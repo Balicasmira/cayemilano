@@ -47,6 +47,7 @@
         "product_cNdVYU",
         "product_irAfhq"
       ],
+      "disabled": true,
       "settings": {
         "full_width": false,
         "stack_mobile": true,

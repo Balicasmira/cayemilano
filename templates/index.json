@@ -50,6 +50,7 @@
         "autoplay": true,
         "video_size": "auto",
         "external_video_url": "",
+        "poster": "shopify://shop_images/fall-vegetable-box.jpg",
         "text_color": "#ffffff",
         "overlay_color": "#000000",
         "overlay_opacity": 30
@@ -73,7 +74,6 @@
         "item-1": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/d6b68399-6360-4abf-9448-b06d85e92780.webp",
             "title": "Soldes d'hiver : Jusqu'à 70% de réduction",
             "heading_tag": "h4",
             "link_url": "shopify://collections/all",
@@ -95,7 +95,6 @@
         "item-2": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Nine_Favorite_Things.webp",
             "title": "À propos de nous",
             "heading_tag": "h4",
             "link_url": "shopify://pages/a-propos-de-nous",
@@ -117,7 +116,6 @@
         "item-3": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/c5ff5a6d-c378-4330-bd1c-a2997b09eaac.jpg",
             "title": "Contact",
             "heading_tag": "h4",
             "link_url": "shopify://pages/contact",
@@ -139,7 +137,6 @@
         "29246d34-c6e0-4373-84f6-b15e57736a00": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/3755fc51-0f7e-4d8d-a8d3-116d1d4b54f7.webp",
             "title": "Travailler avec nous",
             "heading_tag": "h4",
             "link_url": "shopify://pages/travailler-avec-nous",
@@ -180,8 +177,6 @@
         "image_GBLwdn": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/11.png",
-            "mobile_image": "shopify://shop_images/11.png",
             "content_max_width": 780,
             "mobile_text_position": "place-self-center text-center",
             "desktop_text_position": "sm:place-self-center sm:text-center",
@@ -218,7 +213,7 @@
     "featured_collection_byQV8W": {
       "type": "featured-collection",
       "settings": {
-        "collection": "manteux-vestes",
+        "collection": "frontpage",
         "products": [
           "dupont™-pull-de-luxe",
           "blazer-jupe-femme-printemps-elegant",
@@ -296,6 +291,7 @@
         "collection-2",
         "collection-3"
       ],
+      "disabled": true,
       "settings": {
         "full_width": true,
         "stack_collections": false,
