@@ -70,6 +70,7 @@
       "blocks": {
         "links_yEthjk": {
           "type": "links",
+          "disabled": true,
           "settings": {
             "menu": "footer",
             "show_menu_title": true
@@ -81,14 +82,14 @@
             "image_width": 150,
             "heading_size": "h3",
             "title": "Tentez de gagner un crédit shopping de 100 €",
-            "content": "<p>Chaque mois, nous offrons 100 € à l'un de nos fidèles abonnés Lucelle Paris !</p>"
+            "content": "<p>Chaque mois, nous offrons 100 € à l'un de nos fidèles abonnés Kiel Amsterdam !</p>"
           }
         },
         "text": {
           "type": "text",
           "settings": {
             "title": "Des questions?",
-            "content": "<p><strong>Vous avez une question ou besoin de conseils ? N'hésitez pas à nous contacter. Nous sommes là pour vous aider et vous conseiller.</strong></p><p><strong><br/>Email : bienvenue@lucelleparis.com</strong></p><p><strong>Registration: 78738792<br/>VAT: FR003035275B29</strong></p><p><strong>Horaire d'ouverture:<br/>LUN / VEN 09h00 - 17h00<br/>SAM / DIM 10h00 - 17h00</strong></p><p><strong>Localisation:</strong></p><p><strong>102 rue de vaugirard 75006 paris </strong></p>",
+            "content": "<p><strong>Vous avez une question ou besoin de conseils ? N'hésitez pas à nous contacter. Nous sommes là pour vous aider et vous conseiller.</strong></p><p><strong><br/>Email : bienvenue@kielamsterdam.com</strong></p><p><strong>Registration: 78738792<br/>VAT: FR003035275B29</strong></p><p><strong>Horaire d'ouverture:<br/>LUN / VEN 09h00 - 17h00<br/>SAM / DIM 10h00 - 17h00</strong></p><p><strong>Localisation:</strong></p><p><strong>102 rue de la paris 75002 paris </strong></p>",
             "enable_follow_on_shop": false
           }
         },

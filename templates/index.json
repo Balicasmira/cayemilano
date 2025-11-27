@@ -219,12 +219,14 @@
     "featured_collection_byQV8W": {
       "type": "featured-collection",
       "settings": {
-        "collection": "white",
+        "collection": "replili",
         "products": [
-          "dupont™-pull-de-luxe",
-          "blazer-jupe-femme-printemps-elegant",
-          "polo-femme-ete-t-shirt-slim-fit-sexy",
-          "pull-brosse-chic-femme"
+          "100-cashmere-hoodie",
+          "100-merino-wool-zip-up",
+          "adidas®-3-pack-t-shirt",
+          "sweatshirt-w",
+          "arantique-floral-denim-jacket",
+          "pull-cachemire"
         ],
         "full_width": true,
         "stack_products": true,
@@ -343,7 +345,7 @@
           "type": "item",
           "settings": {
             "title": "Vous aves d'autres questions?",
-            "content": "<p>Vous avez une question ou besoin de conseils ? N'hésitez pas à nous contacter. Nous sommes ici pour vous aider et vous conseiller.</p><p><br/>Email : </p><p><br/>LUN / VEN 9h00 - 17h00<br/>SAM / DIM 10h00 - 17h00</p>"
+            "content": "<p>Vous avez une question ou besoin de conseils ? N'hésitez pas à nous contacter. Nous sommes ici pour vous aider et vous conseiller.</p><p><br/>Email :  bonjour@kielamsterdam.com</p><p><br/>LUN / VEN 9h00 - 17h00<br/>SAM / DIM 10h00 - 17h00</p>"
           }
         }
       },
