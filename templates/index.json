@@ -75,6 +75,7 @@
         "item-1": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/man-in-white-and-light-tan-outfit.jpg",
             "title": "Soldes d'hiver : Jusqu'à 70% de réduction",
             "heading_tag": "h4",
             "link_url": "shopify://collections/all",
@@ -96,6 +97,7 @@
         "item-2": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/person-fishing-on-the-beach-is-silhouetted-at-sunset.jpg",
             "title": "À propos de nous",
             "heading_tag": "h4",
             "link_url": "shopify://pages/a-propos-de-nous",
@@ -117,6 +119,7 @@
         "item-3": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/contact-us-image.jpg",
             "title": "Contact",
             "heading_tag": "h4",
             "link_url": "shopify://pages/contact",
@@ -137,6 +140,7 @@
         },
         "29246d34-c6e0-4373-84f6-b15e57736a00": {
           "type": "image",
+          "disabled": true,
           "settings": {
             "title": "Travailler avec nous",
             "heading_tag": "h4",
