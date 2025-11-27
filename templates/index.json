@@ -19,8 +19,9 @@
         },
         "subheading_9q7aDW": {
           "type": "subheading",
+          "disabled": true,
           "settings": {
-            "text": "Lucelle Paris"
+            "text": "Kiel Amsterdam"
           }
         },
         "heading_jyn4Tr": {
@@ -44,14 +45,13 @@
         "heading_jyn4Tr",
         "richtext_KqWkWA"
       ],
-      "disabled": true,
       "settings": {
         "full_width": true,
         "allow_transparent_header": false,
         "autoplay": true,
         "video_size": "auto",
+        "video": "shopify://files/videos/b20fcdcf2e42496a8690d06efa5c4d01.HD-1080p-4.8Mbps-58357982.mp4",
         "external_video_url": "",
-        "poster": "shopify://shop_images/fall-vegetable-box.jpg",
         "text_color": "#ffffff",
         "overlay_color": "#000000",
         "overlay_opacity": 30
@@ -63,7 +63,7 @@
         "full_width": true,
         "remove_vertical_spacing": true,
         "remove_horizontal_spacing": false,
-        "html": "<section id=\"shopify-section-template--24595606045056__impact-text\" class=\"shopify-section shopify-section--impact-text\"><style>\n  #shopify-section-template--24595606045056__impact-text {\n    --section-background-hash: 0;\n  }\n\n  #shopify-section-template--24595606045056__impact-text + * {\n    --previous-section-background-hash: 0;\n  }</style>\n<style>\n    #shopify-section-template--24595606045056__impact-text {\n      --impact-text-font-size: calc(min(20vw, 65px) * 1);\n      --impact-text-auto-columns: minmax(0, 1fr);\n    }\n\n    @media screen and (min-width: 700px) {\n      #shopify-section-template--24595606045056__impact-text {\n        --impact-text-font-size: calc(min(15vw, var(--container-max-width) * 0.15) / 1 * 1);\n        --impact-text-auto-columns: minmax(0, 1fr);\n      }\n    }\n  </style>\n<div class=\"section   section-blends section-full text-custom\" style=\"--text-color: 0 0 0;\">\n    <div>\n      <div class=\"impact-text impact-text--center \"><div class=\"snap-center\">\n<h2 class=\"impact-text__text heading break-all\">\n                  <impact-text reveal-js=\"\" style=\"opacity: 1; transform: translateY(0px);\"><span class=\"text-gradient \" style=\"--gradient: linear-gradient(180deg, rgba(0, 0, 0, 1), rgba(26, 26, 26, 0) 100%)\">100% féminité</span></impact-text>\n                </h2>\n<div class=\"impact-text__content\">\n                  <div class=\"prose\"><p>Pour la femme qui rayonne de beauté avec fierté, chaque jour.</p></div>\n                </div>\n</div></div>\n    </div>\n  </div></section>",
+        "html": "<section id=\"shopify-section-template--24595606045056__impact-text\" class=\"shopify-section shopify-section--impact-text\"><style>\n  #shopify-section-template--24595606045056__impact-text {\n    --section-background-hash: 0;\n  }\n\n  #shopify-section-template--24595606045056__impact-text + * {\n    --previous-section-background-hash: 0;\n  }</style>\n<style>\n    #shopify-section-template--24595606045056__impact-text {\n      --impact-text-font-size: calc(min(20vw, 65px) * 1);\n      --impact-text-auto-columns: minmax(0, 1fr);\n    }\n\n    @media screen and (min-width: 700px) {\n      #shopify-section-template--24595606045056__impact-text {\n        --impact-text-font-size: calc(min(15vw, var(--container-max-width) * 0.15) / 1 * 1);\n        --impact-text-auto-columns: minmax(0, 1fr);\n      }\n    }\n  </style>\n<div class=\"section   section-blends section-full text-custom\" style=\"--text-color: 0 0 0;\">\n    <div>\n      <div class=\"impact-text impact-text--center \"><div class=\"snap-center\">\n<h2 class=\"impact-text__text heading break-all\">\n                  <impact-text reveal-js=\"\" style=\"opacity: 1; transform: translateY(0px);\"><span class=\"text-gradient \" style=\"--gradient: linear-gradient(180deg, rgba(0, 0, 0, 1), rgba(26, 26, 26, 0) 100%)\">100% Élégance</span></impact-text>\n                </h2>\n<div class=\"impact-text__content\">\n                  <div class=\"prose\"><p>Pour la femme qui rayonne de beauté avec fierté, chaque jour.</p></div>\n                </div>\n</div></div>\n    </div>\n  </div></section>",
         "background": "#fff5f5",
         "background_gradient": "",
         "text_color": ""
@@ -163,7 +163,6 @@
         "item-3",
         "29246d34-c6e0-4373-84f6-b15e57736a00"
       ],
-      "disabled": true,
       "settings": {
         "full_width": true,
         "reduce_width": false,
@@ -216,7 +215,7 @@
     "featured_collection_byQV8W": {
       "type": "featured-collection",
       "settings": {
-        "collection": "frontpage",
+        "collection": "white",
         "products": [
           "dupont™-pull-de-luxe",
           "blazer-jupe-femme-printemps-elegant",
@@ -371,6 +370,50 @@
         "accordion_background": "",
         "accordion_text_color": ""
       }
+    },
+    "image_with_text_overlay_UmQrPx": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "heading_RPGTpE": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "text": "Image with text overlay",
+            "heading_tag": "h1"
+          }
+        },
+        "richtext_FYKYHJ": {
+          "type": "richtext",
+          "disabled": true,
+          "settings": {
+            "content": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>"
+          }
+        },
+        "subheading_nANLyB": {
+          "type": "subheading",
+          "settings": {
+            "text": "Notre boutique: 102 rue de la paix, 75002 Paris"
+          }
+        }
+      },
+      "block_order": [
+        "heading_RPGTpE",
+        "richtext_FYKYHJ",
+        "subheading_nANLyB"
+      ],
+      "name": "Image with text overlay",
+      "settings": {
+        "full_width": true,
+        "allow_transparent_header": false,
+        "enable_parallax": false,
+        "image_size": "auto",
+        "image": "shopify://shop_images/ooo.jpg",
+        "mobile_text_position": "place-self-center text-center",
+        "desktop_text_position": "sm:place-self-center sm:text-center",
+        "text_color": "#ffffff",
+        "overlay_color": "#000000",
+        "overlay_opacity": 30
+      }
     }
   },
   "order": [
@@ -380,6 +423,7 @@
     "slideshow_a373fe",
     "featured_collection_byQV8W",
     "collection-list",
-    "faq"
+    "faq",
+    "image_with_text_overlay_UmQrPx"
   ]
 }
