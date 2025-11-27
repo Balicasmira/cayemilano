@@ -363,7 +363,7 @@
         "full_width": true,
         "stack_testimonials": false,
         "subheading": "",
-        "title": "* Avis de nos clients sur Lucelle Paris *",
+        "title": "* Avis de nos clients sur KielAmsterdam  *",
         "content": "",
         "link_url": "",
         "link_text": "",
@@ -455,7 +455,7 @@
           "type": "item",
           "settings": {
             "title": "Vous avez d'autres questions ?",
-            "content": "<p>Vous avez une question ou besoin de conseils ? N'hésitez pas à nous contacter. Nous sommes ici pour vous aider et vous conseiller.</p><p><strong>Email : bonjour@lucelleparis.com</strong></p><p>LUN / VEN 9h00 - 21h00<br/>SAM / DIM 10h00 - 23h00</p>"
+            "content": "<p>Vous avez une question ou besoin de conseils ? N'hésitez pas à nous contacter. Nous sommes ici pour vous aider et vous conseiller.</p><p><strong>Email : bonjour@kielamsterdam.com</strong></p><p>LUN / VEN 9h00 - 21h00<br/>SAM / DIM 10h00 - 23h00</p>"
           }
         }
       },
@@ -516,6 +516,50 @@
         "product_card_background": "#fff7f7",
         "product_card_text_color": "#380e0e"
       }
+    },
+    "image_with_text_overlay_mWgwx8": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "subheading_heXYiH": {
+          "type": "subheading",
+          "disabled": true,
+          "settings": {
+            "text": "Subheading"
+          }
+        },
+        "heading_qAT8AH": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "text": "Image with text overlay",
+            "heading_tag": "h1"
+          }
+        },
+        "richtext_xCKDBY": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Notre boutique: 102 rue de la paix, 75002 Paris</p>"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_heXYiH",
+        "heading_qAT8AH",
+        "richtext_xCKDBY"
+      ],
+      "name": "Image with text overlay",
+      "settings": {
+        "full_width": true,
+        "allow_transparent_header": false,
+        "enable_parallax": false,
+        "image_size": "auto",
+        "image": "shopify://shop_images/ooo.jpg",
+        "mobile_text_position": "place-self-center text-center",
+        "desktop_text_position": "sm:place-self-center sm:text-center",
+        "text_color": "#ffffff",
+        "overlay_color": "#000000",
+        "overlay_opacity": 30
+      }
     }
   },
   "order": [
@@ -525,6 +569,7 @@
     "testimonials_UJCkNj",
     "image_with_text_overlay_MeEWqc",
     "faq_FKfNe8",
-    "related-products"
+    "related-products",
+    "image_with_text_overlay_mWgwx8"
   ]
 }
