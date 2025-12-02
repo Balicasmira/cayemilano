@@ -534,7 +534,13 @@
       "type": "related-products",
       "settings": {
         "recommendations_count": 5,
-        "products": [],
+        "products": [
+          "100-cashmere-hoodie",
+          "100-cashmere-vest",
+          "100-premium-wool-gillet",
+          "100-premium-wool-zip-up",
+          "100-premium-wool-turtleneck"
+        ],
         "full_width": true,
         "stack_products": false,
         "show_progress_bar": false,
