@@ -578,6 +578,7 @@
         },
         "richtext_xCKDBY": {
           "type": "richtext",
+          "disabled": true,
           "settings": {
             "content": "<p>Notre boutique: 102 rue de la paix, 75002 Paris</p>"
           }
