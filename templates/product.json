@@ -534,15 +534,7 @@
       "type": "related-products",
       "settings": {
         "recommendations_count": 5,
-        "products": [
-          "blazer-jupe-femme-printemps-elegant",
-          "cardigan-boutonne-fleurs-femme",
-          "cardigan-tricote-vetements-femme",
-          "fleurelia™-cardigan-boheme-a-fleurs-elegance-1",
-          "pull-brode-col-rond-femme",
-          "pull-en-coton-cable-wimbledon-cricket",
-          "pull-femme-fleurs-brode"
-        ],
+        "products": [],
         "full_width": true,
         "stack_products": false,
         "show_progress_bar": false,
