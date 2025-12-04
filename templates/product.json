@@ -606,6 +606,7 @@
         "image_e9FCVE": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/bleue.jpg",
             "content_max_width": 780,
             "mobile_text_position": "place-self-center text-center",
             "desktop_text_position": "sm:place-self-center sm:text-center",
@@ -626,6 +627,7 @@
         "image_FPhCBq": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/gris1_c7a8916c-dc5b-4744-a326-845f16c4ee14.jpg",
             "content_max_width": 780,
             "mobile_text_position": "place-self-center text-center",
             "desktop_text_position": "sm:place-self-center sm:text-center",
