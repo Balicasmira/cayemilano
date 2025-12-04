@@ -577,7 +577,7 @@
         "richtext_xCKDBY": {
           "type": "richtext",
           "settings": {
-            "content": "<p><strong>Notre boutique: 102 Rue de Provence, 75009 Paris, France</strong></p>"
+            "content": "<p></p><p></p><p><strong>Notre boutique: 102 Rue de Provence, 75009 Paris, France</strong></p>"
           }
         }
       },
