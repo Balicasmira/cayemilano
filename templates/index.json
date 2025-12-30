@@ -219,15 +219,8 @@
     "featured_collection_byQV8W": {
       "type": "featured-collection",
       "settings": {
-        "collection": "replili",
-        "products": [
-          "100-cashmere-hoodie",
-          "100-merino-wool-zip-up",
-          "adidas®-3-pack-t-shirt",
-          "sweatshirt-w",
-          "arantique-floral-denim-jacket",
-          "pull-cachemire"
-        ],
+        "collection": "pull-de-noel-3d-pere-noel™-edition-limite",
+        "products": [],
         "full_width": true,
         "stack_products": true,
         "show_progress_bar": false,
