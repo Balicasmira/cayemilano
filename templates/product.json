@@ -166,6 +166,29 @@
           "settings": {
             "liquid": "<hr style=\"border: none; border-top: 1px solid black; margin: 20px 0;\">"
           }
+        },
+        "paywhirl_subscriptions_paywhirl_plan_selector_Y8zphY": {
+          "type": "shopify://apps/paywhirl-subscriptions/blocks/paywhirl-plan-selector/41e95d60-82cf-46e8-84de-618d7e4c37b7",
+          "settings": {
+            "theme": "default",
+            "font_scale": 100,
+            "show_prices": "default",
+            "show_per_delivery_prices": "default",
+            "selling_plans_first": true,
+            "theme_color": "#334FB4",
+            "sleek_theme_color_preset": "default",
+            "sleek_color_background": "",
+            "sleek_color_primary_button": "",
+            "sleek_color_primary_button_label": "",
+            "sleek_color_primary_button_icon": "",
+            "sleek_color_secondary_button": "",
+            "sleek_color_secondary_button_label": "",
+            "sleek_color_secondary_button_icon": "",
+            "sleek_color_text": "",
+            "one_time_purchase_icon": "default",
+            "subscription_icon": "default",
+            "product": "{{product}}"
+          }
         }
       },
       "block_order": [
@@ -192,7 +215,8 @@
         "separator_NyY8hA",
         "liquid_69gTBj",
         "description",
-        "liquid_WNUeX4"
+        "liquid_WNUeX4",
+        "paywhirl_subscriptions_paywhirl_plan_selector_Y8zphY"
       ],
       "custom_css": [
         ".div {margin-bottom: 0; padding-bottom: 0;}"
