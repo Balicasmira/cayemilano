@@ -1,0 +1,263 @@
+{% comment %}
+  ============================================================
+  SNIPPET: trust-strip.liquid
+  Location: snippets/trust-strip.liquid
+  Usage: {% render 'trust-strip' %}
+  ============================================================
+{% endcomment %}
+
+<style>
+  .ts__section {
+    padding: 50px 60px;
+    background: #FDFAF5;
+    border-top: 1px solid #EDE7D9;
+    border-bottom: 1px solid #EDE7D9;
+    font-family: 'Jost', 'DM Sans', sans-serif;
+  }
+
+  .ts__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .ts__header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .ts__label {
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #8B7355;
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  .ts__title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(22px, 2.5vw, 32px);
+    font-weight: 400;
+    color: #1A1610;
+  }
+
+  .ts__title em {
+    font-style: italic;
+    color: #8B7355;
+  }
+
+  .ts__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+  }
+
+  .ts__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 36px 28px;
+    background: #F5F0E8;
+    border: 1px solid #EDE7D9;
+    transition: background 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ts__card::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%) scaleX(0);
+    width: 40px;
+    height: 2px;
+    background: #8B7355;
+    transition: transform 0.3s ease;
+  }
+
+  .ts__card:hover { background: #EDE7D9; }
+  .ts__card:hover::before { transform: translateX(-50%) scaleX(1); }
+
+  .ts__icon-wrap {
+    width: 62px;
+    height: 62px;
+    border-radius: 50%;
+    background: #1A1610;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 18px;
+    font-size: 26px;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+  }
+
+  .ts__card:hover .ts__icon-wrap { transform: scale(1.08); }
+
+  .ts__card-title {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: #1A1610;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+  }
+
+  .ts__card-desc {
+    font-size: 13px;
+    line-height: 1.65;
+    color: #6B5E48;
+    font-weight: 300;
+  }
+
+  .ts__card-desc strong {
+    color: #1A1610;
+    font-weight: 600;
+  }
+
+  .ts__stars {
+    color: #E8A24A;
+    font-size: 12px;
+    letter-spacing: 2px;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .ts__payment {
+    margin-top: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    padding-top: 28px;
+    border-top: 1px solid #EDE7D9;
+  }
+
+  .ts__payment-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #B8A882;
+  }
+
+  .ts__payment-icons {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .ts__pay-badge {
+    background: white;
+    border: 1px solid #EDE7D9;
+    border-radius: 8px;
+    padding: 6px 14px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #1A1610;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+  }
+
+  @media (max-width: 900px) {
+    .ts__section { padding: 40px 20px; }
+    .ts__grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 540px) {
+    .ts__grid { grid-template-columns: 1fr; }
+    .ts__card { padding: 28px 20px; }
+  }
+</style>
+
+<section class="ts__section">
+  <div class="ts__inner">
+
+    <div class="ts__header">
+      <span class="ts__label">Pourquoi nous choisir</span>
+      <h2 class="ts__title">Ce qui nous <em>distingue</em></h2>
+    </div>
+
+    <div class="ts__grid">
+
+      <div class="ts__card">
+        <div class="ts__icon-wrap">🚚</div>
+        <div class="ts__card-title">Livraison Gratuite & Suivie</div>
+        <p class="ts__card-desc">
+          Expédié avec <strong>La Poste</strong>.<br>
+          Suivi en temps réel inclus.<br>
+          Livré en <strong>4–6 jours ouvrés</strong>.
+        </p>
+      </div>
+
+      <div class="ts__card">
+        <div class="ts__icon-wrap">↩️</div>
+        <div class="ts__card-title">30 Jours Pour Changer d'Avis</div>
+        <p class="ts__card-desc">
+          Retour ou échange <strong>gratuit</strong>.<br>
+          Sans question posée.<br>
+          <strong>Remboursement sous 5 jours</strong>.
+        </p>
+      </div>
+
+      <div class="ts__card">
+        <div class="ts__icon-wrap">🔒</div>
+        <div class="ts__card-title">Paiement 100% Sécurisé</div>
+        <p class="ts__card-desc">
+          Visa, Mastercard, Apple Pay,<br>
+          Google Pay — crypté <strong>SSL</strong>.<br>
+          Vos données sont protégées.
+        </p>
+      </div>
+
+      <div class="ts__card">
+        <div class="ts__icon-wrap">⭐</div>
+        <div class="ts__card-title">+2 300 Clients Satisfaits</div>
+        <p class="ts__card-desc">
+          <span class="ts__stars">★★★★★</span>
+          Noté <strong>4.7/5</strong> par nos acheteurs.<br>
+          Avis vérifiés et authentiques.
+        </p>
+      </div>
+
+      <div class="ts__card">
+        <div class="ts__icon-wrap">💬</div>
+        <div class="ts__card-title">Réponse en Moins de 2h</div>
+        <p class="ts__card-desc">
+          Notre équipe répond <strong>7j/7</strong><br>
+          de 9h à 21h.<br>
+          Par email ou via le chat.
+        </p>
+      </div>
+
+      <div class="ts__card">
+        <div class="ts__icon-wrap">🇫🇷</div>
+        <div class="ts__card-title">Expédié Depuis Paris</div>
+        <p class="ts__card-desc">
+          Votre commande part de notre<br>
+          entrepôt <strong>parisien</strong> dès<br>
+          le lendemain de votre achat.
+        </p>
+      </div>
+
+    </div>
+
+    <div class="ts__payment">
+      <span class="ts__payment-label">Paiement accepté</span>
+      <div class="ts__payment-icons">
+        <span class="ts__pay-badge">VISA</span>
+        <span class="ts__pay-badge">Mastercard</span>
+        <span class="ts__pay-badge">Apple Pay</span>
+        <span class="ts__pay-badge">Google Pay</span>
+        <span class="ts__pay-badge">Maestro</span>
+        <span class="ts__pay-badge">Amex</span>
+      </div>
+    </div>
+
+  </div>
+</section>
