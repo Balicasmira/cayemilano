@@ -293,6 +293,7 @@
         "item_rK4bqM",
         "item_PM6jDt"
       ],
+      "disabled": true,
       "settings": {
         "full_width": false,
         "stack_on_mobile": true,
@@ -402,6 +403,7 @@
         "testimonial_nByit4",
         "testimonial_PjKnpt"
       ],
+      "disabled": true,
       "settings": {
         "full_width": true,
         "stack_testimonials": false,
@@ -508,6 +510,7 @@
         "item_bnQnfE",
         "item_9My4gD"
       ],
+      "disabled": true,
       "settings": {
         "full_width": true,
         "subheading": "",
@@ -548,7 +551,7 @@
         "subheading": "",
         "title": "Meilleurs ventes:",
         "content": "",
-        "background": "#d99898",
+        "background": "#ffffff",
         "background_gradient": "",
         "text_color": "",
         "heading_color": "#101010",
