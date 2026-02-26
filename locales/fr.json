@@ -440,9 +440,9 @@
       },
       "payment": {
         "purchase_options_agreement_label": "Kiel Amsterdam - 2026.",
-        "purchase_options_agreement_label_wallets": "Lucelleparis.com",
-        "subscription_agreement_label": "Lucelleparis.com",
-        "purchase_options_and_vaulting_agreement_label": "Lucelleparis.com",
+        "purchase_options_agreement_label_wallets": "kielamsterdam.com",
+        "subscription_agreement_label": "kielamsterdam.com",
+        "purchase_options_and_vaulting_agreement_label": "kielamsterdam.com",
         "card_security_notice": "Toutes les transactions sont sécurisées et chifrées."
       }
     }
