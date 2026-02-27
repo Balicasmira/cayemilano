@@ -69,7 +69,7 @@
         "liquid_8fDnrH": {
           "type": "liquid",
           "settings": {
-            "liquid": "<style>\n  .popular-badge {\n    display: inline-flex;\n    align-items: center;\n    gap: 10px;\n    background: #F3F3F3;\n    border-radius: 8px;\n    padding: 14px 18px;\n    margin: 12px 0;\n    width: fit-content;\n  }\n\n  .popular-badge__icon {\n    font-size: 18px;\n    flex-shrink: 0;\n    color: #1A1610;\n  }\n\n  .popular-badge__text {\n    font-size: 15px;\n    color: #1A1610;\n    font-family: inherit;\n    font-weight: 400;\n    letter-spacing: 0;\n    margin: 0;\n  }\n</style>\n\n<div class=\"popular-badge\">\n  <span class=\"popular-badge__icon\">🔥</span>\n  <p class=\"popular-badge__text\">C'est l'un de nos articles les plus populaires ce mois-ci.</p>\n</div>"
+            "liquid": "<style>\n  .popular-badge {\n    display: inline-flex;\n    align-items: center;\n    gap: 10px;\n    background: #F3F3F3;\n    border-radius: 8px;\n    padding: 14px 18px;\n    margin: 12px 0;\n    width: fit-content;\n  }\n\n  .popular-badge__icon {\n    font-size: 18px;\n    flex-shrink: 0;\n    color: #1A1610;\n  }\n\n  .popular-badge__text {\n    font-size: 15px;\n    color: #1A1610;\n    font-family: inherit;\n    font-weight: 400;\n    letter-spacing: 0;\n    margin: 0;\n  }\n</style>\n\n<div class=\"popular-badge\">\n  <span class=\"popular-badge__icon\">🫶🏻</span>\n  <p class=\"popular-badge__text\">C'est l'un de nos articles les plus populaires ce mois-ci.</p>\n</div>"
           }
         },
         "liquid_HT7rAR": {
