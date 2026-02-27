@@ -49,12 +49,6 @@
             "liquid": "<div style=\"display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px; padding: 20px; max-width: 400px;\">\n  <!-- Row 1: Money Back Guarantee and Easy Return -->\n  <div style=\"display: flex; align-items: center; font-family: Arial, sans-serif; background-color: #f4f4f4; padding: 10px 20px; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); width: 47%;\">\n    <img alt=\"Money Back Guarantee\" style=\"width: 35px; height: 35px; margin-right: 10px;\" src=\"https://static.vecteezy.com/system/resources/previews/011/629/361/non_2x/international-shipping-3d-rendering-illustration-png.png\">\n    <span style=\"font-size: 14px; font-weight: bold; color: #333;\">Livraison Gratuite</span>\n  </div>\n\n  <div style=\"display: flex; align-items: center; font-family: Arial, sans-serif; background-color: #f4f4f4; padding: 10px 20px; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); width: 45%;\">\n    <img alt=\"Easy Return\" style=\"width: 35px; height: 35px; margin-right: 10px;\" src=\"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREvcHN0Qq7AVQMbkxiq5tFtEGcWhQ8AACteg&amp;s\">\n    <span style=\"font-size: 14px; font-weight: bold; color: #333;\">Garantie de retour sous 30j</span>\n  </div>\n\n  <!-- Row 2: Secure Checkout and 1 Year Warranty -->\n  <div style=\"display: flex; align-items: center; font-family: Arial, sans-serif; background-color: #f4f4f4; padding: 10px 20px; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); width: 45%;\">\n    <img alt=\"Secure Checkout\" style=\"width: 35px; height: 35px; margin-right: 10px;\" src=\"https://cdn-icons-png.freepik.com/512/8946/8946418.png\">\n    <span style=\"font-size: 14px; font-weight: bold; color: #333;\">Paiement sécurisé via SSL</span>\n  </div>\n\n  <div style=\"display: flex; align-items: center; font-family: Arial, sans-serif; background-color: #f4f4f4; padding: 10px 20px; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); width: 45%;\">\n    <img alt=\"1 Year Warranty\" style=\"width: 50px; height: 35px; margin-right: 10px;\" src=\"https://cdn.shopify.com/s/files/1/0668/5356/8556/files/Flag_of_France.svg?v=1740577030\">\n    <span style=\"font-size: 14px; font-weight: bold; color: #333;\">Made IN France</span>\n  </div>\n</div>\n          </div>"
           }
         },
-        "liquid_8fDnrH": {
-          "type": "liquid",
-          "settings": {
-            "liquid": "<style>\n  .popular-badge {\n    display: inline-flex;\n    align-items: center;\n    gap: 10px;\n    background: #F3F3F3;\n    border-radius: 8px;\n    padding: 14px 18px;\n    margin: 12px 0;\n    width: fit-content;\n  }\n\n  .popular-badge__icon {\n    font-size: 18px;\n    flex-shrink: 0;\n    color: #1A1610;\n  }\n\n  .popular-badge__text {\n    font-size: 15px;\n    color: #1A1610;\n    font-family: inherit;\n    font-weight: 400;\n    letter-spacing: 0;\n    margin: 0;\n  }\n</style>\n\n<div class=\"popular-badge\">\n  <span class=\"popular-badge__icon\">🔥</span>\n  <p class=\"popular-badge__text\">C'est l'un de nos articles les plus populaires ce mois-ci.</p>\n</div>"
-          }
-        },
         "liquid_CmRcXq": {
           "type": "liquid",
           "disabled": true,
@@ -70,6 +64,12 @@
             "selector_mode": "block",
             "color_mode": "variant",
             "size_chart_page": ""
+          }
+        },
+        "liquid_8fDnrH": {
+          "type": "liquid",
+          "settings": {
+            "liquid": "<style>\n  .popular-badge {\n    display: inline-flex;\n    align-items: center;\n    gap: 10px;\n    background: #F3F3F3;\n    border-radius: 8px;\n    padding: 14px 18px;\n    margin: 12px 0;\n    width: fit-content;\n  }\n\n  .popular-badge__icon {\n    font-size: 18px;\n    flex-shrink: 0;\n    color: #1A1610;\n  }\n\n  .popular-badge__text {\n    font-size: 15px;\n    color: #1A1610;\n    font-family: inherit;\n    font-weight: 400;\n    letter-spacing: 0;\n    margin: 0;\n  }\n</style>\n\n<div class=\"popular-badge\">\n  <span class=\"popular-badge__icon\">🔥</span>\n  <p class=\"popular-badge__text\">C'est l'un de nos articles les plus populaires ce mois-ci.</p>\n</div>"
           }
         },
         "liquid_HT7rAR": {
@@ -175,9 +175,9 @@
         "liquid_HfVy8n",
         "liquid_HdzimW",
         "liquid_aAiG8g",
-        "liquid_8fDnrH",
         "liquid_CmRcXq",
         "variant_picker",
+        "liquid_8fDnrH",
         "liquid_HT7rAR",
         "buy_buttons",
         "liquid_fYbmhL",
