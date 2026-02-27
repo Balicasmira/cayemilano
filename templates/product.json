@@ -74,6 +74,7 @@
         },
         "liquid_HT7rAR": {
           "type": "liquid",
+          "disabled": true,
           "settings": {
             "liquid": "<br>"
           }
