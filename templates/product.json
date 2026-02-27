@@ -203,6 +203,7 @@
         "description",
         "liquid_WNUeX4"
       ],
+      "disabled": true,
       "custom_css": [
         ".div {margin-bottom: 0; padding-bottom: 0;}"
       ],
