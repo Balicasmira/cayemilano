@@ -24,14 +24,14 @@
         "message": {
           "type": "message",
           "settings": {
-            "text": "Garantie de retour à 100%",
+            "text": "Garantie de retour sur 30 Jours",
             "url": ""
           }
         },
         "message_UjK433": {
           "type": "message",
           "settings": {
-            "text": "4.7/5 Évalué (2300+ avis)",
+            "text": "Paiement 100% Sécurisé",
             "url": ""
           }
         }
