@@ -579,7 +579,7 @@
         "products_per_row_mobile": "1",
         "products_per_row_desktop": 4,
         "subheading": "",
-        "title": "Meilleurs ventes:",
+        "title": "Complétez votre look:",
         "content": "",
         "background": "#ffffff",
         "background_gradient": "",
@@ -699,24 +699,6 @@
     },
     "1772302451693b38a7": {
       "type": "apps",
-      "blocks": {
-        "loox_reviews_loox_dynamic_section_YdwXrK": {
-          "type": "shopify://apps/loox-reviews/blocks/loox-dynamic-section/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
-          "settings": {
-            "reviews_to_display": "",
-            "default_tab": "automatic",
-            "only_photos": false,
-            "aggregated": false,
-            "limit": 20,
-            "hide_thumbnails": false,
-            "maxwidth": 1080,
-            "is_sample": true
-          }
-        }
-      },
-      "block_order": [
-        "loox_reviews_loox_dynamic_section_YdwXrK"
-      ],
       "settings": {
         "full_width": true,
         "remove_vertical_spacing": false,
