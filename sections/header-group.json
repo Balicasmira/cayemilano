@@ -11,19 +11,6 @@
   "type": "header",
   "name": "Header group",
   "sections": {
-    "custom_html_bNgYwA": {
-      "type": "custom-html",
-      "name": "Custom HTML",
-      "settings": {
-        "full_width": false,
-        "remove_vertical_spacing": false,
-        "remove_horizontal_spacing": false,
-        "html": "<style>\n  .wa-sticky-bar,\n  .wa-sticky-bar * {\n    margin: 0;\n    padding: 0;\n    box-sizing: border-box;\n  }\n\n  .wa-sticky-bar {\n    position: fixed;\n    top: 0;\n    left: 0;\n    width: 100%;\n    z-index: 9999;\n    background: #ffffff;\n    border-bottom: 1px solid #e0e0e0;\n    padding: 9px 16px;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n  }\n\n  .wa-sticky-bar a {\n    display: inline-flex;\n    align-items: center;\n    gap: 9px;\n    text-decoration: none;\n    color: #333333;\n    font-size: 13px;\n    font-weight: 500;\n    letter-spacing: 0.01em;\n    transition: opacity 0.2s ease;\n  }\n\n  .wa-sticky-bar a:hover {\n    opacity: 0.75;\n  }\n\n  .wa-icon {\n    width: 20px;\n    height: 20px;\n    flex-shrink: 0;\n  }\n\n  .wa-label {\n    color: #555;\n    font-weight: 400;\n  }\n\n  .wa-number {\n    color: #111;\n    font-weight: 600;\n  }\n\n  .wa-badge {\n    background: #25D366;\n    color: white;\n    font-size: 10px;\n    font-weight: 700;\n    letter-spacing: 0.04em;\n    padding: 0px 7px;\n    border-radius: 20px;\n    text-transform: uppercase;\n  }\n</style>\n<div class=\"wa-sticky-bar\">\n    <a href=\"https://wa.me/33720901802\" target=\"_blank\" rel=\"noopener\">\n      <!-- WhatsApp official SVG icon -->\n      <svg class=\"wa-icon\" viewbox=\"0 0 32 32\" xmlns=\"http://www.w3.org/2000/svg\">\n        <path d=\"M16 1C7.716 1 1 7.716 1 16c0 2.628.678 5.1 1.865 7.254L1 31l7.98-1.835A14.94 14.94 0 0016 31c8.284 0 15-6.716 15-15S24.284 1 16 1z\" fill=\"#25D366\"></path>\n        <path d=\"M23.07 19.66c-.36-.18-2.13-1.05-2.46-1.17-.33-.12-.57-.18-.81.18-.24.36-.93 1.17-1.14 1.41-.21.24-.42.27-.78.09-.36-.18-1.52-.56-2.89-1.79-1.07-.96-1.79-2.14-2-2.5-.21-.36-.02-.55.16-.73.16-.16.36-.42.54-.63.18-.21.24-.36.36-.6.12-.24.06-.45-.03-.63-.09-.18-.81-1.95-1.11-2.67-.29-.7-.59-.6-.81-.61-.21-.01-.45-.01-.69-.01-.24 0-.63.09-.96.45-.33.36-1.26 1.23-1.26 3s1.29 3.48 1.47 3.72c.18.24 2.54 3.88 6.16 5.44.86.37 1.53.59 2.05.76.86.27 1.64.23 2.26.14.69-.1 2.13-.87 2.43-1.71.3-.84.3-1.56.21-1.71-.09-.15-.33-.24-.69-.42z\" fill=\"#fff\"></path>\n      </svg>\n      <span class=\"wa-label\">Service Client :</span>\n      <span class=\"wa-number\">07 20 90 18 02</span>\n      <span class=\"wa-badge\">WhatsApp</span>\n    </a>\n  </div>",
-        "background": "",
-        "background_gradient": "",
-        "text_color": ""
-      }
-    },
     "announcement-bar": {
       "type": "announcement-bar",
       "blocks": {
@@ -62,6 +49,19 @@
         "background": "#095929",
         "background_gradient": "",
         "text_color": "#ffffff"
+      }
+    },
+    "custom_html_bNgYwA": {
+      "type": "custom-html",
+      "name": "Custom HTML",
+      "settings": {
+        "full_width": false,
+        "remove_vertical_spacing": false,
+        "remove_horizontal_spacing": false,
+        "html": "<style>\n  .wa-sticky-bar,\n  .wa-sticky-bar * {\n    margin: 0;\n    padding: 0;\n    box-sizing: border-box;\n  }\n\n  .wa-sticky-bar {\n    position: fixed;\n    top: 0;\n    left: 0;\n    width: 100%;\n    z-index: 9999;\n    background: #ffffff;\n    border-bottom: 1px solid #e0e0e0;\n    padding: 9px 16px;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n  }\n\n  .wa-sticky-bar a {\n    display: inline-flex;\n    align-items: center;\n    gap: 9px;\n    text-decoration: none;\n    color: #333333;\n    font-size: 13px;\n    font-weight: 500;\n    letter-spacing: 0.01em;\n    transition: opacity 0.2s ease;\n  }\n\n  .wa-sticky-bar a:hover {\n    opacity: 0.75;\n  }\n\n  .wa-icon {\n    width: 20px;\n    height: 20px;\n    flex-shrink: 0;\n  }\n\n  .wa-label {\n    color: #555;\n    font-weight: 400;\n  }\n\n  .wa-number {\n    color: #111;\n    font-weight: 600;\n  }\n\n  .wa-badge {\n    background: #25D366;\n    color: white;\n    font-size: 10px;\n    font-weight: 700;\n    letter-spacing: 0.04em;\n    padding: 0px 7px;\n    border-radius: 20px;\n    text-transform: uppercase;\n  }\n</style>\n<div class=\"wa-sticky-bar\">\n    <a href=\"https://wa.me/33720901802\" target=\"_blank\" rel=\"noopener\">\n      <!-- WhatsApp official SVG icon -->\n      <svg class=\"wa-icon\" viewbox=\"0 0 32 32\" xmlns=\"http://www.w3.org/2000/svg\">\n        <path d=\"M16 1C7.716 1 1 7.716 1 16c0 2.628.678 5.1 1.865 7.254L1 31l7.98-1.835A14.94 14.94 0 0016 31c8.284 0 15-6.716 15-15S24.284 1 16 1z\" fill=\"#25D366\"></path>\n        <path d=\"M23.07 19.66c-.36-.18-2.13-1.05-2.46-1.17-.33-.12-.57-.18-.81.18-.24.36-.93 1.17-1.14 1.41-.21.24-.42.27-.78.09-.36-.18-1.52-.56-2.89-1.79-1.07-.96-1.79-2.14-2-2.5-.21-.36-.02-.55.16-.73.16-.16.36-.42.54-.63.18-.21.24-.36.36-.6.12-.24.06-.45-.03-.63-.09-.18-.81-1.95-1.11-2.67-.29-.7-.59-.6-.81-.61-.21-.01-.45-.01-.69-.01-.24 0-.63.09-.96.45-.33.36-1.26 1.23-1.26 3s1.29 3.48 1.47 3.72c.18.24 2.54 3.88 6.16 5.44.86.37 1.53.59 2.05.76.86.27 1.64.23 2.26.14.69-.1 2.13-.87 2.43-1.71.3-.84.3-1.56.21-1.71-.09-.15-.33-.24-.69-.42z\" fill=\"#fff\"></path>\n      </svg>\n      <span class=\"wa-label\">Service Client :</span>\n      <span class=\"wa-number\">07 20 90 18 02</span>\n      <span class=\"wa-badge\">WhatsApp</span>\n    </a>\n  </div>",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
       }
     },
     "header": {
