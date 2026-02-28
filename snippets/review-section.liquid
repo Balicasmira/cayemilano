@@ -276,6 +276,65 @@
     .rr__review-title { font-size: 12px; }
     .rr__text { font-size: 11px; }
   }
+
+  /* ── LIGHTBOX ── */
+  .rr__lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+    z-index: 99999;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .rr__lightbox.rr--open {
+    display: flex;
+  }
+
+  .rr__lightbox-img {
+    max-width: 90vw;
+    max-height: 85vh;
+    object-fit: contain;
+    border-radius: 10px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    animation: lbIn 0.2s ease;
+  }
+
+  @keyframes lbIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to   { opacity: 1; transform: scale(1); }
+  }
+
+  .rr__lightbox-close {
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.15);
+    border: none;
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+    z-index: 100000;
+  }
+
+  .rr__lightbox-close:hover {
+    background: rgba(255,255,255,0.3);
+  }
+
+  /* Make photos look clickable */
+  .rr__photo {
+    cursor: zoom-in;
+  }
+
 </style>
 
 <section class="rr__section" id="reviews">
@@ -328,7 +387,7 @@
 
       <!-- REVIEW 1 — Marco -->
       <div class="rr__card">
-        <img class="rr__photo" src="https://cdn.shopify.com/s/files/1/0924/9747/7960/files/10.webp?v=1764687102" alt="Photo produit">
+        <img class="rr__photo" onclick="rrLightboxOpen('https://cdn.shopify.com/s/files/1/0924/9747/7960/files/10.webp?v=1764687102')" src="https://cdn.shopify.com/s/files/1/0924/9747/7960/files/10.webp?v=1764687102" alt="Photo produit">
         <div class="rr__body">
           <div class="rr__name-row">
             <span class="rr__name">Marco B.</span>
@@ -344,7 +403,7 @@
 
       <!-- REVIEW 2 — Thomas -->
       <div class="rr__card">
-        <img class="rr__photo" src="https://cdn.shopify.com/s/files/1/0924/9747/7960/files/6_16e6e6bf-ff0a-4e86-be5b-68f46b270e24.webp?v=1764687102" alt="Photo produit">
+        <img class="rr__photo" onclick="rrLightboxOpen('https://cdn.shopify.com/s/files/1/0924/9747/7960/files/6_16e6e6bf-ff0a-4e86-be5b-68f46b270e24.webp?v=1764687102')" src="https://cdn.shopify.com/s/files/1/0924/9747/7960/files/6_16e6e6bf-ff0a-4e86-be5b-68f46b270e24.webp?v=1764687102" alt="Photo produit">
         <div class="rr__body">
           <div class="rr__name-row">
             <span class="rr__name">Thomas K.</span>
@@ -360,7 +419,7 @@
 
       <!-- REVIEW 3 — Julien -->
       <div class="rr__card">
-        <img class="rr__photo" src="https://cdn.shopify.com/s/files/1/0924/9747/7960/files/1_76b8bc4f-9bc6-4cdc-ad4c-0735792e56df.webp?v=1764687102" alt="Photo produit">
+        <img class="rr__photo" onclick="rrLightboxOpen('https://cdn.shopify.com/s/files/1/0924/9747/7960/files/1_76b8bc4f-9bc6-4cdc-ad4c-0735792e56df.webp?v=1764687102')" src="https://cdn.shopify.com/s/files/1/0924/9747/7960/files/1_76b8bc4f-9bc6-4cdc-ad4c-0735792e56df.webp?v=1764687102" alt="Photo produit">
         <div class="rr__body">
           <div class="rr__name-row">
             <span class="rr__name">Julien M.</span>
@@ -376,7 +435,7 @@
 
       <!-- REVIEW 4 — Alejandro -->
       <div class="rr__card">
-        <img class="rr__photo" src="https://cdn.shopify.com/s/files/1/0924/9747/7960/files/3_58d3ddac-e63b-47ae-8274-bd6c922175ba.webp?v=1764687102" alt="Photo produit">
+        <img class="rr__photo" onclick="rrLightboxOpen('https://cdn.shopify.com/s/files/1/0924/9747/7960/files/3_58d3ddac-e63b-47ae-8274-bd6c922175ba.webp?v=1764687102')" src="https://cdn.shopify.com/s/files/1/0924/9747/7960/files/3_58d3ddac-e63b-47ae-8274-bd6c922175ba.webp?v=1764687102" alt="Photo produit">
         <div class="rr__body">
           <div class="rr__name-row">
             <span class="rr__name">Alejandro R.</span>
@@ -392,7 +451,7 @@
 
       <!-- REVIEW 5 — Lukas -->
       <div class="rr__card">
-        <img class="rr__photo" src="https://cdn.shopify.com/s/files/1/0924/9747/7960/files/5_c8e023cd-49a6-48ee-864f-3a34dc131f98.webp?v=1764687102" alt="Photo produit">
+        <img class="rr__photo" onclick="rrLightboxOpen('https://cdn.shopify.com/s/files/1/0924/9747/7960/files/5_c8e023cd-49a6-48ee-864f-3a34dc131f98.webp?v=1764687102')" src="https://cdn.shopify.com/s/files/1/0924/9747/7960/files/5_c8e023cd-49a6-48ee-864f-3a34dc131f98.webp?v=1764687102" alt="Photo produit">
         <div class="rr__body">
           <div class="rr__name-row">
             <span class="rr__name">Lukas F.</span>
@@ -408,7 +467,7 @@
 
       <!-- REVIEW 6 — Sophie -->
       <div class="rr__card">
-        <img class="rr__photo" src="https://cdn.shopify.com/s/files/1/0924/9747/7960/files/7_686eca7f-fadd-4e05-ad41-202a87951505.webp?v=1764687103" alt="Photo produit">
+        <img class="rr__photo" onclick="rrLightboxOpen('https://cdn.shopify.com/s/files/1/0924/9747/7960/files/7_686eca7f-fadd-4e05-ad41-202a87951505.webp?v=1764687103')" src="https://cdn.shopify.com/s/files/1/0924/9747/7960/files/7_686eca7f-fadd-4e05-ad41-202a87951505.webp?v=1764687103" alt="Photo produit">
         <div class="rr__body">
           <div class="rr__name-row">
             <span class="rr__name">Sophie D.</span>
@@ -432,6 +491,13 @@
     </div>
 
   </div>
+
+<!-- LIGHTBOX -->
+<div class="rr__lightbox" id="rr-lightbox" onclick="rrLightboxClickOutside(event)">
+  <button class="rr__lightbox-close" onclick="rrLightboxClose()">✕</button>
+  <img class="rr__lightbox-img" id="rr-lightbox-img" src="" alt="">
+</div>
+
 </section>
 
 <script>
@@ -446,4 +512,25 @@
       btn.style.opacity = '0.5';
     }
   }
+
+  // Lightbox
+  function rrLightboxOpen(src) {
+    document.getElementById('rr-lightbox-img').src = src;
+    document.getElementById('rr-lightbox').classList.add('rr--open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function rrLightboxClose() {
+    document.getElementById('rr-lightbox').classList.remove('rr--open');
+    document.body.style.overflow = '';
+  }
+
+  function rrLightboxClickOutside(e) {
+    if (e.target === document.getElementById('rr-lightbox')) rrLightboxClose();
+  }
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') rrLightboxClose();
+  });
+
 </script>
