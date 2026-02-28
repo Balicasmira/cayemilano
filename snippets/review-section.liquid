@@ -334,10 +334,23 @@
   }
 
   @media (max-width: 640px) {
-    .rr__section { padding: 50px 20px; }
-    .rr__grid { grid-template-columns: 1fr; }
+    .rr__section { padding: 40px 12px; }
+    .rr__grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
     .rr__summary { padding: 24px 20px; }
     .rr__rating-number { font-size: 56px; }
+    .rr__card { padding: 16px 12px; }
+    .rr__card::before { font-size: 50px; top: 6px; right: 10px; }
+    .rr__avatar { width: 34px; height: 34px; font-size: 13px; }
+    .rr__name { font-size: 13px; }
+    .rr__meta { font-size: 10px; }
+    .rr__review-title { font-size: 14px; }
+    .rr__text { font-size: 12px; line-height: 1.6; }
+    .rr__stars { font-size: 11px; letter-spacing: 1px; }
+    .rr__date { font-size: 10px; }
+    .rr__tag { font-size: 10px; padding: 3px 8px; }
+    .rr__helpful { font-size: 11px; gap: 6px; }
+    .rr__helpful-btn { font-size: 11px; padding: 3px 8px; }
+    .rr__verified { font-size: 9px; padding: 3px 6px; }
   }
 </style>
 
