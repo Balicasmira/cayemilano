@@ -67,7 +67,7 @@
     "header": {
       "type": "header",
       "custom_css": [
-        ".header {margin-bottom: 0px;}"
+        ".header {margin-bottom: 0px; padding-bottom: 0px;}"
       ],
       "settings": {
         "enable_sticky": true,
