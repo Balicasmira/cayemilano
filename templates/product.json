@@ -595,6 +595,7 @@
       "blocks": {
         "subheading_heXYiH": {
           "type": "subheading",
+          "disabled": true,
           "settings": {
             "text": ""
           }
@@ -609,6 +610,7 @@
         },
         "richtext_xCKDBY": {
           "type": "richtext",
+          "disabled": true,
           "settings": {
             "content": "<p></p><p></p><p><strong>Notre boutique: 102 Rue de Provence, 75009 Paris, France</strong></p>"
           }
@@ -619,19 +621,18 @@
         "heading_qAT8AH",
         "richtext_xCKDBY"
       ],
-      "disabled": true,
       "name": "Image with text overlay",
       "settings": {
         "full_width": true,
         "allow_transparent_header": false,
         "enable_parallax": false,
         "image_size": "auto",
-        "image": "shopify://shop_images/ooo.jpg",
+        "image": "shopify://shop_images/8214a165-83f6-4c58-bcd7-c4a298423c9f.png",
         "mobile_text_position": "place-self-center text-center",
         "desktop_text_position": "sm:place-self-center sm:text-center",
         "text_color": "#ffffff",
         "overlay_color": "#000000",
-        "overlay_opacity": 30
+        "overlay_opacity": 0
       }
     },
     "slideshow_X9APHH": {
