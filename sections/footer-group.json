@@ -68,18 +68,10 @@
     "footer": {
       "type": "footer",
       "blocks": {
-        "links_ifFARC": {
-          "type": "links",
-          "settings": {
-            "menu": "main-menu",
-            "show_menu_title": true
-          }
-        },
         "links_yEthjk": {
           "type": "links",
-          "disabled": true,
           "settings": {
-            "menu": "footer",
+            "menu": "customer-account-main-menu",
             "show_menu_title": true
           }
         },
@@ -109,7 +101,6 @@
         }
       },
       "block_order": [
-        "links_ifFARC",
         "links_yEthjk",
         "newsletter",
         "text",
