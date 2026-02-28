@@ -70,6 +70,7 @@
       "blocks": {
         "links_yEthjk": {
           "type": "links",
+          "disabled": true,
           "settings": {
             "menu": "customer-account-main-menu",
             "show_menu_title": true
