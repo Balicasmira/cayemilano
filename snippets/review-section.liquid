@@ -3,16 +3,9 @@
   SNIPPET: review-section.liquid
   Location: snippets/review-section.liquid
   Usage: {% render 'review-section' %}
-  Drop this ONE line anywhere in your product.liquid or
-  sections/product.liquid to display the full review block.
   ============================================================
 {% endcomment %}
 <style>
-  /* ============================================================
-     REVIEW SECTION STYLES
-     Scoped with .rr__ prefix to avoid conflicts with your theme
-  ============================================================ */
-
   .rr__section {
     padding: 80px 60px;
     background: #EDE7D9;
@@ -132,76 +125,59 @@
     flex-shrink: 0;
   }
 
-  /* Review grid */
+  /* ── GRID ── */
   .rr__grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    gap: 16px;
     margin-bottom: 40px;
   }
 
+  /* ── CARD ── */
   .rr__card {
-    background: #FDFAF5;
+    background: #fff;
     border-radius: 16px;
-    padding: 28px;
-    border: 1px solid #EDE7D9;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    position: relative;
+    border: 1.5px solid #E8D9C0;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: box-shadow 0.2s ease;
   }
 
   .rr__card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 16px 40px rgba(0,0,0,0.08);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
   }
 
-  .rr__card::before {
-    content: '"';
-    position: absolute;
-    top: 12px;
-    right: 18px;
-    font-family: 'Playfair Display', Georgia, serif;
-    font-size: 70px;
-    color: #EDE7D9;
-    line-height: 1;
-    pointer-events: none;
+  /* Photo */
+  .rr__photo {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    display: block;
+    background: #F5F0E8;
   }
 
-  .rr__card-header {
+  /* Card body */
+  .rr__body {
+    padding: 14px 16px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1;
+  }
+
+  /* Name row */
+  .rr__name-row {
     display: flex;
     align-items: center;
-    gap: 12px;
-    margin-bottom: 14px;
+    gap: 6px;
+    flex-wrap: wrap;
   }
-
-  .rr__avatar {
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 17px;
-    font-weight: 700;
-    color: #fff;
-    flex-shrink: 0;
-    font-family: 'Jost', sans-serif;
-  }
-
-  .rr__reviewer { flex: 1; }
 
   .rr__name {
-    font-size: 15px;
-    font-weight: 600;
+    font-size: 14px;
+    font-weight: 700;
     color: #1A1610;
-    margin-bottom: 2px;
-    display: block;
-  }
-
-  .rr__meta {
-    font-size: 11px;
-    color: #6B5E48;
-    display: block;
   }
 
   .rr__verified {
@@ -209,92 +185,51 @@
     font-weight: 600;
     color: #2D6A4F;
     background: rgba(45,106,79,0.1);
-    padding: 4px 9px;
+    padding: 2px 7px;
     border-radius: 20px;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     gap: 3px;
-    white-space: nowrap;
-    flex-shrink: 0;
   }
 
-  .rr__stars-row {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 10px;
-  }
-
-  .rr__stars {
-    color: #E8A24A;
-    font-size: 13px;
-    letter-spacing: 2px;
-  }
-
-  .rr__date {
+  .rr__meta {
     font-size: 11px;
-    color: #6B5E48;
-  }
-
-  .rr__review-title {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-size: 17px;
-    font-weight: 500;
-    color: #1A1610;
-    margin-bottom: 10px;
-    line-height: 1.3;
+    color: #8B7355;
     display: block;
   }
 
-  .rr__text {
+  /* Stars */
+  .rr__stars {
+    color: #E8A24A;
+    font-size: 14px;
+    letter-spacing: 2px;
+    display: block;
+  }
+
+  /* Title */
+  .rr__review-title {
     font-size: 13px;
-    line-height: 1.75;
+    font-weight: 600;
+    color: #1A1610;
+    line-height: 1.4;
+    display: block;
+  }
+
+  /* Text */
+  .rr__text {
+    font-size: 12px;
+    line-height: 1.65;
     color: #6B5E48;
+    margin: 0;
   }
 
-  .rr__tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-    margin-top: 14px;
-  }
-
-  .rr__tag {
+  /* Date */
+  .rr__date {
     font-size: 11px;
-    padding: 4px 11px;
-    background: #EDE7D9;
-    border-radius: 20px;
-    color: #8B7355;
-    font-weight: 500;
-  }
-
-  .rr__helpful {
-    margin-top: 14px;
-    padding-top: 14px;
-    border-top: 1px solid #EDE7D9;
-    font-size: 12px;
-    color: #6B5E48;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    flex-wrap: wrap;
-  }
-
-  .rr__helpful-btn {
-    background: none;
-    border: 1px solid #D4C4A0;
-    padding: 4px 12px;
-    border-radius: 20px;
-    cursor: pointer;
-    font-size: 12px;
-    color: #6B5E48;
-    font-family: inherit;
-    transition: all 0.2s;
-  }
-
-  .rr__helpful-btn:hover {
-    border-color: #8B7355;
-    color: #8B7355;
+    color: #B0A08A;
+    margin-top: auto;
+    padding-top: 6px;
+    display: block;
   }
 
   /* Load more */
@@ -322,35 +257,37 @@
     color: #F5F0E8;
   }
 
-  /* Hidden reviews (shown on load more click) */
-  .rr__card.rr__hidden {
-    display: none;
-  }
+  .rr__card.rr__hidden { display: none; }
 
-  /* ===== RESPONSIVE ===== */
+  /* ── RESPONSIVE ── */
   @media (max-width: 1024px) {
     .rr__grid { grid-template-columns: repeat(2, 1fr); }
     .rr__summary { grid-template-columns: 1fr; gap: 30px; }
   }
 
   @media (max-width: 640px) {
-    .rr__section { padding: 50px 20px; }
-    .rr__grid { grid-template-columns: 1fr; }
-    .rr__summary { padding: 24px 20px; }
+    .rr__section { padding: 40px 16px; }
+    .rr__grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    .rr__summary { padding: 24px 16px; }
     .rr__rating-number { font-size: 56px; }
+    .rr__body { padding: 10px 12px 12px; gap: 4px; }
+    .rr__name { font-size: 13px; }
+    .rr__stars { font-size: 12px; }
+    .rr__review-title { font-size: 12px; }
+    .rr__text { font-size: 11px; }
   }
 </style>
 
 <section class="rr__section" id="reviews">
   <div class="rr__inner">
 
-    <!-- Section header -->
+    <!-- Header -->
     <div class="rr__header">
-      <span class="rr__label">Avis Clients</span>
+      <span class="rr__label">AVIS CLIENTS</span>
       <h2 class="rr__title">Ce que nos clients <em>disent</em></h2>
     </div>
 
-    <!-- Rating summary -->
+    <!-- Summary -->
     <div class="rr__summary">
       <div class="rr__rating-big">
         <span class="rr__rating-number">4.9</span>
@@ -386,176 +323,102 @@
       </div>
     </div>
 
-    <!-- Review cards grid -->
+    <!-- Cards -->
     <div class="rr__grid" id="rr-grid">
 
-      <!-- ★ REVIEW 1 — Qualité -->
+      <!-- REVIEW 1 — Marco -->
       <div class="rr__card">
-        <div class="rr__card-header">
-          <div class="rr__avatar" style="background:#8B5E3C;">M</div>
-          <div class="rr__reviewer">
+        <img class="rr__photo" src="https://cdn.shopify.com/s/files/1/0924/9747/7960/files/10.webp?v=1764687102" alt="Photo produit">
+        <div class="rr__body">
+          <div class="rr__name-row">
             <span class="rr__name">Marco B.</span>
-            <span class="rr__meta">Milan, Italie 🇮🇹</span>
+            <span class="rr__verified">✓ Vérifié</span>
           </div>
-          <div class="rr__verified">✓ Vérifié</div>
-        </div>
-        <div class="rr__stars-row">
+          <span class="rr__meta">Milan, Italie 🇮🇹</span>
           <span class="rr__stars">★★★★★</span>
+          <span class="rr__review-title">Qualité exceptionnelle pour le prix</span>
+          <p class="rr__text">La maille est épaisse, finitions nickel, couleur fidèle aux photos. Lavé deux fois — zéro problème. Excellent rapport qualité-prix.</p>
           <span class="rr__date">14 Jan 2026</span>
         </div>
-        <span class="rr__review-title">Qualité exceptionnelle pour le prix</span>
-        <p class="rr__text">Franchement je ne m'attendais pas à ce niveau de qualité. La maille côtelée est épaisse mais respirante, les finitions sont impeccables, et la couleur gris acier est exactement comme sur les photos. Lavé deux fois en machine à 30°C — aucun rétrécissement, aucune déformation. Le logo crocodile brodé est parfaitement propre. Vraiment excellent rapport qualité-prix.</p>
-        <img src="https://cdn.shopify.com/s/files/1/0924/9747/7960/files/10.webp?v=1764687102">
-        <div class="rr__tags">
-          <span class="rr__tag">Qualité ⭐</span>
-          <span class="rr__tag">Fidèle aux photos</span>
-          <span class="rr__tag">Durable</span>
-        </div>
-        <div class="rr__helpful">
-          Utile ?
-          <button class="rr__helpful-btn" onclick="rrHelpful(this, 24)">👍 Oui (24)</button>
-          <button class="rr__helpful-btn">👎 Non</button>
-        </div>
       </div>
 
-      <!-- ★ REVIEW 2 — Taille -->
+      <!-- REVIEW 2 — Thomas -->
       <div class="rr__card">
-        <div class="rr__card-header">
-          <div class="rr__avatar" style="background:#2D6A4F;">T</div>
-          <div class="rr__reviewer">
+        <img class="rr__photo" src="https://cdn.shopify.com/s/files/1/0924/9747/7960/files/6_16e6e6bf-ff0a-4e86-be5b-68f46b270e24.webp?v=1764687102" alt="Photo produit">
+        <div class="rr__body">
+          <div class="rr__name-row">
             <span class="rr__name">Thomas K.</span>
-            <span class="rr__meta">Amsterdam, NL 🇳🇱</span>
+            <span class="rr__verified">✓ Vérifié</span>
           </div>
-          <div class="rr__verified">✓ Vérifié</div>
-        </div>
-        <div class="rr__stars-row">
+          <span class="rr__meta">Amsterdam, NL 🇳🇱</span>
           <span class="rr__stars">★★★★★</span>
+          <span class="rr__review-title">Taille fidèle — prenez votre taille habituelle</span>
+          <p class="rr__text">183cm/80kg, le M tombe parfaitement. Coupe droite, zip fluide, tirette en cuir très sympa. Le guide des tailles est fiable.</p>
           <span class="rr__date">8 Fév 2026</span>
         </div>
-        <span class="rr__review-title">Taille fidèle — prenez votre taille habituelle</span>
-        <p class="rr__text">J'hésitais entre M et L mais le guide des tailles est vraiment précis. Je fais 183cm, 80kg et le M tombe parfaitement — coupe droite sans être trop ample. La fermeture zippée est solide et fluide, la tirette en cuir donne un vrai cachet. Ma copine m'a dit que je ressemblais à quelqu'un qui sort d'une boutique Lacoste. Je prends ça comme un compliment.</p>
-        <img src="https://cdn.shopify.com/s/files/1/0924/9747/7960/files/6_16e6e6bf-ff0a-4e86-be5b-68f46b270e24.webp?v=1764687102">
-        <div class="rr__tags">
-          <span class="rr__tag">Taille fidèle</span>
-          <span class="rr__tag">Coupe parfaite</span>
-          <span class="rr__tag">183cm / M</span>
-        </div>
-        <div class="rr__helpful">
-          Utile ?
-          <button class="rr__helpful-btn" onclick="rrHelpful(this, 18)">👍 Oui (18)</button>
-          <button class="rr__helpful-btn">👎 Non</button>
-        </div>
       </div>
 
-      <!-- ★ REVIEW 3 — Livraison -->
+      <!-- REVIEW 3 — Julien -->
       <div class="rr__card">
-        <div class="rr__card-header">
-          <div class="rr__avatar" style="background:#5B3D8A;">J</div>
-          <div class="rr__reviewer">
+        <img class="rr__photo" src="https://cdn.shopify.com/s/files/1/0924/9747/7960/files/1_76b8bc4f-9bc6-4cdc-ad4c-0735792e56df.webp?v=1764687102" alt="Photo produit">
+        <div class="rr__body">
+          <div class="rr__name-row">
             <span class="rr__name">Julien M.</span>
-            <span class="rr__meta">Lyon, France 🇫🇷</span>
+            <span class="rr__verified">✓ Vérifié</span>
           </div>
-          <div class="rr__verified">✓ Vérifié</div>
-        </div>
-        <div class="rr__stars-row">
+          <span class="rr__meta">Lyon, France 🇫🇷</span>
           <span class="rr__stars">★★★★★</span>
+          <span class="rr__review-title">Reçu en 3 jours — cardigan top</span>
+          <p class="rr__text">Commandé mardi soir, livré vendredi matin. Produit encore mieux qu'en photo. La maille côtelée est vraiment premium. J'ai déjà commandé le bordeaux.</p>
           <span class="rr__date">22 Jan 2026</span>
         </div>
-        <span class="rr__review-title">Reçu en 3 jours — et le cardigan est top</span>
-        <p class="rr__text">Commande passée un mardi soir, livré vendredi matin. Emballage soigné, boîte rigide, cardigan plié proprement à l'intérieur. En vrai le produit est encore mieux en photo — la texture de la maille côtelée est vraiment premium au toucher. Je le porte avec une chemise blanche pour aller au bureau et ça rend super bien. J'ai déjà commandé le bordeaux.</p>
-        <div class="rr__tags">
-          <span class="rr__tag">Livraison rapide 🚀</span>
-          <span class="rr__tag">Bel emballage</span>
-          <span class="rr__tag">Acheteur fidèle</span>
-        </div>
-        <div class="rr__helpful">
-          Utile ?
-          <button class="rr__helpful-btn" onclick="rrHelpful(this, 31)">👍 Oui (31)</button>
-          <button class="rr__helpful-btn">👎 Non</button>
-        </div>
       </div>
 
-      <!-- ★ REVIEW 4 — Polyvalence -->
+      <!-- REVIEW 4 — Alejandro -->
       <div class="rr__card">
-        <div class="rr__card-header">
-          <div class="rr__avatar" style="background:#C9A96E;">A</div>
-          <div class="rr__reviewer">
+        <img class="rr__photo" src="https://cdn.shopify.com/s/files/1/0924/9747/7960/files/3_58d3ddac-e63b-47ae-8274-bd6c922175ba.webp?v=1764687102" alt="Photo produit">
+        <div class="rr__body">
+          <div class="rr__name-row">
             <span class="rr__name">Alejandro R.</span>
-            <span class="rr__meta">Barcelone, Espagne 🇪🇸</span>
+            <span class="rr__verified">✓ Vérifié</span>
           </div>
-          <div class="rr__verified">✓ Vérifié</div>
-        </div>
-        <div class="rr__stars-row">
+          <span class="rr__meta">Barcelone, Espagne 🇪🇸</span>
           <span class="rr__stars">★★★★★</span>
+          <span class="rr__review-title">Je le mets absolument partout</span>
+          <p class="rr__text">Dans ma rotation depuis deux mois. Jean le matin, chemise le soir — il passe partout. Deux personnes m'ont demandé où je l'avais acheté cette semaine.</p>
           <span class="rr__date">3 Fév 2026</span>
         </div>
-        <span class="rr__review-title">Le cardigan que je mets absolument partout</span>
-        <p class="rr__text">Je le porte depuis deux mois et honnêtement il est dans ma rotation presque tous les jours. Le matin avec un jean et des sneakers, le soir fermé sur une chemise pour sortir. La maille côtelée tient bien chaud sans être étouffante. Deux personnes m'ont demandé où je l'avais acheté cette semaine. Je leur ai envoyé le lien direct.</p>
-        <div class="rr__tags">
-          <span class="rr__tag">Très polyvalent</span>
-          <span class="rr__tag">Port quotidien</span>
-          <span class="rr__tag">Nombreux compliments</span>
-        </div>
-        <div class="rr__helpful">
-          Utile ?
-          <button class="rr__helpful-btn" onclick="rrHelpful(this, 42)">👍 Oui (42)</button>
-          <button class="rr__helpful-btn">👎 Non</button>
-        </div>
       </div>
 
-      <!-- ★ REVIEW 5 — Style -->
+      <!-- REVIEW 5 — Lukas -->
       <div class="rr__card">
-        <div class="rr__card-header">
-          <div class="rr__avatar" style="background:#D35400;">L</div>
-          <div class="rr__reviewer">
+        <img class="rr__photo" src="https://cdn.shopify.com/s/files/1/0924/9747/7960/files/5_c8e023cd-49a6-48ee-864f-3a34dc131f98.webp?v=1764687102" alt="Photo produit">
+        <div class="rr__body">
+          <div class="rr__name-row">
             <span class="rr__name">Lukas F.</span>
-            <span class="rr__meta">Munich, Allemagne 🇩🇪</span>
+            <span class="rr__verified">✓ Vérifié</span>
           </div>
-          <div class="rr__verified">✓ Vérifié</div>
-        </div>
-        <div class="rr__stars-row">
+          <span class="rr__meta">Munich, Allemagne 🇩🇪</span>
           <span class="rr__stars">★★★★★</span>
+          <span class="rr__review-title">On dirait un article à 150€</span>
+          <p class="rr__text">Vraiment surpris par la qualité. La maille épaisse, la tirette en cuir, tout est soigné. Porté à une soirée à Munich, compliments toute la nuit.</p>
           <span class="rr__date">17 Jan 2026</span>
         </div>
-        <span class="rr__review-title">La pièce la plus élégante que je possède sous 80€</span>
-        <p class="rr__text">J'ai acheté beaucoup de vêtements en ligne et la plupart sont décevants. Celui-là m'a vraiment surpris. La maille côtelée épaisse donne un rendu très haut de gamme — on dirait un article à 150€. La fermeture zippée avec la tirette en cuir est un vrai détail qui fait la différence. Porté à une soirée à Munich, j'ai eu des compliments toute la nuit.</p>
-        <div class="rr__tags">
-          <span class="rr__tag">Look premium</span>
-          <span class="rr__tag">Finitions soignées</span>
-          <span class="rr__tag">Meilleur rapport qualité/prix</span>
-        </div>
-        <div class="rr__helpful">
-          Utile ?
-          <button class="rr__helpful-btn" onclick="rrHelpful(this, 37)">👍 Oui (37)</button>
-          <button class="rr__helpful-btn">👎 Non</button>
-        </div>
       </div>
 
-      <!-- ★ REVIEW 6 — Cadeau -->
+      <!-- REVIEW 6 — Sophie -->
       <div class="rr__card">
-        <div class="rr__card-header">
-          <div class="rr__avatar" style="background:#2980B9;">S</div>
-          <div class="rr__reviewer">
+        <img class="rr__photo" src="https://cdn.shopify.com/s/files/1/0924/9747/7960/files/7_686eca7f-fadd-4e05-ad41-202a87951505.webp?v=1764687103" alt="Photo produit">
+        <div class="rr__body">
+          <div class="rr__name-row">
             <span class="rr__name">Sophie D.</span>
-            <span class="rr__meta">Paris, France 🇫🇷</span>
+            <span class="rr__verified">✓ Vérifié</span>
           </div>
-          <div class="rr__verified">✓ Vérifié</div>
-        </div>
-        <div class="rr__stars-row">
+          <span class="rr__meta">Paris, France 🇫🇷</span>
           <span class="rr__stars">★★★★★</span>
+          <span class="rr__review-title">Offert en cadeau — il ne l'enlève plus</span>
+          <p class="rr__text">Emballage magnifique, il l'a enfilé direct. Coupe parfaite sur lui (L, 188cm). Il me demande déjà le vert olive. Je recommande les yeux fermés.</p>
           <span class="rr__date">30 Jan 2026</span>
-        </div>
-        <span class="rr__review-title">Offert en cadeau — il ne l'enlève plus</span>
-        <p class="rr__text">J'ai offert ce cardigan à mon compagnon pour son anniversaire. L'emballage était vraiment beau — on avait l'impression d'ouvrir quelque chose acheté dans une vraie boutique. Il l'a enfilé immédiatement. La coupe tombe très bien sur lui (L, 188cm, carrure sportive). Il me demande déjà d'en commander un deuxième en vert olive. Je recommande les yeux fermés.</p>
-        <div class="rr__tags">
-          <span class="rr__tag">Cadeau parfait 🎁</span>
-          <span class="rr__tag">Bel emballage</span>
-          <span class="rr__tag">188cm / L</span>
-        </div>
-        <div class="rr__helpful">
-          Utile ?
-          <button class="rr__helpful-btn" onclick="rrHelpful(this, 29)">👍 Oui (29)</button>
-          <button class="rr__helpful-btn">👎 Non</button>
         </div>
       </div>
 
@@ -568,19 +431,10 @@
       </button>
     </div>
 
-</div>
+  </div>
 </section>
 
 <script>
-  // Helpful button click
-  function rrHelpful(btn, count) {
-    btn.textContent = '👍 Yes (' + (count + 1) + ')';
-    btn.style.borderColor = '#2D6A4F';
-    btn.style.color = '#2D6A4F';
-    btn.disabled = true;
-  }
-
-  // Load more (cosmetic — add real reviews inside rr__hidden divs if needed)
   function rrLoadMore(btn) {
     const hidden = document.querySelectorAll('.rr__card.rr__hidden');
     if (hidden.length > 0) {
