@@ -2,50 +2,51 @@
 ----------------------------------------------------------------------------------------------------------------------
 VARIANT ADDED
 ----------------------------------------------------------------------------------------------------------------------
-
-This section is used when a product is added to the cart, to show a notification. It is therefore only used internally
-by the theme and is not meant to be included directly into a page.
 {%- endcomment -%}
 
 <div class="quick-buy-drawer__info">
   {%- assign added_to_cart = 'product.general.added_to_cart' | t -%}
   {%- render 'banner', status: 'success', content: added_to_cart -%}
- <div class="banner banner--success  justify-center"><p style="color: black;"><strong>Nose partenaires de livraison:</strong></p><br>
-<ul class="_0xLoFW _7ckuOK -hyY7t" style="display: flex; gap: 0px; list-style: none; padding: 0; margin: 0;">
-<li><a class="_5Yd-hZ wTFXcM _65i7kZ" tabindex="0" href="/faq/what-delivery-options-are-available.html" aria-label="Colissimo" data-tracking-label="3.0.Colissimo"> <img style="width: 50px; height: 47px; object-fit: contain;" draggable="false" src="https://mosaic01.ztat.net/zds/assets/svg/colissimo.2f4378f.svg" alt="Colissimo" width="350" height="47"></a></li>
-<li><a class="_5Yd-hZ wTFXcM _65i7kZ" tabindex="0" href="/faq/what-delivery-options-are-available.html" aria-label="Chronopost" data-tracking-label="3.1.Chronopost"> <img style="width: 50px; height: 47px; object-fit: contain;" draggable="false" src="https://mosaic01.ztat.net/zds/assets/svg/chronopost.2154cb4.svg" alt="Chronopost" width="350" height="47"> </a></li>
-<li><a class="_5Yd-hZ wTFXcM _65i7kZ" tabindex="0" href="/faq/what-delivery-options-are-available.html" aria-label="Mondial Relay" data-tracking-label="3.2.MondialRelay"> <img style="width: 50px; height: 47px; object-fit: contain;" draggable="false" src="https://mosaic01.ztat.net/zds/assets/svg/mondial-relay.29fc5cf.svg" alt="Mondial Relay" width="350" height="47"> </a></li>
-</ul></div>
 
-  <div class="quick-buy-drawer__variant text-start h-stack gap-6">
-    {%- assign image = product_variant.featured_media | default: product_variant.product.featured_media -%}
+  <div class="banner banner--success justify-center">
+    <p style="color: black;"><strong>Nos partenaires de livraison:</strong></p><br>
+    <ul style="display: flex; gap: 0px; list-style: none; padding: 0; margin: 0;">
+      <li><img style="width: 50px; height: 47px; object-fit: contain;" src="https://mosaic01.ztat.net/zds/assets/svg/colissimo.2f4378f.svg" alt="Colissimo"></li>
+      <li><img style="width: 50px; height: 47px; object-fit: contain;" src="https://mosaic01.ztat.net/zds/assets/svg/chronopost.2154cb4.svg" alt="Chronopost"></li>
+      <li><img style="width: 50px; height: 47px; object-fit: contain;" src="https://mosaic01.ztat.net/zds/assets/svg/mondial-relay.29fc5cf.svg" alt="Mondial Relay"></li>
+    </ul>
+  </div>
 
-    {%- if image != blank -%}
-      {{- image | image_url: width: image.width | image_tag: loading: 'lazy', sizes: '80px', widths: '80,160', class: 'quick-buy-drawer__media rounded-xs' -}}
-    {%- endif -%}
+  {%- for line_item in cart.items -%}
+    <div class="quick-buy-drawer__variant text-start h-stack gap-6">
+      {%- assign image = line_item.variant.featured_media | default: line_item.product.featured_media -%}
 
-    <div class="v-stack gap-1">
-      <div class="v-stack gap-0.5">
-        <a href="{{ product_variant.url }}" class="bold justify-self-start">{{ product_variant.product.title }}</a>
-        {%- assign matched_line_item = cart.items | where: 'product_id', product_variant.product.id | first -%}
-        {%- render 'price-list', 'Pièces', product: product_variant.product, line_item: matched_line_item -%}
-      </div>
-
-      {%- if matched_line_item.line_level_discount_allocations != blank -%}
-        <ul class="contents" role="list">
-          {%- for discount_allocation in matched_line_item.line_level_discount_allocations -%}
-            <li class="badge">
-              {%- render 'icon' with 'discount' -%} {{ discount_allocation.discount_application.title }} (-{{ discount_allocation.amount | money }})
-            </li>
-          {%- endfor -%}
-        </ul>
+      {%- if image != blank -%}
+        {{- image | image_url: width: image.width | image_tag: loading: 'lazy', sizes: '80px', widths: '80,160', class: 'quick-buy-drawer__media rounded-xs' -}}
       {%- endif -%}
 
-      {%- unless product_variant.product.has_only_default_variant -%}
-        <p class="text-sm text-subdued">{{ product_variant.title }}</p>
-      {%- endunless -%}
+      <div class="v-stack gap-1">
+        <div class="v-stack gap-0.5">
+          <a href="{{ line_item.variant.url }}" class="bold justify-self-start">{{ line_item.product.title }}</a>
+          {%- render 'price-list', product: line_item.product, line_item: line_item -%}
+        </div>
+
+        {%- if line_item.line_level_discount_allocations != blank -%}
+          <ul class="contents" role="list">
+            {%- for discount_allocation in line_item.line_level_discount_allocations -%}
+              <li class="badge">
+                {%- render 'icon' with 'discount' -%} {{ discount_allocation.discount_application.title }} (-{{ discount_allocation.amount | money }})
+              </li>
+            {%- endfor -%}
+          </ul>
+        {%- endif -%}
+
+        {%- unless line_item.product.has_only_default_variant -%}
+          <p class="text-sm text-subdued">{{ line_item.variant.title }}</p>
+        {%- endunless -%}
+      </div>
     </div>
-  </div>
+  {%- endfor -%}
 
   <form action="{{ routes.cart_url }}" method="post" class="buy-buttons buy-buttons--compact">
     {%- assign view_cart_label = 'cart.general.view_cart' | t -%}
