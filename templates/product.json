@@ -568,10 +568,11 @@
       "settings": {
         "recommendations_count": 5,
         "products": [
-          "lacoste-cardigan-signature-pour-homme",
           "lacoste-pull-zip-nouvelle-collection-promo-solde-le-heritage",
           "pull-adidas-grid-solde-nouvelle-collection-homme",
-          "lacoste-pull-a-col-montant-style-et-confort"
+          "lacoste-pull-a-col-montant-style-et-confort",
+          "pull-a-demi-zip-en-laine-dagneau-ultra-fine",
+          "adiflex-ensemble-adidas-survetement"
         ],
         "full_width": true,
         "stack_products": false,
@@ -698,22 +699,6 @@
         "background": "#f2f2f2",
         "background_gradient": ""
       }
-    },
-    "1772302451693b38a7": {
-      "type": "apps",
-      "settings": {
-        "full_width": true,
-        "remove_vertical_spacing": false,
-        "remove_horizontal_spacing": false,
-        "background": "",
-        "background_gradient": "",
-        "text_color": "",
-        "enable_review_integration": true,
-        "review_header_gradient": "linear-gradient(135deg, #FFC266 0%, #FFA31A 100%)",
-        "review_header_text_color": "#000000",
-        "review_button_background": "#000000",
-        "review_button_text_color": "#ffffff"
-      }
     }
   },
   "order": [
@@ -726,7 +711,6 @@
     "faq_FKfNe8",
     "related-products",
     "image_with_text_overlay_mWgwx8",
-    "slideshow_X9APHH",
-    "1772302451693b38a7"
+    "slideshow_X9APHH"
   ]
 }
