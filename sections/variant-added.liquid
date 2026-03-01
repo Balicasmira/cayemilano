@@ -28,7 +28,7 @@ by the theme and is not meant to be included directly into a page.
       <div class="v-stack gap-0.5">
         <a href="{{ product_variant.url }}" class="bold justify-self-start">{{ product_variant.product.title }}</a>
         {%- assign matched_line_item = cart.items | where: 'product_id', product_variant.product.id | first -%}
-        {%- render 'price-list', product: product_variant.product, line_item: matched_line_item -%}
+        {%- render 'price-list', 'Pièces', product: product_variant.product, line_item: matched_line_item -%}
       </div>
 
       {%- if matched_line_item.line_level_discount_allocations != blank -%}
