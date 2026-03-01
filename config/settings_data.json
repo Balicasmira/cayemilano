@@ -56,7 +56,7 @@
     "product_color_display": "variant",
     "product_image_aspect_ratio": "square",
     "product_info_alignment": "start",
-    "cart_type": "page",
+    "cart_type": "drawer",
     "cart_icon": "shopping_basket",
     "cart_show_free_shipping_threshold": true,
     "cart_free_shipping_threshold": 1,
