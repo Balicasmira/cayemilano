@@ -68,16 +68,9 @@
     "footer": {
       "type": "footer",
       "blocks": {
-        "links_yEthjk": {
-          "type": "links",
-          "disabled": true,
-          "settings": {
-            "menu": "customer-account-main-menu",
-            "show_menu_title": true
-          }
-        },
         "newsletter": {
           "type": "newsletter",
+          "disabled": true,
           "settings": {
             "image_width": 150,
             "heading_size": "h3",
@@ -89,23 +82,22 @@
           "type": "text",
           "settings": {
             "title": "Des questions?",
-            "content": "<p><strong>Vous avez une question ou besoin de conseils ? N'hésitez pas à nous contacter. Nous sommes là pour vous aider et vous conseiller.</strong></p><p><strong><br/>Email : bienvenue@kielamsterdam.com</strong></p><p><strong>Registration: 78738792<br/>VAT: FR003035275B29</strong></p><p></p>",
+            "content": "<p><strong>Vous avez une question ou besoin de conseils ? N'hésitez pas à nous contacter. Nous sommes là pour vous aider et vous conseiller.</strong></p><p><strong><br/>Email : bienvenue@kielamsterdam.com</strong></p><p>✉️ <a><strong>info@couturemodeparis.fr</strong></a></p><p><strong>Registration: 78738792<br/>VAT: FR003035275B29</strong></p><p></p>",
             "enable_follow_on_shop": false
           }
         },
-        "links": {
+        "links_yEthjk": {
           "type": "links",
           "settings": {
-            "menu": "",
-            "show_menu_title": false
+            "menu": "footer-menu",
+            "show_menu_title": true
           }
         }
       },
       "block_order": [
-        "links_yEthjk",
         "newsletter",
         "text",
-        "links"
+        "links_yEthjk"
       ],
       "settings": {
         "show_social_media": true,
