@@ -8985,7 +8985,9 @@ split-lines {
 .text-on-sale {
   color: rgb(var(--on-sale-text));
 }
-
+.kaching-bundles__bar-price {
+  color: rgb(var(--on-sale-text));
+  }
 .text-stroke {
   -webkit-text-stroke: 1px currentColor;
   -webkit-text-fill-color: transparent;
