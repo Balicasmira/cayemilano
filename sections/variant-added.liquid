@@ -52,7 +52,6 @@ VARIANT ADDED
     
     {%- assign checkout_label = 'cart.general.checkout' | t -%}
 
-    {%- render 'button', href: routes.cart_url, secondary: true, content: view_cart_label -%}
     {%- render 'button', type: 'submit', name: 'checkout', content: checkout_label -%}
   </form>
 </div>
