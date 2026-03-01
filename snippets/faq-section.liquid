@@ -53,7 +53,6 @@
     font-weight: 300;
   }
 
-  /* Accordion */
   .faq__list {
     display: flex;
     flex-direction: column;
@@ -145,48 +144,6 @@
     font-weight: 500;
   }
 
-  /* Contact CTA */
-  .faq__contact {
-    margin-top: 40px;
-    text-align: center;
-    padding: 28px;
-    border: 1px solid rgba(201,169,110,0.2);
-    border-radius: 14px;
-    background: rgba(201,169,110,0.05);
-  }
-
-  .faq__contact-text {
-    font-size: 14px;
-    color: rgba(245,240,232,0.5);
-    margin-bottom: 14px;
-  }
-
-  .faq__contact-text strong {
-    color: #F5F0E8;
-  }
-
-  .faq__contact-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 12px 28px;
-    background: #C9A96E;
-    color: #1A1610;
-    border-radius: 30px;
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    text-decoration: none;
-    font-family: 'Jost', sans-serif;
-    transition: all 0.2s;
-  }
-
-  .faq__contact-btn:hover {
-    background: #E8D5B0;
-    transform: translateY(-2px);
-  }
-
   @media (max-width: 768px) {
     .faq__section { padding: 50px 20px; }
     .faq__question { padding: 18px 20px; }
@@ -206,10 +163,9 @@
 
     <div class="faq__list">
 
-      <!-- Q1 -->
       <div class="faq__item" id="faq-1">
         <button class="faq__question" onclick="faqToggle('faq-1')" aria-expanded="false">
-          <span class="faq__question-text">Est-ce un produit authentique ? </span>
+          <span class="faq__question-text">Est-ce un produit authentique ?</span>
           <span class="faq__icon">+</span>
         </button>
         <div class="faq__answer">
@@ -219,7 +175,6 @@
         </div>
       </div>
 
-      <!-- Q2 -->
       <div class="faq__item" id="faq-2">
         <button class="faq__question" onclick="faqToggle('faq-2')" aria-expanded="false">
           <span class="faq__question-text">Pourquoi vos prix sont-ils inférieurs aux boutiques ?</span>
@@ -232,7 +187,6 @@
         </div>
       </div>
 
-      <!-- Q3 -->
       <div class="faq__item" id="faq-3">
         <button class="faq__question" onclick="faqToggle('faq-3')" aria-expanded="false">
           <span class="faq__question-text">Comment choisir ma taille ?</span>
@@ -245,7 +199,6 @@
         </div>
       </div>
 
-      <!-- Q4 -->
       <div class="faq__item" id="faq-4">
         <button class="faq__question" onclick="faqToggle('faq-4')" aria-expanded="false">
           <span class="faq__question-text">Est-ce que le tissu rétrécit au lavage ?</span>
@@ -258,7 +211,6 @@
         </div>
       </div>
 
-      <!-- Q5 -->
       <div class="faq__item" id="faq-5">
         <button class="faq__question" onclick="faqToggle('faq-5')" aria-expanded="false">
           <span class="faq__question-text">Quels sont les délais de livraison ?</span>
@@ -271,7 +223,6 @@
         </div>
       </div>
 
-      <!-- Q6 -->
       <div class="faq__item" id="faq-6">
         <button class="faq__question" onclick="faqToggle('faq-6')" aria-expanded="false">
           <span class="faq__question-text">Comment suivre ma commande ?</span>
@@ -284,7 +235,6 @@
         </div>
       </div>
 
-      <!-- Q7 -->
       <div class="faq__item" id="faq-7">
         <button class="faq__question" onclick="faqToggle('faq-7')" aria-expanded="false">
           <span class="faq__question-text">Puis-je retourner ou échanger mon article ?</span>
@@ -297,7 +247,6 @@
         </div>
       </div>
 
-      <!-- Q8 -->
       <div class="faq__item" id="faq-8">
         <button class="faq__question" onclick="faqToggle('faq-8')" aria-expanded="false">
           <span class="faq__question-text">Livrez-vous en Belgique et en Suisse ?</span>
@@ -311,19 +260,7 @@
       </div>
 
     </div>
-
-    <!-- Contact CTA -->
-    <div class="faq__contact">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-      <p class="faq__contact-text">
-        Vous n'avez pas trouvé votre réponse ? <strong>Notre équipe est là pour vous.</strong>
-      </p>
-      <a href="https://api.whatsapp.com/send?phone=33729201821&text=Bonjour" class="faq__contact-btn">
-        <i class="fa fa-whatsapp" style="font-size:24px;color:green"></i>
- Contactez notre agent via WhatsAPP 
-      </a> 
-    </div>
+    <!-- Contact CTA REMOVED — moved to footer -->
 
   </div>
 </section>
@@ -332,14 +269,10 @@
   function faqToggle(id) {
     const item = document.getElementById(id);
     const isOpen = item.classList.contains('open');
-
-    // Close all
     document.querySelectorAll('.faq__item').forEach(el => {
       el.classList.remove('open');
       el.querySelector('.faq__question').setAttribute('aria-expanded', 'false');
     });
-
-    // Open clicked if it was closed
     if (!isOpen) {
       item.classList.add('open');
       item.querySelector('.faq__question').setAttribute('aria-expanded', 'true');
