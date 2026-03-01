@@ -406,6 +406,23 @@
         "overlay_color": "#000000",
         "overlay_opacity": 30
       }
+    },
+    "newsletter_AiawjY": {
+      "type": "newsletter",
+      "name": "Newsletter",
+      "settings": {
+        "full_width": true,
+        "show_icon": false,
+        "title": "Tentez votre chance de gagner un crédit shopping de 49 €",
+        "content": "<p>Chaque mois, nous offrons 49 € à l'un de nos fidèles abonnés Kiel Amsterdam !</p>",
+        "button_text": "",
+        "subtext": "",
+        "background": "",
+        "background_gradient": "",
+        "text_color": "",
+        "button_background": "",
+        "button_text_color": ""
+      }
     }
   },
   "order": [
@@ -416,6 +433,7 @@
     "featured_collection_byQV8W",
     "collection-list",
     "faq",
-    "image_with_text_overlay_UmQrPx"
+    "image_with_text_overlay_UmQrPx",
+    "newsletter_AiawjY"
   ]
 }

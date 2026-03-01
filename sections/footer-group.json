@@ -92,6 +92,7 @@
       "blocks": {
         "newsletter": {
           "type": "newsletter",
+          "disabled": true,
           "settings": {
             "image_width": 150,
             "heading_size": "h3",
@@ -129,7 +130,7 @@
         "links_Hd8Wpd"
       ],
       "custom_css": [
-        ".footer {--text-color: white; color:white;}"
+        ".footer {--text-color: white; color: white;}"
       ],
       "settings": {
         "show_social_media": true,
