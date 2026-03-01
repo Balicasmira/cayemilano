@@ -387,18 +387,11 @@
           "settings": {
             "content": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>"
           }
-        },
-        "subheading_nANLyB": {
-          "type": "subheading",
-          "settings": {
-            "text": "Notre boutique: 102 rue de la paix, 75002 Paris"
-          }
         }
       },
       "block_order": [
         "heading_RPGTpE",
-        "richtext_FYKYHJ",
-        "subheading_nANLyB"
+        "richtext_FYKYHJ"
       ],
       "name": "Image with text overlay",
       "settings": {
@@ -406,7 +399,7 @@
         "allow_transparent_header": false,
         "enable_parallax": false,
         "image_size": "auto",
-        "image": "shopify://shop_images/ooo.jpg",
+        "image": "shopify://shop_images/Gemini_Generated_Image_uqojefuqojefuqoj.png",
         "mobile_text_position": "place-self-center text-center",
         "desktop_text_position": "sm:place-self-center sm:text-center",
         "text_color": "#ffffff",
