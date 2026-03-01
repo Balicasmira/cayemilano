@@ -11,6 +11,28 @@
   "type": "footer",
   "name": "Footer group",
   "sections": {
+    "footer_custom_gzKmhH": {
+      "type": "footer-custom",
+      "disabled": true,
+      "name": "Footer KielAmsterdam",
+      "settings": {
+        "service_desc": "Vous avez des questions concernant votre commande, notre collection ou autre chose ? N'hésitez pas à contacter notre équipe du service client.",
+        "email": "bienvenue@kielamsterdam.com",
+        "phone_display": "+33 7 20 90 18 02",
+        "whatsapp_number": "33729201802",
+        "show_hours": true,
+        "hours_weekday": "09h00 - 18h00",
+        "hours_saturday": "09h00 - 17h00",
+        "hours_sunday": "Fermé",
+        "link_track": "",
+        "link_shipping": "",
+        "link_refund": "",
+        "link_cgv": "",
+        "link_privacy": "",
+        "link_faq": "",
+        "brand_name": "KielAmsterdam"
+      }
+    },
     "shop_the_look_tGFJKm": {
       "type": "shop-the-look",
       "blocks": {
@@ -70,7 +92,6 @@
       "blocks": {
         "newsletter": {
           "type": "newsletter",
-          "disabled": true,
           "settings": {
             "image_width": 150,
             "heading_size": "h3",
@@ -82,7 +103,7 @@
           "type": "text",
           "settings": {
             "title": "Des questions?",
-            "content": "<p><strong>Vous avez une question ou besoin de conseils ? N'hésitez pas à nous contacter. Nous sommes là pour vous aider et vous conseiller.</strong></p><p><strong><br/>Email : bienvenue@kielamsterdam.com</strong></p><p>✉️ <a><strong>info@couturemodeparis.fr</strong></a></p><p><strong>Registration: 78738792<br/>VAT: FR003035275B29</strong></p><p></p>",
+            "content": "<p><strong>Vous avez une question ou besoin de conseils ? N'hésitez pas à nous contacter. Nous sommes là pour vous aider et vous conseiller.</strong></p><p><strong><br/>Email  </strong>✉️<strong>: bienvenue@kielamsterdam.com</strong></p><p>SIREN<strong>: 78738792<br/>VAT: FR003035275B29</strong></p><p></p>",
             "enable_follow_on_shop": false
           }
         },
@@ -92,12 +113,20 @@
             "menu": "footer-menu",
             "show_menu_title": true
           }
+        },
+        "links_Hd8Wpd": {
+          "type": "links",
+          "settings": {
+            "menu": "footer-1",
+            "show_menu_title": false
+          }
         }
       },
       "block_order": [
         "newsletter",
         "text",
-        "links_yEthjk"
+        "links_yEthjk",
+        "links_Hd8Wpd"
       ],
       "settings": {
         "show_social_media": true,
@@ -110,6 +139,7 @@
     }
   },
   "order": [
+    "footer_custom_gzKmhH",
     "shop_the_look_tGFJKm",
     "footer"
   ]
