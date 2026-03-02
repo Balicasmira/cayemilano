@@ -251,9 +251,7 @@
         "description",
         "liquid_WNUeX4"
       ],
-      "custom_css": [
-        ".div {margin-bottom: 0; padding-bottom: 0;}"
-      ],
+      "custom_css": [],
       "settings": {
         "full_width": false,
         "show_fixed_add_to_cart": true,
@@ -592,6 +590,7 @@
     },
     "related-products": {
       "type": "related-products",
+      "custom_css": [],
       "settings": {
         "recommendations_count": 5,
         "products": [
@@ -603,7 +602,7 @@
         ],
         "full_width": true,
         "stack_products": false,
-        "show_progress_bar": false,
+        "show_progress_bar": true,
         "products_per_row_mobile": "1",
         "products_per_row_desktop": 4,
         "subheading": "",
