@@ -5,7 +5,75 @@ VARIANT ADDED
 {%- endcomment -%}
 
 <div class="quick-buy-drawer__info">
+<style>
+  .kiel-stars-bar {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    text-decoration: none;
+  }
 
+  .kiel-stars-bar__stars {
+    display: flex;
+    align-items: center;
+    gap: 1px;
+  }
+
+  .kiel-stars-bar__stars svg {
+    display: block;
+  }
+
+  .kiel-stars-bar__label {
+    font-family: 'Jost', 'DM Sans', Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: green;
+    border-bottom: 1px solid #C4B49A;
+    padding-bottom: 1px;
+    transition: color 0.2s, border-color 0.2s;
+  }
+
+  .kiel-stars-bar:hover .kiel-stars-bar__label {
+    color: green;
+    border-color: green;
+  }
+</style>
+
+<div class="kiel-stars-bar" onclick="kielScrollToReviews()">
+
+  <div class="kiel-stars-bar__stars">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="green"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="green"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="green"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="green"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+    <svg width="14" height="14" viewBox="0 0 24 24">
+      <defs>
+        <linearGradient id="kiel-half-grad">
+          <stop offset="50%" stop-color="green"/>
+          <stop offset="50%" stop-color="grey"/>
+        </linearGradient>
+      </defs>
+      <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" fill="url(#kiel-half-grad)"/>
+    </svg>
+  </div>
+
+  <span class="kiel-stars-bar__label">4,8/5 · Avis clients vérifiés</span>
+
+</div>
+
+<script>
+  function kielScrollToReviews() {
+    var kielTarget =
+      document.getElementById('rr-avis') ||
+      document.querySelector('[id*="reviews"]') ||
+      document.querySelector('[id*="avis"]') ||
+      document.querySelector('[id*="testimonials"]');
+    if (kielTarget) {
+      kielTarget.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+</script>
 </div>
 
   <div class="banner banner--success justify-center">
@@ -47,7 +115,7 @@ VARIANT ADDED
     </div>
   {%- endfor -%}
 
-  <form action="{{ routes.cart_url }}" method="post" class="buy-buttons buy-buttons--compact">
+  <form action="{{ routes.cart_url }}" style="padding:10px" method="post" class="buy-buttons buy-buttons--compact">
     
     {%- assign checkout_label = 'cart.general.checkout' | t -%}
 
