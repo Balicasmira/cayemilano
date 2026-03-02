@@ -101,6 +101,9 @@
             {% if product.tags contains 'review-cardigan' %}
   {% render 'review-section-cardigan' %}
 {% endif %}
+{% if product.tags contains 'review-heritage' %}
+  {% render 'review-section-heritage' %}
+{% endif %}
              {% render 'trust-stripo' %}
              {% render 'faq-section' %}
 
