@@ -98,7 +98,9 @@
                 {{- product.description -}}
               </div>
             </div>
-            {% render 'review-section' %}
+            {% if product.tags contains 'review-cardigan' %}
+  {% render 'review-section-cardigan' %}
+{% endif %}
              {% render 'trust-stripo' %}
              {% render 'faq-section' %}
 
