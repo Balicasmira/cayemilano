@@ -291,11 +291,21 @@ VARIANT ADDED — with upsell + Quick View popup
 </div>
 
 <script>
+  // Move popup to body on first open to escape drawer overflow/z-index
+  function kielQvInit() {
+    var overlay = document.getElementById('kiel-qv-overlay');
+    if (overlay && overlay.parentNode !== document.body) {
+      document.body.appendChild(overlay);
+    }
+  }
   function kielQvOpen() {
+    kielQvInit();
     document.getElementById('kiel-qv-overlay').classList.add('kiel-qv--open');
+    document.body.style.overflow = 'hidden';
   }
   function kielQvClose() {
     document.getElementById('kiel-qv-overlay').classList.remove('kiel-qv--open');
+    document.body.style.overflow = '';
   }
   function kielQvClickOutside(e) {
     if (e.target === document.getElementById('kiel-qv-overlay')) kielQvClose();
