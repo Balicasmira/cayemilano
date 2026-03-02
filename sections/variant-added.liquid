@@ -230,6 +230,7 @@ VARIANT ADDED — with upsell + Quick View popup
   {%- endfor -%}
 
   {%- if kiel_show_upsell -%}
+  {%- assign kiel_upsell_id = 'kiel-upsell-qb' -%}
   <div class="kiel-upsell">
     <span class="kiel-upsell__label">Complétez votre look</span>
     <div class="kiel-upsell__row">
@@ -237,16 +238,16 @@ VARIANT ADDED — with upsell + Quick View popup
         class="kiel-upsell__img"
         src="https://kielamsterdam.com/cdn/shop/files/dzdzdzdzdz.png?v=1761758025&width=300"
         alt="Pull L'Heritage"
-        onclick="kielQvOpen()"
       >
       <div class="kiel-upsell__info">
         <span class="kiel-upsell__name">Pull L'Heritage</span>
         <span class="kiel-upsell__price">€44,99 &nbsp;<s style="color:#B0A08A;font-size:11px;">€110,00</s></span>
         <br>
-        <button class="kiel-upsell__btn" onclick="kielQvOpen()">Compléter ma commande</button>
+        {%- render 'button', content: 'Compléter ma commande', aria_controls: kiel_upsell_id -%}
       </div>
     </div>
   </div>
+  <quick-buy-drawer id="{{ kiel_upsell_id }}" header-bordered open-from="bottom" handle="lacoste-pull-zip-nouvelle-collection-promo-solde-le-heritage" role="region" aria-live="polite" class="quick-buy-drawer drawer"></quick-buy-drawer>
   {%- endif -%}
 
   <form action="{{ routes.cart_url }}" style="padding:10px;" method="post" class="buy-buttons buy-buttons--compact">
@@ -265,44 +266,6 @@ VARIANT ADDED — with upsell + Quick View popup
 
 </div>
 
-
-<script>
-  function kielQvOpen() {
-    var existing = document.getElementById("kiel-qv-overlay");
-    if (existing) existing.remove();
-    var html = '<div id="kiel-qv-overlay" style="display:flex;position:fixed;inset:0;background:rgba(0,0,0,0.65);z-index:2147483647;justify-content:center;align-items:center;padding:20px;" onclick="if(event.target.id===\x27kiel-qv-overlay\x27)kielQvClose()"><div style="background:#fff;border-radius:16px;width:100%;max-width:420px;padding:24px;position:relative;max-height:90vh;overflow-y:auto;"><button onclick="kielQvClose()" style="position:absolute;top:12px;right:14px;background:none;border:none;font-size:22px;color:#999;cursor:pointer;">✕</button><img src="https://kielamsterdam.com/cdn/shop/files/dzdzdzdzdz.png?v=1761758025\x26width=800" style="width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:10px;margin-bottom:16px;"><h3 style="font-size:16px;font-weight:700;color:#1A1610;margin:0 0 8px;font-family:Georgia,serif;">Pull L\x27Heritage</h3><div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;"><span style="font-size:18px;font-weight:700;">€44,99</span><span style="font-size:14px;color:#B0A08A;text-decoration:line-through;">€110,00</span><span style="font-size:11px;font-weight:700;background:#1A1610;color:#fff;padding:2px 8px;border-radius:20px;">-59%</span></div><p style="font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:#8B7355;margin:0 0 8px;">CHOISIR UNE TAILLE</p><div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px;"><button onclick="kielSz(this)" data-v="52080247013704" style="width:44px;height:44px;border:1.5px solid #D4C4A0;border-radius:8px;background:#fff;font-size:12px;font-weight:600;cursor:pointer;">S</button><button onclick="kielSz(this)" data-v="52080247013704" style="width:44px;height:44px;border:1.5px solid #D4C4A0;border-radius:8px;background:#fff;font-size:12px;font-weight:600;cursor:pointer;">M</button><button onclick="kielSz(this)" data-v="52080247013704" style="width:44px;height:44px;border:1.5px solid #D4C4A0;border-radius:8px;background:#fff;font-size:12px;font-weight:600;cursor:pointer;">L</button><button onclick="kielSz(this)" data-v="52080247013704" style="width:44px;height:44px;border:1.5px solid #D4C4A0;border-radius:8px;background:#fff;font-size:12px;font-weight:600;cursor:pointer;">XL</button><button onclick="kielSz(this)" data-v="52080247013704" style="width:44px;height:44px;border:1.5px solid #D4C4A0;border-radius:8px;background:#fff;font-size:12px;font-weight:600;cursor:pointer;">2XL</button></div><button id="kqatc" onclick="kielQvAtc()" disabled style="width:100%;padding:14px;background:#C4B49A;color:#fff;font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;border:none;border-radius:30px;cursor:not-allowed;">Sélectionner une taille</button><p id="kqmsg" style="font-size:12px;text-align:center;margin-top:10px;color:#2D6A4F;font-weight:600;display:none;">✓ Ajouté au panier !</p></div></div>';
-    document.body.insertAdjacentHTML("beforeend", html);
-    document.body.style.overflow = "hidden";
-  }
-  function kielQvClose() {
-    var o = document.getElementById("kiel-qv-overlay");
-    if (o) o.remove();
-    document.body.style.overflow = "";
-  }
-  function kielSz(btn) {
-    document.querySelectorAll("[data-v]").forEach(function(b) { b.style.background="#fff"; b.style.color="#1A1610"; b.style.borderColor="#D4C4A0"; });
-    btn.style.background="#1A1610"; btn.style.color="#fff"; btn.style.borderColor="#1A1610";
-    btn._selected = true;
-    var atc = document.getElementById("kqatc");
-    atc.disabled = false;
-    atc.style.background = "#1A1610";
-    atc.style.cursor = "pointer";
-    atc.textContent = "Ajouter au panier";
-    atc._variant = btn.getAttribute("data-v");
-  }
-  function kielQvAtc() {
-    var atc = document.getElementById("kqatc");
-    var msg = document.getElementById("kqmsg");
-    if (!atc._variant) return;
-    atc.disabled = true;
-    atc.textContent = "Ajout en cours...";
-    fetch("/cart/add.js", { method:"POST", headers:{"Content-Type":"application/json"}, body:JSON.stringify({id:atc._variant, quantity:1}) })
-    .then(function(r){return r.json();})
-    .then(function(){ atc.textContent="✓ Ajouté !"; msg.style.display="block"; setTimeout(kielQvClose, 1400); })
-    .catch(function(){ atc.disabled=false; atc.textContent="Ajouter au panier"; });
-  }
-  document.addEventListener("keydown", function(e){ if(e.key==="Escape") kielQvClose(); });
-</script>
 
 {% schema %}
 {
