@@ -54,6 +54,7 @@
         "message",
         "message_UjK433"
       ],
+      "disabled": true,
       "settings": {
         "enable_sticky": true,
         "text_size": "text-xs",
@@ -70,8 +71,8 @@
         ".header {margin-bottom: 0px; padding-bottom: 0px;}"
       ],
       "settings": {
-        "enable_sticky": true,
-        "hide_on_scroll": false,
+        "enable_sticky": false,
+        "hide_on_scroll": true,
         "logo": "shopify://shop_images/logo_1.jpg",
         "logo_max_width": 300,
         "logo_mobile_max_width": 170,
