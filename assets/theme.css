@@ -2004,10 +2004,7 @@ scroll-carousel {
   --container-max-width: var(--container-narrow-max-width);
 }
 
-.section {
-  padding-block-start: calc(var(--background-differs-from-previous) * var(--calculated-section-spacing-block-start));
-  padding-block-end: var(--calculated-section-spacing-block-end);
-}
+
 
 @media screen and (min-width: 700px) {
   .section--tight {
