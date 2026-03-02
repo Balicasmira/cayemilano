@@ -65,15 +65,7 @@ VARIANT ADDED
 
 </div>
 
-   {%- if section.blocks[next_block_index].type == 'offer' -%}
-                      <div class="v-stack gap-4">
-                    {%- endif -%}
 
-                    {%- render 'offer', block: block -%}
-
-                    {%- if section.blocks[previous_block_index].type == 'offer' -%}
-                      </div>
-                    {%- endif -%}
   {%- for line_item in cart.items -%}
     <div class="quick-buy-drawer__variant text-start h-stack gap-6">
       {%- assign image = line_item.variant.featured_media | default: line_item.product.featured_media -%}
