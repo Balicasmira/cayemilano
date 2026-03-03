@@ -52,7 +52,7 @@
     "show_secondary_image": true,
     "show_quick_buy": true,
     "show_product_rating": false,
-    "show_discount": false,
+    "show_discount": true,
     "discount_mode": "percentage",
     "product_color_display": "count",
     "product_image_aspect_ratio": "square",
