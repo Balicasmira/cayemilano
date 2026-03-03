@@ -134,11 +134,7 @@ ad
 
     {%- render 'button', type: 'submit', name: 'checkout', content: checkout_label -%}
   </form>
-  {%- form 'product', product, id: 'apple-pay-form' -%}
-  <div class="v-stack gap-2" style="margin-top: 10px;">
-    {{ form | payment_button }}
-  </div>
-{%- endform -%}
+
   <div class="v-stack gap-4">
                 <span class="text-xs text-subdued text-center">🔒 Paiement sécurisé avec:</span>
 
