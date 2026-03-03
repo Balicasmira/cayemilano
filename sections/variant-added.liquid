@@ -101,7 +101,7 @@ VARIANT ADDED
 
                       <div class="h-stack gap-4 justify-between">
                         <span class="text-subdued">{{ 'cart.general.subtotal' | t }}</span>
-                        <span class="text-subdued">{{ cart.items_subtotal_price | money }}</span>
+                        <span style="color:green" class="text-subdued">{{ cart.items_subtotal_price | money }}</span>
                       </div>
 
                       {% for discount_application in cart.cart_level_discount_applications %}
