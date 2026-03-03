@@ -97,12 +97,7 @@ VARIANT ADDED
     </div>
   {%- endfor -%}
 <div class="cart-form__totals v-stack gap-2" {{ block.shopify_attributes }}>
-                      {%- if block.settings.show_order_weight -%}
-                        <div class="h-stack gap-4 justify-between">
-                          <span class="text-subdued">{{ 'cart.general.weight' | t }}</span>
-                          <span class="text-subdued">{{ cart.total_weight | weight_with_unit }}</span>
-                        </div>
-                      {%- endif -%}
+                      
 
                       <div class="h-stack gap-4 justify-between">
                         <span class="text-subdued">{{ 'cart.general.subtotal' | t }}</span>
