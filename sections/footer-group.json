@@ -104,7 +104,7 @@
           "type": "text",
           "settings": {
             "title": "Des questions?",
-            "content": "<p><strong>Vous avez une question ou besoin de conseils ? N'hésitez pas à nous contacter. Nous sommes là pour vous aider et vous conseiller.</strong></p><p><strong><br/>Email  </strong>✉️<strong>: bienvenue@kielamsterdam.com</strong></p><p>SIREN<strong>: 78738792<br/>VAT: FR003035275B29</strong></p><p></p>",
+            "content": "<p>Vous avez une question ou besoin de conseils ? N'hésitez pas à nous contacter. Nous sommes là pour vous aider et vous conseiller.</p><p><br/>Email  ✉️: bienvenue@kielamsterdam.com</p><p>SIREN: 78738792<br/>TVA: FR003035275B29</p><p></p>",
             "enable_follow_on_shop": false
           }
         },
