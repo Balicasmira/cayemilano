@@ -3,13 +3,19 @@
   SNIPPET: review-section.liquid
   Location: snippets/review-section.liquid
   Usage: {% render 'review-section' %}
+  OPTIMIZED: lazy loading, explicit img dimensions, font-display swap
   ============================================================
 {% endcomment %}
+
 <style>
+  /* ── FONT OPTIMIZATION: use font-display swap to avoid render blocking ── */
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&family=Jost:wght@300;400;600;700&display=swap');
+
   .rr__section {
     padding: 80px 60px;
     background: #EDE7D9;
-    font-family: 'Jost', 'DM Sans', sans-serif;
+    font-family: 'Jost', 'DM Sans', Arial, sans-serif;
+    contain: layout style;
   }
 
   .rr__inner {
@@ -17,7 +23,6 @@
     margin: 0 auto;
   }
 
-  /* Header */
   .rr__header {
     text-align: center;
     margin-bottom: 40px;
@@ -33,7 +38,7 @@
   }
 
   .rr__title {
-    font-family: 'Playfair Display', 'Georgia', serif;
+    font-family: 'Playfair Display', Georgia, serif;
     font-size: clamp(24px, 3vw, 36px);
     font-weight: 400;
     color: #1A1610;
@@ -45,7 +50,6 @@
     color: #8B7355;
   }
 
-  /* Summary row */
   .rr__summary {
     display: grid;
     grid-template-columns: auto 1fr;
@@ -125,7 +129,6 @@
     flex-shrink: 0;
   }
 
-  /* ── GRID ── */
   .rr__grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -133,7 +136,6 @@
     margin-bottom: 40px;
   }
 
-  /* ── CARD ── */
   .rr__card {
     background: #fff;
     border-radius: 16px;
@@ -142,22 +144,24 @@
     display: flex;
     flex-direction: column;
     transition: box-shadow 0.2s ease;
+    content-visibility: auto;
+    contain-intrinsic-size: 0 400px;
   }
 
   .rr__card:hover {
     box-shadow: 0 8px 24px rgba(0,0,0,0.08);
   }
 
-  /* Photo */
+  /* OPTIMIZED: explicit width/height on img via CSS aspect-ratio */
   .rr__photo {
     width: 100%;
     aspect-ratio: 1 / 1;
     object-fit: cover;
     display: block;
     background: #F5F0E8;
+    cursor: zoom-in;
   }
 
-  /* Card body */
   .rr__body {
     padding: 14px 16px 16px;
     display: flex;
@@ -166,7 +170,6 @@
     flex: 1;
   }
 
-  /* Name row */
   .rr__name-row {
     display: flex;
     align-items: center;
@@ -198,7 +201,6 @@
     display: block;
   }
 
-  /* Stars */
   .rr__stars {
     color: #E8A24A;
     font-size: 14px;
@@ -206,7 +208,6 @@
     display: block;
   }
 
-  /* Title */
   .rr__review-title {
     font-size: 13px;
     font-weight: 600;
@@ -215,7 +216,6 @@
     display: block;
   }
 
-  /* Text */
   .rr__text {
     font-size: 12px;
     line-height: 1.65;
@@ -223,7 +223,6 @@
     margin: 0;
   }
 
-  /* Date */
   .rr__date {
     font-size: 11px;
     color: #B0A08A;
@@ -232,7 +231,6 @@
     display: block;
   }
 
-  /* Load more */
   .rr__load-more {
     text-align: center;
   }
@@ -259,7 +257,6 @@
 
   .rr__card.rr__hidden { display: none; }
 
-  /* ── RESPONSIVE ── */
   @media (max-width: 1024px) {
     .rr__grid { grid-template-columns: repeat(2, 1fr); }
     .rr__summary { grid-template-columns: 1fr; gap: 30px; }
@@ -277,7 +274,7 @@
     .rr__text { font-size: 11px; }
   }
 
-  /* ── LIGHTBOX ── */
+  /* LIGHTBOX */
   .rr__lightbox {
     display: none;
     position: fixed;
@@ -289,9 +286,7 @@
     padding: 20px;
   }
 
-  .rr__lightbox.rr--open {
-    display: flex;
-  }
+  .rr__lightbox.rr--open { display: flex; }
 
   .rr__lightbox-img {
     max-width: 90vw;
@@ -326,27 +321,17 @@
     z-index: 100000;
   }
 
-  .rr__lightbox-close:hover {
-    background: rgba(255,255,255,0.3);
-  }
-
-  /* Make photos look clickable */
-  .rr__photo {
-    cursor: zoom-in;
-  }
-
+  .rr__lightbox-close:hover { background: rgba(255,255,255,0.3); }
 </style>
 
 <section class="rr__section" id="reviews">
   <div class="rr__inner">
 
-    <!-- Header -->
     <div class="rr__header">
       <span class="rr__label">AVIS CLIENTS</span>
       <h2 class="rr__title">Ce que nos clients <em>disent</em></h2>
     </div>
 
-    <!-- Summary -->
     <div class="rr__summary">
       <div class="rr__rating-big">
         <span class="rr__rating-number">4.8</span>
@@ -382,12 +367,14 @@
       </div>
     </div>
 
-    <!-- Cards -->
     <div class="rr__grid" id="rr-grid">
 
-      <!-- REVIEW 1 — Marco -->
+      <!-- REVIEW 1 — Marco — EAGER (first visible row, no lazy) -->
       <div class="rr__card">
-        <img class="rr__photo" onclick="rrLightboxOpen('https://cdn.shopify.com/s/files/1/0924/9747/7960/files/red-selfietoilet.png?v=1772387684')" src="https://cdn.shopify.com/s/files/1/0924/9747/7960/files/red-selfietoilet.png?v=1772387684" alt="Photo produit">
+        <img class="rr__photo" loading="eager" width="400" height="400"
+          onclick="rrLightboxOpen('https://cdn.shopify.com/s/files/1/0924/9747/7960/files/red-selfietoilet.png?v=1772387684')"
+          src="https://cdn.shopify.com/s/files/1/0924/9747/7960/files/red-selfietoilet.png?v=1772387684"
+          alt="Avis client Marco B.">
         <div class="rr__body">
           <div class="rr__name-row">
             <span class="rr__name">Marco B.</span>
@@ -401,9 +388,12 @@
         </div>
       </div>
 
-      <!-- REVIEW 2 — Thomas -->
+      <!-- REVIEW 2 — Thomas — EAGER -->
       <div class="rr__card">
-        <img class="rr__photo" onclick="rrLightboxOpen('https://cdn.shopify.com/s/files/1/0924/9747/7960/files/zitia-selfie-kitchen.png?v=1772387687')" src="https://cdn.shopify.com/s/files/1/0924/9747/7960/files/zitia-selfie-kitchen.png?v=1772387687" alt="Photo produit">
+        <img class="rr__photo" loading="eager" width="400" height="400"
+          onclick="rrLightboxOpen('https://cdn.shopify.com/s/files/1/0924/9747/7960/files/zitia-selfie-kitchen.png?v=1772387687')"
+          src="https://cdn.shopify.com/s/files/1/0924/9747/7960/files/zitia-selfie-kitchen.png?v=1772387687"
+          alt="Avis client Thomas K.">
         <div class="rr__body">
           <div class="rr__name-row">
             <span class="rr__name">Thomas K.</span>
@@ -417,9 +407,12 @@
         </div>
       </div>
 
-      <!-- REVIEW 3 — Julien -->
+      <!-- REVIEW 3 — Julien — EAGER -->
       <div class="rr__card">
-        <img class="rr__photo" onclick="rrLightboxOpen('https://cdn.shopify.com/s/files/1/0924/9747/7960/files/Gemini_Generated_Image_715a2b715a2b715a_processed.png?v=1772514735')" src="https://cdn.shopify.com/s/files/1/0924/9747/7960/files/Gemini_Generated_Image_715a2b715a2b715a_processed.png?v=1772514735" alt="Photo produit">
+        <img class="rr__photo" loading="eager" width="400" height="400"
+          onclick="rrLightboxOpen('https://cdn.shopify.com/s/files/1/0924/9747/7960/files/Gemini_Generated_Image_715a2b715a2b715a_processed.png?v=1772514735')"
+          src="https://cdn.shopify.com/s/files/1/0924/9747/7960/files/Gemini_Generated_Image_715a2b715a2b715a_processed.png?v=1772514735"
+          alt="Avis client Julien M.">
         <div class="rr__body">
           <div class="rr__name-row">
             <span class="rr__name">Julien M.</span>
@@ -433,9 +426,12 @@
         </div>
       </div>
 
-      <!-- REVIEW 4 — Alejandro -->
+      <!-- REVIEW 4 — Alejandro — LAZY (below fold) -->
       <div class="rr__card">
-        <img class="rr__photo" onclick="rrLightboxOpen('https://cdn.shopify.com/s/files/1/0924/9747/7960/files/black-selfie-noface.png?v=1772387686')" src="https://cdn.shopify.com/s/files/1/0924/9747/7960/files/black-selfie-noface.png?v=1772387686" alt="Photo produit">
+        <img class="rr__photo" loading="lazy" width="400" height="400"
+          onclick="rrLightboxOpen('https://cdn.shopify.com/s/files/1/0924/9747/7960/files/black-selfie-noface.png?v=1772387686')"
+          src="https://cdn.shopify.com/s/files/1/0924/9747/7960/files/black-selfie-noface.png?v=1772387686"
+          alt="Avis client Alejandro R.">
         <div class="rr__body">
           <div class="rr__name-row">
             <span class="rr__name">Alejandro R.</span>
@@ -449,9 +445,12 @@
         </div>
       </div>
 
-      <!-- REVIEW 5 — Lukas -->
+      <!-- REVIEW 5 — Lukas — LAZY -->
       <div class="rr__card">
-        <img class="rr__photo" onclick="rrLightboxOpen('https://cdn.shopify.com/s/files/1/0924/9747/7960/files/zitia-photo-image.png?v=1772387687')" src="https://cdn.shopify.com/s/files/1/0924/9747/7960/files/zitia-photo-image.png?v=1772387687" alt="Photo produit">
+        <img class="rr__photo" loading="lazy" width="400" height="400"
+          onclick="rrLightboxOpen('https://cdn.shopify.com/s/files/1/0924/9747/7960/files/zitia-photo-image.png?v=1772387687')"
+          src="https://cdn.shopify.com/s/files/1/0924/9747/7960/files/zitia-photo-image.png?v=1772387687"
+          alt="Avis client Lukas F.">
         <div class="rr__body">
           <div class="rr__name-row">
             <span class="rr__name">Lukas F.</span>
@@ -465,9 +464,12 @@
         </div>
       </div>
 
-      <!-- REVIEW 6 — Sophie -->
+      <!-- REVIEW 6 — Sophie — LAZY -->
       <div class="rr__card">
-        <img class="rr__photo" onclick="rrLightboxOpen('https://cdn.shopify.com/s/files/1/0924/9747/7960/files/Gemini_Generated_Image_rb0gjwrb0gjwrb0g_processed.png?v=1772421000')" src="https://cdn.shopify.com/s/files/1/0924/9747/7960/files/Gemini_Generated_Image_rb0gjwrb0gjwrb0g_processed.png?v=1772421000" alt="Photo produit">
+        <img class="rr__photo" loading="lazy" width="400" height="400"
+          onclick="rrLightboxOpen('https://cdn.shopify.com/s/files/1/0924/9747/7960/files/Gemini_Generated_Image_rb0gjwrb0gjwrb0g_processed.png?v=1772421000')"
+          src="https://cdn.shopify.com/s/files/1/0924/9747/7960/files/Gemini_Generated_Image_rb0gjwrb0gjwrb0g_processed.png?v=1772421000"
+          alt="Avis client Sophie D.">
         <div class="rr__body">
           <div class="rr__name-row">
             <span class="rr__name">Sophie D.</span>
@@ -481,9 +483,12 @@
         </div>
       </div>
 
-      <!-- REVIEW 7 — Karim — Marseille — Gris — 5★ — hidden -->
+      <!-- REVIEW 7 — Karim — hidden + LAZY -->
       <div class="rr__card rr__hidden">
-        <img class="rr__photo" onclick="rrLightboxOpen('https://cdn.shopify.com/s/files/1/0924/9747/7960/files/change-background-to-like-he-is-in-his-t_7iN7kD1uT6ixrHcs9p3Krw_ra7usEjXRCCHwp1ZtlCDQw_cover_sd.jpg?v=1772599234')" src="https://cdn.shopify.com/s/files/1/0924/9747/7960/files/change-background-to-like-he-is-in-his-t_7iN7kD1uT6ixrHcs9p3Krw_ra7usEjXRCCHwp1ZtlCDQw_cover_sd.jpg?v=1772599234" alt="Photo produit">
+        <img class="rr__photo" loading="lazy" width="400" height="400"
+          onclick="rrLightboxOpen('https://cdn.shopify.com/s/files/1/0924/9747/7960/files/change-background-to-like-he-is-in-his-t_7iN7kD1uT6ixrHcs9p3Krw_ra7usEjXRCCHwp1ZtlCDQw_cover_sd.jpg?v=1772599234')"
+          src="https://cdn.shopify.com/s/files/1/0924/9747/7960/files/change-background-to-like-he-is-in-his-t_7iN7kD1uT6ixrHcs9p3Krw_ra7usEjXRCCHwp1ZtlCDQw_cover_sd.jpg?v=1772599234"
+          alt="Avis client Karim B.">
         <div class="rr__body">
           <div class="rr__name-row">
             <span class="rr__name">Karim B.</span>
@@ -497,9 +502,12 @@
         </div>
       </div>
 
-      <!-- REVIEW 8 — Nathalie — Bordeaux — Crème — 4★ — hidden -->
+      <!-- REVIEW 8 — Nathalie — hidden + LAZY -->
       <div class="rr__card rr__hidden">
-        <img class="rr__photo" onclick="rrLightboxOpen('https://cdn.shopify.com/s/files/1/0924/9747/7960/files/red-selfie-noface.png?v=1772387685')" src="https://cdn.shopify.com/s/files/1/0924/9747/7960/files/red-selfie-noface.png?v=1772387685" alt="Photo produit">
+        <img class="rr__photo" loading="lazy" width="400" height="400"
+          onclick="rrLightboxOpen('https://cdn.shopify.com/s/files/1/0924/9747/7960/files/red-selfie-noface.png?v=1772387685')"
+          src="https://cdn.shopify.com/s/files/1/0924/9747/7960/files/red-selfie-noface.png?v=1772387685"
+          alt="Avis client Nathalie R.">
         <div class="rr__body">
           <div class="rr__name-row">
             <span class="rr__name">Nathalie R.</span>
@@ -513,10 +521,12 @@
         </div>
       </div>
 
-      <!-- REVIEW 9 — Dylan — Toulouse — Noir — 5★ — hidden -->
+      <!-- REVIEW 9 — Dylan — hidden + LAZY -->
       <div class="rr__card rr__hidden">
-                <img class="rr__photo" onclick="rrLightboxOpen('https://cdn.shopify.com/s/files/1/0924/9747/7960/files/office_selfie_brussels_fixed.png?v=1772514736')" src="https://cdn.shopify.com/s/files/1/0924/9747/7960/files/office_selfie_brussels_fixed.png?v=1772514736" alt="Photo produit">
-
+        <img class="rr__photo" loading="lazy" width="400" height="400"
+          onclick="rrLightboxOpen('https://cdn.shopify.com/s/files/1/0924/9747/7960/files/office_selfie_brussels_fixed.png?v=1772514736')"
+          src="https://cdn.shopify.com/s/files/1/0924/9747/7960/files/office_selfie_brussels_fixed.png?v=1772514736"
+          alt="Avis client Dylan C.">
         <div class="rr__body">
           <div class="rr__name-row">
             <span class="rr__name">Dylan C.</span>
@@ -530,9 +540,12 @@
         </div>
       </div>
 
-      <!-- REVIEW 10 — Camille — Nice — Bordeaux — 5★ — hidden -->
+      <!-- REVIEW 10 — Camille — hidden + LAZY -->
       <div class="rr__card rr__hidden">
-        <img class="rr__photo" onclick="rrLightboxOpen('https://cdn.shopify.com/s/files/1/0924/9747/7960/files/grey-box.png?v=1772387686')" src="https://cdn.shopify.com/s/files/1/0924/9747/7960/files/grey-box.png?v=1772387686" alt="Photo produit">
+        <img class="rr__photo" loading="lazy" width="400" height="400"
+          onclick="rrLightboxOpen('https://cdn.shopify.com/s/files/1/0924/9747/7960/files/grey-box.png?v=1772387686')"
+          src="https://cdn.shopify.com/s/files/1/0924/9747/7960/files/grey-box.png?v=1772387686"
+          alt="Avis client Camille T.">
         <div class="rr__body">
           <div class="rr__name-row">
             <span class="rr__name">Camille T.</span>
@@ -546,9 +559,12 @@
         </div>
       </div>
 
-      <!-- REVIEW 11 — Antoine — Nantes — Olive — 4★ — hidden -->
+      <!-- REVIEW 11 — Antoine — hidden + LAZY -->
       <div class="rr__card rr__hidden">
-        <img class="rr__photo" onclick="rrLightboxOpen('https://cdn.shopify.com/s/files/1/0924/9747/7960/files/beige-selfie-mirror.png?v=1772387683')" src="https://cdn.shopify.com/s/files/1/0924/9747/7960/files/beige-selfie-mirror.png?v=1772387683" alt="Photo produit">
+        <img class="rr__photo" loading="lazy" width="400" height="400"
+          onclick="rrLightboxOpen('https://cdn.shopify.com/s/files/1/0924/9747/7960/files/beige-selfie-mirror.png?v=1772387683')"
+          src="https://cdn.shopify.com/s/files/1/0924/9747/7960/files/beige-selfie-mirror.png?v=1772387683"
+          alt="Avis client Antoine L.">
         <div class="rr__body">
           <div class="rr__name-row">
             <span class="rr__name">Antoine L.</span>
@@ -562,7 +578,7 @@
         </div>
       </div>
 
-      <!-- REVIEW 12 — Romain — Strasbourg — Gris — 5★ — hidden -->
+      <!-- REVIEW 12 — Romain — hidden (no photo) -->
       <div class="rr__card rr__hidden">
         <div class="rr__body">
           <div class="rr__name-row">
@@ -577,7 +593,7 @@
         </div>
       </div>
 
-      <!-- REVIEW 13 — Mehdi — Lille — Noir — 5★ — hidden -->
+      <!-- REVIEW 13 — Mehdi — hidden (no photo) -->
       <div class="rr__card rr__hidden">
         <div class="rr__body">
           <div class="rr__name-row">
@@ -592,10 +608,12 @@
         </div>
       </div>
 
-      <!-- REVIEW 14 — Pierre — Montpellier — Crème — 5★ — hidden -->
+      <!-- REVIEW 14 — Pierre — hidden + LAZY -->
       <div class="rr__card rr__hidden">
-                <img class="rr__photo" onclick="rrLightboxOpen('https://cdn.shopify.com/s/files/1/0924/9747/7960/files/Gemini_Generated_Image_90k8nj90k8nj90k8_processed.png?v=1772395609')" src="https://cdn.shopify.com/s/files/1/0924/9747/7960/files/Gemini_Generated_Image_90k8nj90k8nj90k8_processed.png?v=1772395609" alt="Photo produit">
-
+        <img class="rr__photo" loading="lazy" width="400" height="400"
+          onclick="rrLightboxOpen('https://cdn.shopify.com/s/files/1/0924/9747/7960/files/Gemini_Generated_Image_90k8nj90k8nj90k8_processed.png?v=1772395609')"
+          src="https://cdn.shopify.com/s/files/1/0924/9747/7960/files/Gemini_Generated_Image_90k8nj90k8nj90k8_processed.png?v=1772395609"
+          alt="Avis client Pierre M.">
         <div class="rr__body">
           <div class="rr__name-row">
             <span class="rr__name">Pierre M.</span>
@@ -609,9 +627,12 @@
         </div>
       </div>
 
-      <!-- REVIEW 15 — Yann — Rennes — Bordeaux — 5★ — hidden -->
+      <!-- REVIEW 15 — Yann — hidden + LAZY -->
       <div class="rr__card rr__hidden">
-        <img class="rr__photo" onclick="rrLightboxOpen('https://cdn.shopify.com/s/files/1/0924/9747/7960/files/Gemini_Generated_Image_d0iq7ed0iq7ed0iq_processed.png?v=1772393586')" src="https://cdn.shopify.com/s/files/1/0924/9747/7960/files/Gemini_Generated_Image_d0iq7ed0iq7ed0iq_processed.png?v=1772393586" alt="Photo produit">
+        <img class="rr__photo" loading="lazy" width="400" height="400"
+          onclick="rrLightboxOpen('https://cdn.shopify.com/s/files/1/0924/9747/7960/files/Gemini_Generated_Image_d0iq7ed0iq7ed0iq_processed.png?v=1772393586')"
+          src="https://cdn.shopify.com/s/files/1/0924/9747/7960/files/Gemini_Generated_Image_d0iq7ed0iq7ed0iq_processed.png?v=1772393586"
+          alt="Avis client Yann P.">
         <div class="rr__body">
           <div class="rr__name-row">
             <span class="rr__name">Yann P.</span>
@@ -625,7 +646,7 @@
         </div>
       </div>
 
-      <!-- REVIEW 16 — Florian — Grenoble — Olive — 5★ — hidden -->
+      <!-- REVIEW 16 — Florian — hidden (no photo) -->
       <div class="rr__card rr__hidden">
         <div class="rr__body">
           <div class="rr__name-row">
@@ -640,10 +661,12 @@
         </div>
       </div>
 
-      <!-- REVIEW 17 — Hugo — Paris — Noir — 4★ — hidden -->
+      <!-- REVIEW 17 — Hugo — hidden + LAZY -->
       <div class="rr__card rr__hidden">
-                <img class="rr__photo" onclick="rrLightboxOpen('https://cdn.shopify.com/s/files/1/0924/9747/7960/files/Gemini_Generated_Image_iqi8l9iqi8l9iqi8_processed.png?v=1772396240')" src="https://cdn.shopify.com/s/files/1/0924/9747/7960/files/Gemini_Generated_Image_iqi8l9iqi8l9iqi8_processed.png?v=1772396240" alt="Photo produit">
-
+        <img class="rr__photo" loading="lazy" width="400" height="400"
+          onclick="rrLightboxOpen('https://cdn.shopify.com/s/files/1/0924/9747/7960/files/Gemini_Generated_Image_iqi8l9iqi8l9iqi8_processed.png?v=1772396240')"
+          src="https://cdn.shopify.com/s/files/1/0924/9747/7960/files/Gemini_Generated_Image_iqi8l9iqi8l9iqi8_processed.png?v=1772396240"
+          alt="Avis client Hugo V.">
         <div class="rr__body">
           <div class="rr__name-row">
             <span class="rr__name">Hugo V.</span>
@@ -657,9 +680,12 @@
         </div>
       </div>
 
-      <!-- REVIEW 18 — Sébastien — Lyon — Gris — 5★ — hidden -->
+      <!-- REVIEW 18 — Sébastien — hidden + LAZY -->
       <div class="rr__card rr__hidden">
-        <img class="rr__photo" onclick="rrLightboxOpen('https://cdn.shopify.com/s/files/1/0924/9747/7960/files/Gemini_Generated_Image_3z2yd33z2yd33z2y_processed.png?v=1772394898')" src="https://cdn.shopify.com/s/files/1/0924/9747/7960/files/Gemini_Generated_Image_3z2yd33z2yd33z2y_processed.png?v=1772394898" alt="Photo produit">
+        <img class="rr__photo" loading="lazy" width="400" height="400"
+          onclick="rrLightboxOpen('https://cdn.shopify.com/s/files/1/0924/9747/7960/files/Gemini_Generated_Image_3z2yd33z2yd33z2y_processed.png?v=1772394898')"
+          src="https://cdn.shopify.com/s/files/1/0924/9747/7960/files/Gemini_Generated_Image_3z2yd33z2yd33z2y_processed.png?v=1772394898"
+          alt="Avis client Sébastien H.">
         <div class="rr__body">
           <div class="rr__name-row">
             <span class="rr__name">Sébastien H.</span>
@@ -673,22 +699,19 @@
         </div>
       </div>
 
-    </div><!-- /rr__grid -->
+    </div>
 
-    <!-- Load More -->
     <div class="rr__load-more">
-      <button class="rr__btn-more" onclick="rrLoadMore(this)">
-        Voir plus d'avis 
-      </button>
+      <button class="rr__btn-more" onclick="rrLoadMore(this)">Voir plus d'avis</button>
     </div>
 
   </div>
 
-<!-- LIGHTBOX -->
-<div class="rr__lightbox" id="rr-lightbox" onclick="rrLightboxClickOutside(event)">
-  <button class="rr__lightbox-close" onclick="rrLightboxClose()">✕</button>
-  <img class="rr__lightbox-img" id="rr-lightbox-img" src="" alt="">
-</div>
+  <!-- LIGHTBOX -->
+  <div class="rr__lightbox" id="rr-lightbox" onclick="rrLightboxClickOutside(event)">
+    <button class="rr__lightbox-close" onclick="rrLightboxClose()">✕</button>
+    <img class="rr__lightbox-img" id="rr-lightbox-img" src="" alt="" width="800" height="800">
+  </div>
 
 </section>
 
@@ -700,15 +723,11 @@
     hidden.forEach(card => {
       if (shown < 6) { card.classList.remove('rr__hidden'); shown++; }
     });
-    const remaining = document.querySelectorAll('.rr__card.rr__hidden').length;
-    if (remaining === 0) {
+    if (document.querySelectorAll('.rr__card.rr__hidden').length === 0) {
       btn.style.display = 'none';
-    } else {
-      btn.textContent = 'Voir plus d\'avis ';
     }
   }
 
-  // Lightbox
   function rrLightboxOpen(src) {
     document.getElementById('rr-lightbox-img').src = src;
     document.getElementById('rr-lightbox').classList.add('rr--open');
@@ -727,5 +746,4 @@
   document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') rrLightboxClose();
   });
-
 </script>
