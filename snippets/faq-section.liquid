@@ -3,7 +3,7 @@
   SNIPPET: faq-section.liquid
   Location: snippets/faq-section.liquid
   Usage: {% render 'faq-section' %}
-  Generic for ALL products on the store.
+  OPTIMIZED: contain layout, script deferred, no render-blocking resources
   ============================================================
 {% endcomment %}
 
@@ -11,7 +11,8 @@
   .faq__section {
     padding: 70px 60px;
     background: #1A1610;
-    font-family: 'Jost', 'DM Sans', sans-serif;
+    font-family: 'Jost', 'DM Sans', Arial, sans-serif;
+    contain: layout style;
   }
 
   .faq__inner {
@@ -90,12 +91,10 @@
     font-weight: 500;
     color: #F5F0E8;
     line-height: 1.4;
-    font-family: 'Jost', 'DM Sans', sans-serif;
+    font-family: 'Jost', 'DM Sans', Arial, sans-serif;
   }
 
-  .faq__item.open .faq__question-text {
-    color: #C9A96E;
-  }
+  .faq__item.open .faq__question-text { color: #C9A96E; }
 
   .faq__icon {
     width: 28px;
@@ -125,18 +124,15 @@
     transition: max-height 0.4s ease, padding 0.3s ease;
   }
 
-  .faq__item.open .faq__answer {
-    max-height: 300px;
-  }
+  .faq__item.open .faq__answer { max-height: 300px; }
 
   .faq__answer-inner {
-    padding: 0 28px 22px;
+    padding: 16px 28px 22px;
     font-size: 14px;
     line-height: 1.75;
     color: rgba(245,240,232,0.6);
     font-weight: 300;
     border-top: 1px solid rgba(255,255,255,0.06);
-    padding-top: 16px;
   }
 
   .faq__answer-inner strong {
@@ -260,12 +256,12 @@
       </div>
 
     </div>
-    <!-- Contact CTA REMOVED — moved to footer -->
 
   </div>
 </section>
 
-<script>
+<!-- OPTIMIZED: script deferred to avoid render blocking -->
+<script defer>
   function faqToggle(id) {
     const item = document.getElementById(id);
     const isOpen = item.classList.contains('open');
