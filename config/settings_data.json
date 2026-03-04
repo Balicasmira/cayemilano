@@ -45,6 +45,7 @@
     "text_font": "barlow_n5",
     "text_font_size_desktop": 16,
     "show_page_transition": true,
+    "reduce_menu_animation": true,
     "heading_apparition": "split_clip",
     "color_swatch_style": "square",
     "color_swatch_config": "Red:#ff0000",
@@ -79,11 +80,6 @@
       "17198465164502963513": {
         "type": "shopify://apps/parcelwill-parcel-panel/blocks/app.embed/fc785c3f-90e0-4c98-a20c-7cde9ba5e4b5",
         "disabled": false,
-        "settings": {}
-      },
-      "6065014864672580889": {
-        "type": "shopify://apps/amp-slide-cart-drawer/blocks/app-embed/0a410b8d-7dc4-4f2d-b4e8-c12d34fd2255",
-        "disabled": true,
         "settings": {}
       }
     }
