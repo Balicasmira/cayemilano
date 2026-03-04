@@ -600,7 +600,6 @@
     },
     "related-products": {
       "type": "related-products",
-      "disabled": true,
       "settings": {
         "recommendations_count": 5,
         "products": [
