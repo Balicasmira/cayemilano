@@ -444,6 +444,9 @@
         "subscription_agreement_label": "kielamsterdam.com",
         "purchase_options_and_vaulting_agreement_label": "kielamsterdam.com",
         "card_security_notice": "Toutes les transactions sont sécurisées et chifrées."
+      },
+      "alternative_payment_method_banner": {
+        "or": "★★★★★ Plus de 1000 clients nous ont fait confiance en 2025."
       }
     }
   }
