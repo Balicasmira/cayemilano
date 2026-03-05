@@ -1,0 +1,670 @@
+{% comment %}
+  ============================================================
+  SNIPPET: review-section.liquid
+  Location: snippets/review-section.liquid
+  Usage: {% render 'review-section' %}
+  OPTIMIZED: lazy loading, explicit img dimensions, font-display swap
+  ============================================================
+{% endcomment %}
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&family=Jost:wght@300;400;600;700&display=swap');
+
+  .rr__section {
+    padding: 80px 60px;
+    background: #EDE7D9;
+    font-family: 'Jost', 'DM Sans', Arial, sans-serif;
+    contain: layout style;
+  }
+
+  .rr__inner { max-width: 1200px; margin: 0 auto; }
+
+  .rr__header { text-align: center; margin-bottom: 40px; }
+
+  .rr__label {
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #8B7355;
+    margin-bottom: 12px;
+    display: block;
+  }
+
+  .rr__title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(24px, 3vw, 36px);
+    font-weight: 400;
+    color: #1A1610;
+    line-height: 1.2;
+  }
+
+  .rr__title em { font-style: italic; color: #8B7355; }
+
+  .rr__summary {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 60px;
+    align-items: center;
+    margin-bottom: 50px;
+    background: #F5F0E8;
+    border-radius: 20px;
+    padding: 36px 40px;
+  }
+
+  .rr__rating-big { text-align: center; min-width: 140px; }
+
+  .rr__rating-number {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 72px;
+    font-weight: 400;
+    color: #1A1610;
+    line-height: 1;
+    display: block;
+  }
+
+  .rr__stars-big {
+    font-size: 22px;
+    color: #E8A24A;
+    letter-spacing: 3px;
+    margin: 8px 0 6px;
+    display: block;
+  }
+
+  .rr__total { font-size: 13px; color: #6B5E48; display: block; }
+
+  .rr__bars { flex: 1; }
+
+  .rr__bar-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 9px;
+  }
+
+  .rr__bar-row:last-child { margin-bottom: 0; }
+
+  .rr__bar-label { font-size: 13px; color: #6B5E48; width: 36px; flex-shrink: 0; }
+
+  .rr__bar-track {
+    flex: 1;
+    height: 8px;
+    background: #D4C4A0;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .rr__bar-fill { height: 100%; background: #1A1610; border-radius: 4px; }
+
+  .rr__bar-count { font-size: 13px; color: #6B5E48; width: 28px; text-align: right; flex-shrink: 0; }
+
+  .rr__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 40px;
+  }
+
+  .rr__card {
+    background: #fff;
+    border-radius: 16px;
+    border: 1.5px solid #E8D9C0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: box-shadow 0.2s ease;
+    content-visibility: auto;
+    contain-intrinsic-size: 0 400px;
+  }
+
+  .rr__card:hover { box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+
+  .rr__photo {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    display: block;
+    background: #F5F0E8;
+    cursor: zoom-in;
+  }
+
+  .rr__body {
+    padding: 14px 16px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1;
+  }
+
+  .rr__name-row { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+
+  .rr__name { font-size: 14px; font-weight: 700; color: #1A1610; }
+
+  .rr__verified {
+    font-size: 10px;
+    font-weight: 600;
+    color: #2D6A4F;
+    background: rgba(45,106,79,0.1);
+    padding: 2px 7px;
+    border-radius: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+  }
+
+  .rr__meta { font-size: 11px; color: #8B7355; display: block; }
+
+  .rr__stars { color: #E8A24A; font-size: 14px; letter-spacing: 2px; display: block; }
+
+  .rr__review-title { font-size: 13px; font-weight: 600; color: #1A1610; line-height: 1.4; display: block; }
+
+  .rr__text { font-size: 12px; line-height: 1.65; color: #6B5E48; margin: 0; }
+
+  .rr__date { font-size: 11px; color: #B0A08A; margin-top: auto; padding-top: 6px; display: block; }
+
+  .rr__load-more { text-align: center; }
+
+  .rr__btn-more {
+    padding: 14px 44px;
+    border: 2px solid #1A1610;
+    background: transparent;
+    color: #1A1610;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .rr__btn-more:hover { background: #1A1610; color: #F5F0E8; }
+
+  .rr__card.rr__hidden { display: none; }
+
+  @media (max-width: 1024px) {
+    .rr__grid { grid-template-columns: repeat(2, 1fr); }
+    .rr__summary { grid-template-columns: 1fr; gap: 30px; }
+  }
+
+  @media (max-width: 640px) {
+    .rr__section { padding: 40px 16px; }
+    .rr__grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    .rr__summary { padding: 24px 16px; }
+    .rr__rating-number { font-size: 56px; }
+    .rr__body { padding: 10px 12px 12px; gap: 4px; }
+    .rr__name { font-size: 13px; }
+    .rr__stars { font-size: 12px; }
+    .rr__review-title { font-size: 12px; }
+    .rr__text { font-size: 11px; }
+  }
+
+  /* LIGHTBOX */
+  .rr__lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+    z-index: 99999;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .rr__lightbox.rr--open { display: flex; }
+
+  .rr__lightbox-img {
+    max-width: 90vw;
+    max-height: 85vh;
+    object-fit: contain;
+    border-radius: 10px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    animation: lbIn 0.2s ease;
+  }
+
+  @keyframes lbIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to   { opacity: 1; transform: scale(1); }
+  }
+
+  .rr__lightbox-close {
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.15);
+    border: none;
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+    z-index: 100000;
+  }
+
+  .rr__lightbox-close:hover { background: rgba(255,255,255,0.3); }
+</style>
+
+<section class="rr__section" id="reviews">
+  <div class="rr__inner">
+
+    <div class="rr__header">
+      <span class="rr__label">AVIS CLIENTS</span>
+      <h2 class="rr__title">Ce que nos clientes <em>disent</em></h2>
+    </div>
+
+    <div class="rr__summary">
+      <div class="rr__rating-big">
+        <span class="rr__rating-number">4.7</span>
+        <span class="rr__stars-big">★★★★★</span>
+        <span class="rr__total">2 847 avis vérifiés</span>
+      </div>
+      <div class="rr__bars">
+        <div class="rr__bar-row">
+          <span class="rr__bar-label">5 ★</span>
+          <div class="rr__bar-track"><div class="rr__bar-fill" style="width:85%"></div></div>
+          <span class="rr__bar-count">2417</span>
+        </div>
+        <div class="rr__bar-row">
+          <span class="rr__bar-label">4 ★</span>
+          <div class="rr__bar-track"><div class="rr__bar-fill" style="width:10%"></div></div>
+          <span class="rr__bar-count">285</span>
+        </div>
+        <div class="rr__bar-row">
+          <span class="rr__bar-label">3 ★</span>
+          <div class="rr__bar-track"><div class="rr__bar-fill" style="width:3%"></div></div>
+          <span class="rr__bar-count">85</span>
+        </div>
+        <div class="rr__bar-row">
+          <span class="rr__bar-label">2 ★</span>
+          <div class="rr__bar-track"><div class="rr__bar-fill" style="width:1%"></div></div>
+          <span class="rr__bar-count">34</span>
+        </div>
+        <div class="rr__bar-row">
+          <span class="rr__bar-label">1 ★</span>
+          <div class="rr__bar-track"><div class="rr__bar-fill" style="width:1%"></div></div>
+          <span class="rr__bar-count">26</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="rr__grid" id="rr-grid">
+
+      <!-- REVIEW 1 — Sophie — EAGER -->
+      <div class="rr__card">
+        <img class="rr__photo" loading="eager" width="400" height="400"
+          onclick="rrLightboxOpen('https://m.media-amazon.com/images/I/81a6WB47fgL.jpg')"
+          src="https://m.media-amazon.com/images/I/81a6WB47fgL.jpg"
+          alt="Avis client Sophie M.">
+        <div class="rr__body">
+          <div class="rr__name-row">
+            <span class="rr__name">Sophie M.</span>
+            <span class="rr__verified">✓ Vérifié</span>
+          </div>
+          <span class="rr__meta">Paris, France 🇫🇷</span>
+          <span class="rr__stars">★★★★★</span>
+          <span class="rr__review-title">Le cardigan cocooning qu'il me fallait</span>
+          <p class="rr__text">Moelleux, chaud, oversize comme promis. Je le mets avec un jean slim et c'est parfait. Après 3 lavages, rien ne bouge. Je recommande sans hésiter.</p>
+          <span class="rr__date">1 Mars 2026</span>
+        </div>
+      </div>
+
+      <!-- REVIEW 2 — Isabelle — EAGER -->
+      <div class="rr__card">
+        <img class="rr__photo" loading="eager" width="400" height="400"
+          onclick="rrLightboxOpen('https://m.media-amazon.com/images/I/71+Cy9y4ahL.jpg')"
+          src="https://m.media-amazon.com/images/I/71+Cy9y4ahL.jpg"
+          alt="Avis client Isabelle C.">
+        <div class="rr__body">
+          <div class="rr__name-row">
+            <span class="rr__name">Isabelle C.</span>
+            <span class="rr__verified">✓ Vérifié</span>
+          </div>
+          <span class="rr__meta">Lyon, France 🇫🇷</span>
+          <span class="rr__stars">★★★★★</span>
+          <span class="rr__review-title">Taille fidèle, coupe boyfriend vraiment sympa</span>
+          <p class="rr__text">Je fais du 40, j'ai pris un M — tombé parfaitement. La coupe boyfriend est flatteuse sans être informe. Les poches sont profondes, un vrai plus.</p>
+          <span class="rr__date">25 Fév 2026</span>
+        </div>
+      </div>
+
+      <!-- REVIEW 3 — Marie-Laure — EAGER -->
+      <div class="rr__card">
+        <img class="rr__photo" loading="eager" width="400" height="400"
+          onclick="rrLightboxOpen('https://placehold.co/400x400/F5F0E8/8B7355?text=Photo+client')"
+          src="https://placehold.co/400x400/F5F0E8/8B7355?text=Photo+client
+          alt="Avis client Marie-Laure B.">
+        <div class="rr__body">
+          <div class="rr__name-row">
+            <span class="rr__name">Marie-Laure B.</span>
+            <span class="rr__verified">✓ Vérifié</span>
+          </div>
+          <span class="rr__meta">Bordeaux, France 🇫🇷</span>
+          <span class="rr__stars">★★★★★</span>
+          <span class="rr__review-title">Encore mieux qu'en photo</span>
+          <p class="rr__text">La couleur beige est douce et classe. L'effet effilé sur les bords ajoute un côté bohème que j'adore. Reçu en 5 jours, très bien emballé.</p>
+          <span class="rr__date">20 Fév 2026</span>
+        </div>
+      </div>
+
+      <!-- REVIEW 4 — Valérie — LAZY -->
+      <div class="rr__card">
+        <img class="rr__photo" loading="lazy" width="400" height="400"
+          onclick="rrLightboxOpen('https://placehold.co/400x400/F5F0E8/8B7355?text=Photo+client')"
+          src="https://placehold.co/400x400/F5F0E8/8B7355?text=Photo+client
+          alt="Avis client Valérie D.">
+        <div class="rr__body">
+          <div class="rr__name-row">
+            <span class="rr__name">Valérie D.</span>
+            <span class="rr__verified">✓ Vérifié</span>
+          </div>
+          <span class="rr__meta">Marseille, France 🇫🇷</span>
+          <span class="rr__stars">★★★★★</span>
+          <span class="rr__review-title">Je le mets tous les week-ends</span>
+          <p class="rr__text">Confortable comme un pyjama mais assez stylé pour sortir. Je l'ai en gris et je vais reprendre le camel. Matière épaisse et agréable sur la peau.</p>
+          <span class="rr__date">18 Fév 2026</span>
+        </div>
+      </div>
+
+      <!-- REVIEW 5 — Céline — LAZY -->
+      <div class="rr__card">
+        <img class="rr__photo" loading="lazy" width="400" height="400"
+          onclick="rrLightboxOpen('https://placehold.co/400x400/F5F0E8/8B7355?text=Photo+client')"
+          src="https://placehold.co/400x400/F5F0E8/8B7355?text=Photo+client
+          alt="Avis client Céline F.">
+        <div class="rr__body">
+          <div class="rr__name-row">
+            <span class="rr__name">Céline F.</span>
+            <span class="rr__verified">✓ Vérifié</span>
+          </div>
+          <span class="rr__meta">Nantes, France 🇫🇷</span>
+          <span class="rr__stars">★★★★★</span>
+          <span class="rr__review-title">Offert à ma sœur — elle est fan</span>
+          <p class="rr__text">Acheté en cadeau d'anniversaire. Ma sœur l'a enfilé direct à l'ouverture. Elle fait du 38, le S tombe super bien. Très beau cadeau pour le prix.</p>
+          <span class="rr__date">14 Fév 2026</span>
+        </div>
+      </div>
+
+      <!-- REVIEW 6 — Nathalie — LAZY -->
+      <div class="rr__card">
+        <img class="rr__photo" loading="lazy" width="400" height="400"
+          onclick="rrLightboxOpen('https://placehold.co/400x400/F5F0E8/8B7355?text=Photo+client')"
+          src="https://placehold.co/400x400/F5F0E8/8B7355?text=Photo+client
+          alt="Avis client Nathalie R.">
+        <div class="rr__body">
+          <div class="rr__name-row">
+            <span class="rr__name">Nathalie R.</span>
+            <span class="rr__verified">✓ Vérifié</span>
+          </div>
+          <span class="rr__meta">Toulouse, France 🇫🇷</span>
+          <span class="rr__stars">★★★★★</span>
+          <span class="rr__review-title">Parfait pour le bureau en hiver</span>
+          <p class="rr__text">Je le porte par-dessus mes tenues de bureau. Chaud, long, élégant. Mes collègues me demandent toutes où je l'ai trouvé. Deuxième commande en cours.</p>
+          <span class="rr__date">10 Fév 2026</span>
+        </div>
+      </div>
+
+      <!-- REVIEW 7 — Aurélie — hidden + LAZY -->
+      <div class="rr__card rr__hidden">
+        <img class="rr__photo" loading="lazy" width="400" height="400"
+          onclick="rrLightboxOpen('https://placehold.co/400x400/F5F0E8/8B7355?text=Photo+client')"
+          src="https://placehold.co/400x400/F5F0E8/8B7355?text=Photo+client
+          alt="Avis client Aurélie T.">
+        <div class="rr__body">
+          <div class="rr__name-row">
+            <span class="rr__name">Aurélie T.</span>
+            <span class="rr__verified">✓ Vérifié</span>
+          </div>
+          <span class="rr__meta">Strasbourg, France 🇫🇷</span>
+          <span class="rr__stars">★★★★★</span>
+          <span class="rr__review-title">Le S convient bien pour une silhouette fine</span>
+          <p class="rr__text">165cm/52kg, le S est oversize comme voulu sans m'engloutir. La maille est douce, pas grattante du tout. Très satisfaite, livraison ultra rapide.</p>
+          <span class="rr__date">6 Fév 2026</span>
+        </div>
+      </div>
+
+      <!-- REVIEW 8 — Laurence — hidden + LAZY -->
+      <div class="rr__card rr__hidden">
+        <img class="rr__photo" loading="lazy" width="400" height="400"
+          onclick="rrLightboxOpen('https://placehold.co/400x400/F5F0E8/8B7355?text=Photo+client')"
+          src="https://placehold.co/400x400/F5F0E8/8B7355?text=Photo+client
+          alt="Avis client Laurence P.">
+        <div class="rr__body">
+          <div class="rr__name-row">
+            <span class="rr__name">Laurence P.</span>
+            <span class="rr__verified">✓ Vérifié</span>
+          </div>
+          <span class="rr__meta">Rennes, France 🇫🇷</span>
+          <span class="rr__stars">★★★★☆</span>
+          <span class="rr__review-title">Très beau mais boutons un peu fragiles</span>
+          <p class="rr__text">La qualité générale est vraiment là — matière épaisse, belles finitions. Un bouton s'est légèrement effiloché, mais rien de grave. Le rendu est top.</p>
+          <span class="rr__date">2 Fév 2026</span>
+        </div>
+      </div>
+
+      <!-- REVIEW 9 — Émilie — hidden + LAZY -->
+      <div class="rr__card rr__hidden">
+        <img class="rr__photo" loading="lazy" width="400" height="400"
+          onclick="rrLightboxOpen('https://placehold.co/400x400/F5F0E8/8B7355?text=Photo+client')"
+          src="https://placehold.co/400x400/F5F0E8/8B7355?text=Photo+client
+          alt="Avis client Émilie G.">
+        <div class="rr__body">
+          <div class="rr__name-row">
+            <span class="rr__name">Émilie G.</span>
+            <span class="rr__verified">✓ Vérifié</span>
+          </div>
+          <span class="rr__meta">Nice, France 🇫🇷</span>
+          <span class="rr__stars">★★★★★</span>
+          <span class="rr__review-title">La couleur kaki est magnifique en vrai</span>
+          <p class="rr__text">Hésitais entre deux coloris, j'ai choisi le kaki — excellente décision. Très polyvalent, je le porte avec tout. Long et couvrant, parfait pour l'hiver.</p>
+          <span class="rr__date">29 Jan 2026</span>
+        </div>
+      </div>
+
+      <!-- REVIEW 10 — Christine — hidden + LAZY -->
+      <div class="rr__card rr__hidden">
+        <img class="rr__photo" loading="lazy" width="400" height="400"
+          onclick="rrLightboxOpen('https://placehold.co/400x400/F5F0E8/8B7355?text=Photo+client')"
+          src="https://placehold.co/400x400/F5F0E8/8B7355?text=Photo+client
+          alt="Avis client Christine L.">
+        <div class="rr__body">
+          <div class="rr__name-row">
+            <span class="rr__name">Christine L.</span>
+            <span class="rr__verified">✓ Vérifié</span>
+          </div>
+          <span class="rr__meta">Lille, France 🇫🇷</span>
+          <span class="rr__stars">★★★★★</span>
+          <span class="rr__review-title">Mon cardigan préféré depuis des années</span>
+          <p class="rr__text">J'en ai essayé des dizaines. Celui-ci a la bonne longueur, la bonne épaisseur, et les poches au bon endroit. Je l'ai commandé en deux couleurs.</p>
+          <span class="rr__date">24 Jan 2026</span>
+        </div>
+      </div>
+
+      <!-- REVIEW 11 — Patricia — hidden (no photo) -->
+      <div class="rr__card rr__hidden">
+        <div class="rr__body">
+          <div class="rr__name-row">
+            <span class="rr__name">Patricia V.</span>
+            <span class="rr__verified">✓ Vérifié</span>
+          </div>
+          <span class="rr__meta">Grenoble, France 🇫🇷</span>
+          <span class="rr__stars">★★★★★</span>
+          <span class="rr__review-title">XL disponible et coupe vraiment bien</span>
+          <p class="rr__text">Enfin une marque qui fait du XL qui taille vraiment comme il faut. 168cm/78kg, la coupe est généreuse sans être diforme. Ultra confortable.</p>
+          <span class="rr__date">20 Jan 2026</span>
+        </div>
+      </div>
+
+      <!-- REVIEW 12 — Sandrine — hidden (no photo) -->
+      <div class="rr__card rr__hidden">
+        <div class="rr__body">
+          <div class="rr__name-row">
+            <span class="rr__name">Sandrine H.</span>
+            <span class="rr__verified">✓ Vérifié</span>
+          </div>
+          <span class="rr__meta">Montpellier, France 🇫🇷</span>
+          <span class="rr__stars">★★★★★</span>
+          <span class="rr__review-title">Idéal pour les journées à la maison ou dehors</span>
+          <p class="rr__text">Je le porte en télétravail, à la boulangerie, partout. Il fait décontracté mais soigné. Lavé en machine sans problème, pas de boulochage.</p>
+          <span class="rr__date">15 Jan 2026</span>
+        </div>
+      </div>
+
+      <!-- REVIEW 13 — Anne-Sophie — hidden + LAZY -->
+      <div class="rr__card rr__hidden">
+        <img class="rr__photo" loading="lazy" width="400" height="400"
+          onclick="rrLightboxOpen('https://placehold.co/400x400/F5F0E8/8B7355?text=Photo+client')"
+          src="https://placehold.co/400x400/F5F0E8/8B7355?text=Photo+client
+          alt="Avis client Anne-Sophie N.">
+        <div class="rr__body">
+          <div class="rr__name-row">
+            <span class="rr__name">Anne-Sophie N.</span>
+            <span class="rr__verified">✓ Vérifié</span>
+          </div>
+          <span class="rr__meta">Dijon, France 🇫🇷</span>
+          <span class="rr__stars">★★★★★</span>
+          <span class="rr__review-title">Deuxième commande, toujours au top</span>
+          <p class="rr__text">J'avais commandé le blanc cassé en novembre. Je reviens pour le marron. Même qualité irréprochable, même coupe flatteuse. Une valeur sûre.</p>
+          <span class="rr__date">12 Fév 2026</span>
+        </div>
+      </div>
+
+      <!-- REVIEW 14 — Élise — hidden + LAZY -->
+      <div class="rr__card rr__hidden">
+        <img class="rr__photo" loading="lazy" width="400" height="400"
+          onclick="rrLightboxOpen('https://placehold.co/400x400/F5F0E8/8B7355?text=Photo+client')"
+          src="https://placehold.co/400x400/F5F0E8/8B7355?text=Photo+client
+          alt="Avis client Élise M.">
+        <div class="rr__body">
+          <div class="rr__name-row">
+            <span class="rr__name">Élise M.</span>
+            <span class="rr__verified">✓ Vérifié</span>
+          </div>
+          <span class="rr__meta">Annecy, France 🇫🇷</span>
+          <span class="rr__stars">★★★★★</span>
+          <span class="rr__review-title">Rapport qualité-prix imbattable</span>
+          <p class="rr__text">Pour ce prix, je ne m'attendais pas à une telle qualité. La maille est épaisse, les coutures sont solides. Je vais en offrir à ma mère pour son anniversaire.</p>
+          <span class="rr__date">8 Fév 2026</span>
+        </div>
+      </div>
+
+      <!-- REVIEW 15 — Delphine — hidden (no photo) -->
+      <div class="rr__card rr__hidden">
+        <div class="rr__body">
+          <div class="rr__name-row">
+            <span class="rr__name">Delphine A.</span>
+            <span class="rr__verified">✓ Vérifié</span>
+          </div>
+          <span class="rr__meta">Clermont-Ferrand, France 🇫🇷</span>
+          <span class="rr__stars">★★★★☆</span>
+          <span class="rr__review-title">Très bien, légèrement plus long qu'attendu</span>
+          <p class="rr__text">Je suis petite (160cm) et il tombe un peu sous les hanches. Ça donne un effet robe/cardigan que j'ai finalement adopté. Matière vraiment douce.</p>
+          <span class="rr__date">3 Fév 2026</span>
+        </div>
+      </div>
+
+      <!-- REVIEW 16 — Julie — hidden + LAZY -->
+      <div class="rr__card rr__hidden">
+        <img class="rr__photo" loading="lazy" width="400" height="400"
+          onclick="rrLightboxOpen('https://placehold.co/400x400/F5F0E8/8B7355?text=Photo+client')"
+          src="https://placehold.co/400x400/F5F0E8/8B7355?text=Photo+client
+          alt="Avis client Julie B.">
+        <div class="rr__body">
+          <div class="rr__name-row">
+            <span class="rr__name">Julie B.</span>
+            <span class="rr__verified">✓ Vérifié</span>
+          </div>
+          <span class="rr__meta">Rouen, France 🇫🇷</span>
+          <span class="rr__stars">★★★★★</span>
+          <span class="rr__review-title">Chaud, stylé, poches fonctionnelles</span>
+          <p class="rr__text">Les poches sont immenses — j'y mets mon téléphone, mes clés, tout. Chaud sans être trop lourd. Un indispensable de ma garde-robe d'automne-hiver.</p>
+          <span class="rr__date">26 Jan 2026</span>
+        </div>
+      </div>
+
+      <!-- REVIEW 17 — Camille — hidden (no photo) -->
+      <div class="rr__card rr__hidden">
+        <div class="rr__body">
+          <div class="rr__name-row">
+            <span class="rr__name">Camille R.</span>
+            <span class="rr__verified">✓ Vérifié</span>
+          </div>
+          <span class="rr__meta">Tours, France 🇫🇷</span>
+          <span class="rr__stars">★★★★★</span>
+          <span class="rr__review-title">Commandé deux fois en deux mois</span>
+          <p class="rr__text">J'ai pris le premier pour moi, le deuxième pour ma fille. On l'adore toutes les deux. La coupe boyfriend est vraiment réussie, pas trop large.</p>
+          <span class="rr__date">22 Jan 2026</span>
+        </div>
+      </div>
+
+      <!-- REVIEW 18 — Virginie — hidden + LAZY -->
+      <div class="rr__card rr__hidden">
+        <img class="rr__photo" loading="lazy" width="400" height="400"
+          onclick="rrLightboxOpen('https://placehold.co/400x400/F5F0E8/8B7355?text=Photo+client')"
+          src="https://placehold.co/400x400/F5F0E8/8B7355?text=Photo+client
+          alt="Avis client Virginie S.">
+        <div class="rr__body">
+          <div class="rr__name-row">
+            <span class="rr__name">Virginie S.</span>
+            <span class="rr__verified">✓ Vérifié</span>
+          </div>
+          <span class="rr__meta">Metz, France 🇫🇷</span>
+          <span class="rr__stars">★★★★★</span>
+          <span class="rr__review-title">Un vrai coup de cœur</span>
+          <p class="rr__text">Je cherchais LE cardigan oversize depuis longtemps. Celui-ci coche toutes les cases : longueur, épaisseur, style effilé discret. Parfait.</p>
+          <span class="rr__date">17 Jan 2026</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="rr__load-more">
+      <button class="rr__btn-more" onclick="rrLoadMore(this)">Voir plus d'avis</button>
+    </div>
+
+  </div>
+
+  <!-- LIGHTBOX -->
+  <div class="rr__lightbox" id="rr-lightbox" onclick="rrLightboxClickOutside(event)">
+    <button class="rr__lightbox-close" onclick="rrLightboxClose()">✕</button>
+    <img class="rr__lightbox-img" id="rr-lightbox-img" src="" alt="" width="800" height="800">
+  </div>
+
+</section>
+
+<script>
+  function rrLoadMore(btn) {
+    const hidden = document.querySelectorAll('.rr__card.rr__hidden');
+    if (hidden.length === 0) { btn.style.display = 'none'; return; }
+    let shown = 0;
+    hidden.forEach(card => {
+      if (shown < 6) { card.classList.remove('rr__hidden'); shown++; }
+    });
+    if (document.querySelectorAll('.rr__card.rr__hidden').length === 0) {
+      btn.style.display = 'none';
+    }
+  }
+
+  function rrLightboxOpen(src) {
+    document.getElementById('rr-lightbox-img').src = src;
+    document.getElementById('rr-lightbox').classList.add('rr--open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function rrLightboxClose() {
+    document.getElementById('rr-lightbox').classList.remove('rr--open');
+    document.body.style.overflow = '';
+  }
+
+  function rrLightboxClickOutside(e) {
+    if (e.target === document.getElementById('rr-lightbox')) rrLightboxClose();
+  }
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') rrLightboxClose();
+  });
+</script>
