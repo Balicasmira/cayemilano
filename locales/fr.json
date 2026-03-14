@@ -450,7 +450,7 @@
         "express_checkout": "🔒 Paiement 100% sécurisé – Données bancaires protégées par nos partenaires bancaires français."
       },
       "general": {
-        "continue_to_review": "🔒 Finaliser ma commande"
+        "continue_to_review": "Finaliser ma commande"
       }
     }
   }
