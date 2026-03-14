@@ -446,7 +446,7 @@
         "card_security_notice": "Toutes les transactions sont sécurisées et chifrées."
       },
       "alternative_payment_method_banner": {
-        "or": "🚚 Commande expédiée en 24h",
+        "or": "🚚 Commande expédiée sous 24h",
         "express_checkout": "🔒 Paiement 100% sécurisé – Données bancaires protégées par nos partenaires bancaires français."
       }
     }
