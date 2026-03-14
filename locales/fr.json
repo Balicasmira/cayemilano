@@ -447,7 +447,7 @@
       },
       "alternative_payment_method_banner": {
         "or": "🚚 Commande expédiée en 24h",
-        "express_checkout": "🔒 Paiement 100% sécurisé via la Fédération Bancaire Française"
+        "express_checkout": "🔒 Paiement 100% sécurisé • Données bancaires protégées"
       }
     }
   }
