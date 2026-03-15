@@ -447,7 +447,7 @@
       },
       "alternative_payment_method_banner": {
         "or": "🚚 Commande expédiée sous 24h",
-        "express_checkout": "🔒 Paiement 100% sécurisé – Vos données sont protégées par nos partenaires bancaires français."
+        "express_checkout": "🔒 Paiement sécurisé · SSL 256-bit · Données cryptées"
       },
       "general": {
         "continue_to_review": "Finaliser ma commande"
