@@ -205,13 +205,16 @@
     position: fixed;
     inset: 0;
     background: rgba(0,0,0,0.92);
-    z-index: 99999;
+    z-index: 2147483647; /* valeur max possible */
     justify-content: center;
     align-items: center;
     padding: env(safe-area-inset-top, 12px) env(safe-area-inset-right, 12px) env(safe-area-inset-bottom, 12px) env(safe-area-inset-left, 12px);
     box-sizing: border-box;
     touch-action: none;
     -webkit-overflow-scrolling: none;
+    isolation: isolate;
+    transform: translateZ(0); /* force nouveau stacking context GPU */
+    will-change: transform;
   }
 
   .rr__lightbox.rr--open { display: flex; }
@@ -644,15 +647,16 @@
 
   </div>
 
-  <!-- LIGHTBOX -->
-  <div class="rr__lightbox" id="rr-lightbox" onclick="rrLightboxClickOutside(event)">
-    <button class="rr__lightbox-close" onclick="rrLightboxClose()" aria-label="Fermer">✕</button>
-    <div class="rr__lightbox-inner">
-      <img class="rr__lightbox-img" id="rr-lightbox-img" src="" alt="Avis client photo">
-    </div>
-  </div>
 
 </section>
+
+<!-- LIGHTBOX — en dehors de la section pour éviter les conflits z-index Shopify -->
+<div class="rr__lightbox" id="rr-lightbox" onclick="rrLightboxClickOutside(event)">
+  <button class="rr__lightbox-close" onclick="rrLightboxClose()" aria-label="Fermer">✕</button>
+  <div class="rr__lightbox-inner">
+    <img class="rr__lightbox-img" id="rr-lightbox-img" src="" alt="Avis client photo">
+  </div>
+</div>
 
 <script>
   function rrLoadMore(btn) {
@@ -668,10 +672,15 @@
   }
 
   function rrLightboxOpen(src) {
+    var lb = document.getElementById('rr-lightbox');
+    // Déplace le lightbox directement sous <body> pour échapper aux stacking contexts Shopify
+    if (lb.parentNode !== document.body) {
+      document.body.appendChild(lb);
+    }
     var img = document.getElementById('rr-lightbox-img');
     img.src = '';
     img.src = src;
-    document.getElementById('rr-lightbox').classList.add('rr--open');
+    lb.classList.add('rr--open');
     document.body.style.overflow = 'hidden';
     document.body.style.position = 'fixed';
     document.body.style.width = '100%';
