@@ -204,49 +204,82 @@
     display: none;
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,0.85);
+    background: rgba(0,0,0,0.92);
     z-index: 99999;
     justify-content: center;
     align-items: center;
-    padding: 20px;
+    padding: env(safe-area-inset-top, 12px) env(safe-area-inset-right, 12px) env(safe-area-inset-bottom, 12px) env(safe-area-inset-left, 12px);
+    box-sizing: border-box;
+    touch-action: none;
+    -webkit-overflow-scrolling: none;
   }
 
   .rr__lightbox.rr--open { display: flex; }
 
+  .rr__lightbox-inner {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    max-width: 100vw;
+    max-height: 100dvh;
+  }
+
   .rr__lightbox-img {
-    max-width: 90vw;
-    max-height: 85vh;
+    display: block;
+    width: auto;
+    height: auto;
+    max-width: min(92vw, 900px);
+    max-height: min(80dvh, 900px);
     object-fit: contain;
     border-radius: 10px;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.6);
     animation: lbIn 0.2s ease;
+    touch-action: pinch-zoom;
   }
 
   @keyframes lbIn {
-    from { opacity: 0; transform: scale(0.95); }
+    from { opacity: 0; transform: scale(0.93); }
     to   { opacity: 1; transform: scale(1); }
   }
 
   .rr__lightbox-close {
     position: fixed;
-    top: 16px;
-    right: 16px;
-    width: 36px;
-    height: 36px;
+    top: max(16px, env(safe-area-inset-top, 16px));
+    right: max(16px, env(safe-area-inset-right, 16px));
+    width: 44px;
+    height: 44px;
     border-radius: 50%;
-    background: rgba(255,255,255,0.15);
-    border: none;
+    background: rgba(255,255,255,0.18);
+    border: 1.5px solid rgba(255,255,255,0.3);
     color: #fff;
-    font-size: 18px;
+    font-size: 20px;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: background 0.2s;
     z-index: 100000;
+    -webkit-tap-highlight-color: transparent;
   }
 
-  .rr__lightbox-close:hover { background: rgba(255,255,255,0.3); }
+  .rr__lightbox-close:hover,
+  .rr__lightbox-close:active { background: rgba(255,255,255,0.35); }
+
+  @media (max-width: 640px) {
+    .rr__lightbox-img {
+      max-width: 96vw;
+      max-height: 75dvh;
+      border-radius: 8px;
+    }
+    .rr__lightbox-close {
+      width: 48px;
+      height: 48px;
+      font-size: 22px;
+    }
+  }
 </style>
 
 <section class="rr__section" id="reviews">
@@ -254,7 +287,7 @@
 
     <div class="rr__header">
       <span class="rr__label">AVIS CLIENTS</span>
-      <h2 class="rr__title">Ce que nos clientes <em>disent</em></h2>
+      <h2 class="rr__title">Ce que nos clients <em>disent</em></h2>
     </div>
 
     <div class="rr__summary">
@@ -294,308 +327,311 @@
 
     <div class="rr__grid" id="rr-grid">
 
-      <!-- REVIEW 1 — Sophie — EAGER -->
+      <!-- REVIEW 1 — Thomas — EAGER -->
       <div class="rr__card">
         <img class="rr__photo" loading="eager" width="400" height="400"
           onclick="rrLightboxOpen('https://m.media-amazon.com/images/I/81a6WB47fgL.jpg')"
           src="https://m.media-amazon.com/images/I/81a6WB47fgL.jpg"
-          alt="Avis client Sophie M.">
+          alt="Avis client Thomas M.">
         <div class="rr__body">
           <div class="rr__name-row">
-            <span class="rr__name">Sophie M.</span>
+            <span class="rr__name">Thomas M.</span>
             <span class="rr__verified">✓ Vérifié</span>
           </div>
           <span class="rr__meta">Paris, France 🇫🇷</span>
           <span class="rr__stars">★★★★★</span>
-          <span class="rr__review-title">Le cardigan cocooning qu'il me fallait</span>
-          <p class="rr__text">Moelleux, chaud, oversize comme promis. Je le mets avec un jean slim et c'est parfait. Après 3 lavages, rien ne bouge. Je recommande sans hésiter.</p>
+          <span class="rr__review-title">Le pull zippé qu'il me fallait</span>
+          <p class="rr__text">Maille côtelée dense, tombé impeccable, coupe sobre et ajustée. Je le porte avec un chino ou un jean — il passe partout. Après plusieurs lavages, aucune déformation. Je recommande sans hésiter.</p>
           <span class="rr__date">1 Mars 2026</span>
         </div>
       </div>
 
-      <!-- REVIEW 2 — Isabelle — EAGER -->
+      <!-- REVIEW 2 — Julien — EAGER -->
       <div class="rr__card">
         <img class="rr__photo" loading="eager" width="400" height="400"
           onclick="rrLightboxOpen('https://m.media-amazon.com/images/I/71+Cy9y4ahL.jpg')"
           src="https://m.media-amazon.com/images/I/71+Cy9y4ahL.jpg"
-          alt="Avis client Isabelle C.">
+          alt="Avis client Julien C.">
         <div class="rr__body">
           <div class="rr__name-row">
-            <span class="rr__name">Isabelle C.</span>
+            <span class="rr__name">Julien C.</span>
             <span class="rr__verified">✓ Vérifié</span>
           </div>
           <span class="rr__meta">Lyon, France 🇫🇷</span>
           <span class="rr__stars">★★★★★</span>
-          <span class="rr__review-title">Taille fidèle, coupe boyfriend vraiment sympa</span>
-          <p class="rr__text">Je fais du 40, j'ai pris un M — tombé parfaitement. La coupe boyfriend est flatteuse sans être informe. Les poches sont profondes, un vrai plus.</p>
+          <span class="rr__review-title">Taille fidèle, coupe vraiment sympa</span>
+          <p class="rr__text">Je fais du L, j'ai pris un L — tombé parfaitement. La coupe est ajustée sans être étriquée. La fermeture éclair est solide et glisse bien. Très bon achat.</p>
           <span class="rr__date">25 Fév 2026</span>
         </div>
       </div>
 
-      <!-- REVIEW 3 — Marie-Laure — EAGER -->
+      <!-- REVIEW 3 — Marc-Antoine — EAGER -->
       <div class="rr__card">
        
         <div class="rr__body">
           <div class="rr__name-row">
-            <span class="rr__name">Marie-Laure B.</span>
+            <span class="rr__name">Marc-Antoine B.</span>
             <span class="rr__verified">✓ Vérifié</span>
           </div>
           <span class="rr__meta">Bordeaux, France 🇫🇷</span>
           <span class="rr__stars">★★★★★</span>
           <span class="rr__review-title">Encore mieux qu'en photo</span>
-          <p class="rr__text">La couleur beige est douce et classe. L'effet effilé sur les bords ajoute un côté bohème que j'adore. Reçu en 5 jours, très bien emballé.</p>
+          <p class="rr__text">La maille côtelée est bien structurée, le rendu est net et élégant. Le petit logo crocodile brodé ajoute une touche premium discrète. Reçu en 5 jours, très bien emballé.</p>
           <span class="rr__date">20 Fév 2026</span>
         </div>
       </div>
 
-      <!-- REVIEW 4 — Valérie — LAZY -->
+      <!-- REVIEW 4 — Romain — LAZY -->
       <div class="rr__card">
        
         <div class="rr__body">
           <div class="rr__name-row">
-            <span class="rr__name">Valérie D.</span>
+            <span class="rr__name">Romain D.</span>
             <span class="rr__verified">✓ Vérifié</span>
           </div>
           <span class="rr__meta">Marseille, France 🇫🇷</span>
           <span class="rr__stars">★★★★★</span>
           <span class="rr__review-title">Je le mets tous les week-ends</span>
-          <p class="rr__text">Confortable comme un pyjama mais assez stylé pour sortir. Je l'ai en gris et je vais reprendre le camel. Matière épaisse et agréable sur la peau.</p>
+          <p class="rr__text">Confortable sans être trop décontracté. Je l'ai en noir et je vais reprendre le bordeaux. La maille est épaisse, agréable sur la peau, et il garde bien la chaleur.</p>
           <span class="rr__date">18 Fév 2026</span>
         </div>
       </div>
 
-      <!-- REVIEW 5 — Céline — LAZY -->
+      <!-- REVIEW 5 — Nicolas — LAZY -->
       <div class="rr__card">
-               <img class="rr__photo" loading="eager" width="400" height="400"           onclick="rrLightboxOpen('https://m.media-amazon.com/images/I/71aSZWngRLL.jpg')"           src="https://m.media-amazon.com/images/I/71aSZWngRLL.jpg"           alt="Avis client Sophie M.">
+        <img class="rr__photo" loading="eager" width="400" height="400"
+          onclick="rrLightboxOpen('https://m.media-amazon.com/images/I/81a6WB47fgL.jpg')"
+          src="https://m.media-amazon.com/images/I/71aSZWngRLL.jpg"
+          alt="Avis client Nicolas F.">
 
         <div class="rr__body">
           <div class="rr__name-row">
-            <span class="rr__name">Céline F.</span>
+            <span class="rr__name">Nicolas F.</span>
             <span class="rr__verified">✓ Vérifié</span>
           </div>
           <span class="rr__meta">Nantes, France 🇫🇷</span>
           <span class="rr__stars">★★★★★</span>
-          <span class="rr__review-title">Offert à ma sœur — elle est fan</span>
-          <p class="rr__text">Acheté en cadeau d'anniversaire. Ma sœur l'a enfilé direct à l'ouverture. Elle fait du 38, le S tombe super bien. Très beau cadeau pour le prix.</p>
+          <span class="rr__review-title">Offert à mon frère — il est fan</span>
+          <p class="rr__text">Acheté en cadeau d'anniversaire. Mon frère l'a enfilé direct à l'ouverture. Il fait du M, la coupe tombe super bien. Très beau cadeau pour le prix.</p>
           <span class="rr__date">14 Fév 2026</span>
         </div>
       </div>
 
-      <!-- REVIEW 6 — Nathalie — LAZY -->
+      <!-- REVIEW 6 — Antoine — LAZY -->
       <div class="rr__card">
         <img class="rr__photo" loading="eager" width="400" height="400"
           onclick="rrLightboxOpen('https://cdn.shopify.com/s/files/1/0924/9747/7960/files/asazasasa_processed.jpg?v=1773272810')"
           src="https://cdn.shopify.com/s/files/1/0924/9747/7960/files/asazasasa_processed.jpg?v=1773272810"
-          alt="Avis client Sophie M.">
+          alt="Avis client Antoine R.">
         <div class="rr__body">
           <div class="rr__name-row">
-            <span class="rr__name">Nathalie R.</span>
+            <span class="rr__name">Antoine R.</span>
             <span class="rr__verified">✓ Vérifié</span>
           </div>
           <span class="rr__meta">Toulouse, France 🇫🇷</span>
           <span class="rr__stars">★★★★★</span>
           <span class="rr__review-title">Parfait pour le bureau en hiver</span>
-          <p class="rr__text">Je le porte par-dessus mes tenues de bureau. Chaud, long, élégant. Mes collègues me demandent toutes où je l'ai trouvé. Deuxième commande en cours.</p>
+          <p class="rr__text">Je le porte par-dessus une chemise au bureau. Chaud, élégant, professionnel. Mes collègues me demandent tous où je l'ai trouvé. Deuxième commande en cours pour le vert.</p>
           <span class="rr__date">10 Fév 2026</span>
         </div>
       </div>
 
-      <!-- REVIEW 7 — Aurélie — hidden + LAZY -->
+      <!-- REVIEW 7 — Maxime — hidden + LAZY -->
       <div class="rr__card rr__hidden">
-       <img class="rr__photo" loading="eager" width="400" height="400"
-          onclick="rrLightboxOpen('https://m.media-amazon.com/images/I/71FGRhwWaNL.jpg')"
+        <img class="rr__photo" loading="eager" width="400" height="400"
+          onclick="rrLightboxOpen('https://m.media-amazon.com/images/I/81a6WB47fgL.jpg')"
           src="https://m.media-amazon.com/images/I/71FGRhwWaNL.jpg"
-          alt="Avis client Sophie M.">
+          alt="Avis client Maxime T.">
 
         <div class="rr__body">
           <div class="rr__name-row">
-            <span class="rr__name">Aurélie T.</span>
+            <span class="rr__name">Maxime T.</span>
             <span class="rr__verified">✓ Vérifié</span>
           </div>
           <span class="rr__meta">Strasbourg, France 🇫🇷</span>
           <span class="rr__stars">★★★★★</span>
-          <span class="rr__review-title">Le S convient bien pour une silhouette fine</span>
-          <p class="rr__text">165cm/52kg, le S est oversize comme voulu sans m'engloutir. La maille est douce, pas grattante du tout. Très satisfaite, livraison ultra rapide.</p>
+          <span class="rr__review-title">Le M convient bien pour une silhouette fine</span>
+          <p class="rr__text">178cm/70kg, le M est ajusté comme il faut sans être serré. La maille côtelée est douce, pas grattante du tout. Très satisfait, livraison ultra rapide.</p>
           <span class="rr__date">6 Fév 2026</span>
         </div>
       </div>
 
-      <!-- REVIEW 8 — Laurence — hidden + LAZY -->
+      <!-- REVIEW 8 — Laurent — hidden + LAZY -->
       <div class="rr__card rr__hidden">
        
         <div class="rr__body">
           <div class="rr__name-row">
-            <span class="rr__name">Laurence P.</span>
+            <span class="rr__name">Laurent P.</span>
             <span class="rr__verified">✓ Vérifié</span>
           </div>
           <span class="rr__meta">Rennes, France 🇫🇷</span>
           <span class="rr__stars">★★★★☆</span>
-          <span class="rr__review-title">Très beau mais boutons un peu fragiles</span>
-          <p class="rr__text">La qualité générale est vraiment là — matière épaisse, belles finitions. Un bouton s'est légèrement effiloché, mais rien de grave. Le rendu est top.</p>
+          <span class="rr__review-title">Très beau mais zip légèrement rigide au départ</span>
+          <p class="rr__text">La qualité générale est vraiment là — maille épaisse, belles finitions Lacoste. Le zip était un peu dur les premiers jours, mais il s'est assoupli. Le rendu est top.</p>
           <span class="rr__date">2 Fév 2026</span>
         </div>
       </div>
 
-      <!-- REVIEW 9 — Émilie — hidden + LAZY -->
+      <!-- REVIEW 9 — Éric — hidden + LAZY -->
       <div class="rr__card rr__hidden">
        
         <div class="rr__body">
           <div class="rr__name-row">
-            <span class="rr__name">Émilie G.</span>
+            <span class="rr__name">Éric G.</span>
             <span class="rr__verified">✓ Vérifié</span>
           </div>
           <span class="rr__meta">Nice, France 🇫🇷</span>
           <span class="rr__stars">★★★★★</span>
-          <span class="rr__review-title">La couleur kaki est magnifique en vrai</span>
-          <p class="rr__text">Hésitais entre deux coloris, j'ai choisi le kaki — excellente décision. Très polyvalent, je le porte avec tout. Long et couvrant, parfait pour l'hiver.</p>
+          <span class="rr__review-title">La couleur bordeaux est magnifique en vrai</span>
+          <p class="rr__text">Hésitais entre le noir et le bordeaux, j'ai choisi le bordeaux — excellente décision. Très polyvalent, je le porte avec tout. Chaud et couvrant, parfait pour l'hiver.</p>
           <span class="rr__date">29 Jan 2026</span>
         </div>
       </div>
 
-      <!-- REVIEW 10 — Christine — hidden + LAZY -->
+      <!-- REVIEW 10 — Christophe — hidden + LAZY -->
       <div class="rr__card rr__hidden">
-               <img class="rr__photo" loading="eager" width="400" height="400"
-          onclick="rrLightboxOpen('https://m.media-amazon.com/images/I/81+F9Nhh7KL.jpg')"
+        <img class="rr__photo" loading="eager" width="400" height="400"
+          onclick="rrLightboxOpen('https://m.media-amazon.com/images/I/81a6WB47fgL.jpg')"
           src="https://m.media-amazon.com/images/I/81+F9Nhh7KL.jpg"
-          alt="Avis client Sophie M.">
+          alt="Avis client Christophe L.">
 
         <div class="rr__body">
           <div class="rr__name-row">
-            <span class="rr__name">Christine L.</span>
+            <span class="rr__name">Christophe L.</span>
             <span class="rr__verified">✓ Vérifié</span>
           </div>
           <span class="rr__meta">Lille, France 🇫🇷</span>
           <span class="rr__stars">★★★★★</span>
-          <span class="rr__review-title">Mon cardigan préféré depuis des semaines</span>
-          <p class="rr__text">J'en ai essayé des dizaines. Celui-ci a la bonne longueur, la bonne épaisseur, et les poches au bon endroit. Je l'ai commandé en deux couleurs.</p>
+          <span class="rr__review-title">Mon pull préféré depuis des semaines</span>
+          <p class="rr__text">J'en ai essayé des dizaines. Celui-ci a la bonne longueur, la bonne épaisseur de maille, et la fermeture zippée au bon endroit. Je l'ai commandé en deux coloris.</p>
           <span class="rr__date">24 Jan 2026</span>
         </div>
       </div>
 
-      <!-- REVIEW 11 — Patricia — hidden (no photo) -->
+      <!-- REVIEW 11 — Pierre — hidden -->
       <div class="rr__card rr__hidden">
         <img class="rr__photo" loading="eager" width="400" height="400"
-          onclick="rrLightboxOpen('https://m.media-amazon.com/images/I/61TqLaqtOML.jpg')"
+          onclick="rrLightboxOpen('https://m.media-amazon.com/images/I/81a6WB47fgL.jpg')"
           src="https://m.media-amazon.com/images/I/61TqLaqtOML.jpg"
-          alt="Avis client Sophie M.">
+          alt="Avis client Pierre V.">
         <div class="rr__body">
           <div class="rr__name-row">
-            <span class="rr__name">Patricia V.</span>
+            <span class="rr__name">Pierre V.</span>
             <span class="rr__verified">✓ Vérifié</span>
           </div>
           <span class="rr__meta">Grenoble, France 🇫🇷</span>
           <span class="rr__stars">★★★★★</span>
           <span class="rr__review-title">XL disponible et coupe vraiment bien</span>
-          <p class="rr__text">Enfin une marque qui fait du XL qui taille vraiment comme il faut. 168cm/78kg, la coupe est généreuse sans être diforme. Ultra confortable.</p>
+          <p class="rr__text">Enfin une marque qui fait du XL qui taille vraiment comme il faut. 182cm/90kg, la coupe est généreuse sans être informelle. Ultra confortable toute la journée.</p>
           <span class="rr__date">20 Jan 2026</span>
         </div>
       </div>
 
-      <!-- REVIEW 12 — Sandrine — hidden (no photo) -->
+      <!-- REVIEW 12 — Sébastien — hidden (no photo) -->
       <div class="rr__card rr__hidden">
         <div class="rr__body">
           <div class="rr__name-row">
-            <span class="rr__name">Sandrine H.</span>
+            <span class="rr__name">Sébastien H.</span>
             <span class="rr__verified">✓ Vérifié</span>
           </div>
           <span class="rr__meta">Montpellier, France 🇫🇷</span>
           <span class="rr__stars">★★★★★</span>
           <span class="rr__review-title">Idéal pour les journées à la maison ou dehors</span>
-          <p class="rr__text">Je le porte en télétravail, à la boulangerie, partout. Il fait décontracté mais soigné. Lavé en machine sans problème, pas de boulochage.</p>
+          <p class="rr__text">Je le porte en télétravail, en balade, partout. Il fait décontracté mais soigné. Lavé en machine sans problème, pas de boulochage, la maille reste impeccable.</p>
           <span class="rr__date">15 Jan 2026</span>
         </div>
       </div>
 
-      <!-- REVIEW 13 — Anne-Sophie — hidden + LAZY -->
+      <!-- REVIEW 13 — Jean-Baptiste — hidden + LAZY -->
       <div class="rr__card rr__hidden">
        
         <div class="rr__body">
           <div class="rr__name-row">
-            <span class="rr__name">Anne-Sophie N.</span>
+            <span class="rr__name">Jean-Baptiste N.</span>
             <span class="rr__verified">✓ Vérifié</span>
           </div>
           <span class="rr__meta">Dijon, France 🇫🇷</span>
           <span class="rr__stars">★★★★★</span>
           <span class="rr__review-title">Deuxième commande, toujours au top</span>
-          <p class="rr__text">J'avais commandé le blanc cassé en novembre. Je reviens pour le marron. Même qualité irréprochable, même coupe flatteuse. Une valeur sûre.</p>
+          <p class="rr__text">J'avais commandé le noir en novembre. Je reviens pour le bleu. Même qualité irréprochable, même coupe flatteuse. La maille côtelée Lacoste, c'est une valeur sûre.</p>
           <span class="rr__date">12 Fév 2026</span>
         </div>
       </div>
 
-      <!-- REVIEW 14 — Élise — hidden + LAZY -->
+      <!-- REVIEW 14 — Alexandre — hidden + LAZY -->
       <div class="rr__card rr__hidden">
        
         <div class="rr__body">
           <div class="rr__name-row">
-            <span class="rr__name">Élise M.</span>
+            <span class="rr__name">Alexandre M.</span>
             <span class="rr__verified">✓ Vérifié</span>
           </div>
           <span class="rr__meta">Annecy, France 🇫🇷</span>
           <span class="rr__stars">★★★★★</span>
           <span class="rr__review-title">Rapport qualité-prix imbattable</span>
-          <p class="rr__text">Pour ce prix, je ne m'attendais pas à une telle qualité. La maille est épaisse, les coutures sont solides. Je vais en offrir à ma mère pour son anniversaire.</p>
+          <p class="rr__text">Pour ce prix, je ne m'attendais pas à une telle qualité Lacoste. La maille est épaisse, les coutures sont solides, le zip est fluide. Je vais en offrir un à mon père pour son anniversaire.</p>
           <span class="rr__date">8 Fév 2026</span>
         </div>
       </div>
 
-      <!-- REVIEW 15 — Delphine — hidden (no photo) -->
+      <!-- REVIEW 15 — Damien — hidden (no photo) -->
       <div class="rr__card rr__hidden">
         <div class="rr__body">
           <div class="rr__name-row">
-            <span class="rr__name">Delphine A.</span>
+            <span class="rr__name">Damien A.</span>
             <span class="rr__verified">✓ Vérifié</span>
           </div>
           <span class="rr__meta">Clermont-Ferrand, France 🇫🇷</span>
           <span class="rr__stars">★★★★☆</span>
           <span class="rr__review-title">Très bien, légèrement plus long qu'attendu</span>
-          <p class="rr__text">Je suis petite (160cm) et il tombe un peu sous les hanches. Ça donne un effet robe/cardigan que j'ai finalement adopté. Matière vraiment douce.</p>
+          <p class="rr__text">Je suis de taille moyenne (175cm) et il couvre bien les hanches. Ça donne un look pull long que j'ai finalement adopté avec un jean slim. Matière vraiment agréable.</p>
           <span class="rr__date">3 Fév 2026</span>
         </div>
       </div>
 
-      <!-- REVIEW 16 — Julie — hidden + LAZY -->
+      <!-- REVIEW 16 — Florian — hidden + LAZY -->
       <div class="rr__card rr__hidden">
        
         <div class="rr__body">
           <div class="rr__name-row">
-            <span class="rr__name">Julie B.</span>
+            <span class="rr__name">Florian B.</span>
             <span class="rr__verified">✓ Vérifié</span>
           </div>
           <span class="rr__meta">Rouen, France 🇫🇷</span>
           <span class="rr__stars">★★★★★</span>
-          <span class="rr__review-title">Chaud, stylé, poches fonctionnelles</span>
-          <p class="rr__text">Les poches sont immenses — j'y mets mon téléphone, mes clés, tout. Chaud sans être trop lourd. Un indispensable de ma garde-robe d'automne-hiver.</p>
+          <span class="rr__review-title">Chaud, stylé, finitions soignées</span>
+          <p class="rr__text">La maille côtelée tient parfaitement sa forme. Chaud sans être trop lourd. La broderie du logo est propre et discrète. Un indispensable de ma garde-robe automne-hiver.</p>
           <span class="rr__date">26 Jan 2026</span>
         </div>
       </div>
 
-      <!-- REVIEW 17 — Camille — hidden (no photo) -->
+      <!-- REVIEW 17 — Kevin — hidden (no photo) -->
       <div class="rr__card rr__hidden">
         <div class="rr__body">
           <div class="rr__name-row">
-            <span class="rr__name">Camille R.</span>
+            <span class="rr__name">Kevin R.</span>
             <span class="rr__verified">✓ Vérifié</span>
           </div>
           <span class="rr__meta">Tours, France 🇫🇷</span>
           <span class="rr__stars">★★★★★</span>
           <span class="rr__review-title">Commandé deux fois en deux mois</span>
-          <p class="rr__text">J'ai pris le premier pour moi, le deuxième pour ma fille. On l'adore toutes les deux. La coupe boyfriend est vraiment réussie, pas trop large.</p>
+          <p class="rr__text">J'ai pris le premier pour moi en noir, le deuxième en gris pour offrir. On l'adore tous les deux. La coupe zippée est vraiment réussie, polyvalente et moderne.</p>
           <span class="rr__date">22 Jan 2026</span>
         </div>
       </div>
 
-      <!-- REVIEW 18 — Virginie — hidden + LAZY -->
+      <!-- REVIEW 18 — Vincent — hidden + LAZY -->
       <div class="rr__card rr__hidden">
         
         <div class="rr__body">
           <div class="rr__name-row">
-            <span class="rr__name">Virginie S.</span>
+            <span class="rr__name">Vincent S.</span>
             <span class="rr__verified">✓ Vérifié</span>
           </div>
           <span class="rr__meta">Metz, France 🇫🇷</span>
           <span class="rr__stars">★★★★★</span>
           <span class="rr__review-title">Un vrai coup de cœur</span>
-          <p class="rr__text">Je cherchais LE cardigan oversize depuis longtemps. Celui-ci coche toutes les cases : longueur, épaisseur, style effilé discret. Parfait.</p>
+          <p class="rr__text">Je cherchais LE pull zippé de qualité depuis longtemps. Celui-ci coche toutes les cases : maille côtelée structurée, zip solide, look épuré Lacoste. Parfait.</p>
           <span class="rr__date">17 Jan 2026</span>
         </div>
       </div>
@@ -610,8 +646,10 @@
 
   <!-- LIGHTBOX -->
   <div class="rr__lightbox" id="rr-lightbox" onclick="rrLightboxClickOutside(event)">
-    <button class="rr__lightbox-close" onclick="rrLightboxClose()">✕</button>
-    <img class="rr__lightbox-img" id="rr-lightbox-img" src="" alt="" width="800" height="800">
+    <button class="rr__lightbox-close" onclick="rrLightboxClose()" aria-label="Fermer">✕</button>
+    <div class="rr__lightbox-inner">
+      <img class="rr__lightbox-img" id="rr-lightbox-img" src="" alt="Avis client photo">
+    </div>
   </div>
 
 </section>
@@ -630,18 +668,26 @@
   }
 
   function rrLightboxOpen(src) {
-    document.getElementById('rr-lightbox-img').src = src;
+    var img = document.getElementById('rr-lightbox-img');
+    img.src = '';
+    img.src = src;
     document.getElementById('rr-lightbox').classList.add('rr--open');
     document.body.style.overflow = 'hidden';
+    document.body.style.position = 'fixed';
+    document.body.style.width = '100%';
   }
 
   function rrLightboxClose() {
     document.getElementById('rr-lightbox').classList.remove('rr--open');
     document.body.style.overflow = '';
+    document.body.style.position = '';
+    document.body.style.width = '';
   }
 
   function rrLightboxClickOutside(e) {
-    if (e.target === document.getElementById('rr-lightbox')) rrLightboxClose();
+    var lb = document.getElementById('rr-lightbox');
+    var inner = lb.querySelector('.rr__lightbox-inner');
+    if (!inner.contains(e.target) || e.target === lb) rrLightboxClose();
   }
 
   document.addEventListener('keydown', function(e) {
