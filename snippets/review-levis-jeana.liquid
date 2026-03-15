@@ -652,7 +652,7 @@
 
 <!-- LIGHTBOX — en dehors de la section pour éviter les conflits z-index Shopify -->
 <div class="rr__lightbox" id="rr-lightbox" onclick="rrLightboxClickOutside(event)">
-  <button class="rr__lightbox-close" onclick="rrLightboxClose()" aria-label="Fermer">✕</button>
+  <button type="button" class="rr__lightbox-close" onclick="event.preventDefault(); event.stopPropagation(); rrLightboxClose();" aria-label="Fermer">✕</button>
   <div class="rr__lightbox-inner">
     <img class="rr__lightbox-img" id="rr-lightbox-img" src="" alt="Avis client photo">
   </div>
@@ -671,9 +671,20 @@
     }
   }
 
+  function rrLightboxClose() {
+    document.getElementById('rr-lightbox').classList.remove('rr--open');
+    var scrollY = document.body.style.top;
+    document.body.style.overflow = '';
+    document.body.style.position = '';
+    document.body.style.width = '';
+    document.body.style.top = '';
+    if (scrollY) {
+      window.scrollTo(0, parseInt(scrollY || '0') * -1);
+    }
+  }
+
   function rrLightboxOpen(src) {
     var lb = document.getElementById('rr-lightbox');
-    // Déplace le lightbox directement sous <body> pour échapper aux stacking contexts Shopify
     if (lb.parentNode !== document.body) {
       document.body.appendChild(lb);
     }
@@ -681,16 +692,11 @@
     img.src = '';
     img.src = src;
     lb.classList.add('rr--open');
+    // Sauvegarde la position de scroll avant de fixer le body
+    document.body.style.top = '-' + window.scrollY + 'px';
     document.body.style.overflow = 'hidden';
     document.body.style.position = 'fixed';
     document.body.style.width = '100%';
-  }
-
-  function rrLightboxClose() {
-    document.getElementById('rr-lightbox').classList.remove('rr--open');
-    document.body.style.overflow = '';
-    document.body.style.position = '';
-    document.body.style.width = '';
   }
 
   function rrLightboxClickOutside(e) {
