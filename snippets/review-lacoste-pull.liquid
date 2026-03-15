@@ -199,54 +199,90 @@
     .rr__text { font-size: 11px; }
   }
 
-  /* LIGHTBOX */
+  /* LIGHTBOX — FIXED VERSION */
   .rr__lightbox {
     display: none;
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,0.85);
-    z-index: 99999;
+    background: rgba(0,0,0,0.92);
+    z-index: 2147483647;
     justify-content: center;
     align-items: center;
-    padding: 20px;
+    padding: env(safe-area-inset-top, 12px) env(safe-area-inset-right, 12px) env(safe-area-inset-bottom, 12px) env(safe-area-inset-left, 12px);
+    box-sizing: border-box;
+    touch-action: none;
+    -webkit-overflow-scrolling: none;
+    isolation: isolate;
+    transform: translateZ(0);
+    will-change: transform;
   }
 
   .rr__lightbox.rr--open { display: flex; }
 
+  .rr__lightbox-inner {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    max-width: 100vw;
+    max-height: 100dvh;
+  }
+
   .rr__lightbox-img {
-    max-width: 90vw;
-    max-height: 85vh;
+    display: block;
+    width: auto;
+    height: auto;
+    max-width: min(92vw, 900px);
+    max-height: min(80dvh, 900px);
     object-fit: contain;
     border-radius: 10px;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.6);
     animation: lbIn 0.2s ease;
+    touch-action: pinch-zoom;
   }
 
   @keyframes lbIn {
-    from { opacity: 0; transform: scale(0.95); }
+    from { opacity: 0; transform: scale(0.93); }
     to   { opacity: 1; transform: scale(1); }
   }
 
   .rr__lightbox-close {
     position: fixed;
-    top: 16px;
-    right: 16px;
-    width: 36px;
-    height: 36px;
+    top: max(16px, env(safe-area-inset-top, 16px));
+    right: max(16px, env(safe-area-inset-right, 16px));
+    width: 44px;
+    height: 44px;
     border-radius: 50%;
-    background: rgba(255,255,255,0.15);
-    border: none;
+    background: rgba(255,255,255,0.18);
+    border: 1.5px solid rgba(255,255,255,0.3);
     color: #fff;
-    font-size: 18px;
+    font-size: 20px;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: background 0.2s;
     z-index: 100000;
+    -webkit-tap-highlight-color: transparent;
   }
 
-  .rr__lightbox-close:hover { background: rgba(255,255,255,0.3); }
+  .rr__lightbox-close:hover,
+  .rr__lightbox-close:active { background: rgba(255,255,255,0.35); }
+
+  @media (max-width: 640px) {
+    .rr__lightbox-img {
+      max-width: 96vw;
+      max-height: 75dvh;
+      border-radius: 8px;
+    }
+    .rr__lightbox-close {
+      width: 48px;
+      height: 48px;
+      font-size: 22px;
+    }
+  }
 </style>
 
 <section class="rr__section" id="reviews">
@@ -334,7 +370,6 @@
 
       <!-- REVIEW 3 — Marc-Antoine — EAGER -->
       <div class="rr__card">
-       
         <div class="rr__body">
           <div class="rr__name-row">
             <span class="rr__name">Marc-Antoine B.</span>
@@ -350,7 +385,6 @@
 
       <!-- REVIEW 4 — Romain — LAZY -->
       <div class="rr__card">
-       
         <div class="rr__body">
           <div class="rr__name-row">
             <span class="rr__name">Romain D.</span>
@@ -370,7 +404,6 @@
           onclick="rrLightboxOpen('https://cdn.shopify.com/s/files/1/0924/9747/7960/files/Gemini_Generated_Image_yqqshuyqqshuyqqs_processed.png?v=1773547771')"
           src="https://cdn.shopify.com/s/files/1/0924/9747/7960/files/Gemini_Generated_Image_yqqshuyqqshuyqqs_processed.png?v=1773547771"
           alt="Avis client Nicolas F.">
-
         <div class="rr__body">
           <div class="rr__name-row">
             <span class="rr__name">Nicolas F.</span>
@@ -405,11 +438,10 @@
 
       <!-- REVIEW 7 — Maxime — hidden + LAZY -->
       <div class="rr__card rr__hidden">
-        <img class="rr__photo" loading="eager" width="400" height="400"
+        <img class="rr__photo" loading="lazy" width="400" height="400"
           onclick="rrLightboxOpen('https://cdn.shopify.com/s/files/1/0924/9747/7960/files/Gemini_Generated_Image_6v98m36v98m36v98_processed_processed.png?v=1773547771')"
           src="https://cdn.shopify.com/s/files/1/0924/9747/7960/files/Gemini_Generated_Image_6v98m36v98m36v98_processed_processed.png?v=1773547771"
           alt="Avis client Maxime T.">
-
         <div class="rr__body">
           <div class="rr__name-row">
             <span class="rr__name">Maxime T.</span>
@@ -425,7 +457,6 @@
 
       <!-- REVIEW 8 — Laurent — hidden + LAZY -->
       <div class="rr__card rr__hidden">
-       
         <div class="rr__body">
           <div class="rr__name-row">
             <span class="rr__name">Laurent P.</span>
@@ -441,7 +472,6 @@
 
       <!-- REVIEW 9 — Éric — hidden + LAZY -->
       <div class="rr__card rr__hidden">
-       
         <div class="rr__body">
           <div class="rr__name-row">
             <span class="rr__name">Éric G.</span>
@@ -457,11 +487,10 @@
 
       <!-- REVIEW 10 — Christophe — hidden + LAZY -->
       <div class="rr__card rr__hidden">
-        <img class="rr__photo" loading="eager" width="400" height="400"
+        <img class="rr__photo" loading="lazy" width="400" height="400"
           onclick="rrLightboxOpen('https://cdn.shopify.com/s/files/1/0924/9747/7960/files/Gemini_Generated_Image_jetqr2jetqr2jetq_processed.png?v=1773547771')"
           src="https://cdn.shopify.com/s/files/1/0924/9747/7960/files/Gemini_Generated_Image_jetqr2jetqr2jetq_processed.png?v=1773547771"
           alt="Avis client Christophe L.">
-
         <div class="rr__body">
           <div class="rr__name-row">
             <span class="rr__name">Christophe L.</span>
@@ -476,8 +505,8 @@
       </div>
 
       <!-- REVIEW 11 — Pierre — hidden -->
-      <div class="rr__card rr__hiddené">
-        <img class="rr__photo" loading="eager" width="400" height="400"
+      <div class="rr__card rr__hidden">
+        <img class="rr__photo" loading="lazy" width="400" height="400"
           onclick="rrLightboxOpen('https://cdn.shopify.com/s/files/1/0924/9747/7960/files/Gemini_Generated_Image_mp31fnmp31fnmp31_processed.png?v=1773547770')"
           src="https://cdn.shopify.com/s/files/1/0924/9747/7960/files/Gemini_Generated_Image_mp31fnmp31fnmp31_processed.png?v=1773547770"
           alt="Avis client Pierre V.">
@@ -511,10 +540,10 @@
 
       <!-- REVIEW 13 — Jean-Baptiste — hidden + LAZY -->
       <div class="rr__card rr__hidden">
-       <img class="rr__photo" loading="eager" width="400" height="400"
+        <img class="rr__photo" loading="lazy" width="400" height="400"
           onclick="rrLightboxOpen('https://cdn.shopify.com/s/files/1/0924/9747/7960/files/Gemini_Generated_Image_tmo91mtmo91mtmo9_processed.png?v=1773547769')"
           src="https://cdn.shopify.com/s/files/1/0924/9747/7960/files/Gemini_Generated_Image_tmo91mtmo91mtmo9_processed.png?v=1773547769"
-          alt="Avis client Pierre V.">
+          alt="Avis client Jean-Baptiste N.">
         <div class="rr__body">
           <div class="rr__name-row">
             <span class="rr__name">Jean-Baptiste N.</span>
@@ -530,10 +559,10 @@
 
       <!-- REVIEW 14 — Alexandre — hidden + LAZY -->
       <div class="rr__card rr__hidden">
-       <img class="rr__photo" loading="eager" width="400" height="400"
+        <img class="rr__photo" loading="lazy" width="400" height="400"
           onclick="rrLightboxOpen('https://cdn.shopify.com/s/files/1/0924/9747/7960/files/Gemini_Generated_Image_5q5krh5q5krh5q5k_processed.png?v=1773547770')"
           src="https://cdn.shopify.com/s/files/1/0924/9747/7960/files/Gemini_Generated_Image_5q5krh5q5krh5q5k_processed.png?v=1773547770"
-          alt="Avis client Pierre V.">
+          alt="Avis client Alexandre M.">
         <div class="rr__body">
           <div class="rr__name-row">
             <span class="rr__name">Alexandre M.</span>
@@ -547,12 +576,12 @@
         </div>
       </div>
 
-      <!-- REVIEW 15 — Damien — hidden (no photo) -->
+      <!-- REVIEW 15 — Damien — hidden + LAZY -->
       <div class="rr__card rr__hidden">
-        <img class="rr__photo" loading="eager" width="400" height="400"
+        <img class="rr__photo" loading="lazy" width="400" height="400"
           onclick="rrLightboxOpen('https://cdn.shopify.com/s/files/1/0924/9747/7960/files/ChatGPT_Image_15_mars_2026_05_03_11.png?v=1773547771')"
           src="https://cdn.shopify.com/s/files/1/0924/9747/7960/files/ChatGPT_Image_15_mars_2026_05_03_11.png?v=1773547771"
-          alt="Avis client Pierre V.">
+          alt="Avis client Damien A.">
         <div class="rr__body">
           <div class="rr__name-row">
             <span class="rr__name">Damien A.</span>
@@ -568,7 +597,6 @@
 
       <!-- REVIEW 16 — Florian — hidden + LAZY -->
       <div class="rr__card rr__hidden">
-       
         <div class="rr__body">
           <div class="rr__name-row">
             <span class="rr__name">Florian B.</span>
@@ -599,7 +627,6 @@
 
       <!-- REVIEW 18 — Vincent — hidden + LAZY -->
       <div class="rr__card rr__hidden">
-        
         <div class="rr__body">
           <div class="rr__name-row">
             <span class="rr__name">Vincent S.</span>
@@ -621,13 +648,15 @@
 
   </div>
 
-  <!-- LIGHTBOX -->
-  <div class="rr__lightbox" id="rr-lightbox" onclick="rrLightboxClickOutside(event)">
-    <button class="rr__lightbox-close" onclick="rrLightboxClose()">✕</button>
-    <img class="rr__lightbox-img" id="rr-lightbox-img" src="" alt="" width="800" height="800">
-  </div>
-
 </section>
+
+<!-- LIGHTBOX — hors section pour éviter conflits z-index Shopify -->
+<div class="rr__lightbox" id="rr-lightbox" onclick="rrLightboxClickOutside(event)">
+  <button type="button" class="rr__lightbox-close" onclick="event.preventDefault(); event.stopPropagation(); rrLightboxClose();" aria-label="Fermer">✕</button>
+  <div class="rr__lightbox-inner">
+    <img class="rr__lightbox-img" id="rr-lightbox-img" src="" alt="Avis client photo">
+  </div>
+</div>
 
 <script>
   function rrLoadMore(btn) {
@@ -643,18 +672,36 @@
   }
 
   function rrLightboxOpen(src) {
-    document.getElementById('rr-lightbox-img').src = src;
-    document.getElementById('rr-lightbox').classList.add('rr--open');
+    var lb = document.getElementById('rr-lightbox');
+    if (lb.parentNode !== document.body) {
+      document.body.appendChild(lb);
+    }
+    var img = document.getElementById('rr-lightbox-img');
+    img.src = '';
+    img.src = src;
+    lb.classList.add('rr--open');
+    document.body.style.top = '-' + window.scrollY + 'px';
     document.body.style.overflow = 'hidden';
+    document.body.style.position = 'fixed';
+    document.body.style.width = '100%';
   }
 
   function rrLightboxClose() {
     document.getElementById('rr-lightbox').classList.remove('rr--open');
+    var scrollY = document.body.style.top;
     document.body.style.overflow = '';
+    document.body.style.position = '';
+    document.body.style.width = '';
+    document.body.style.top = '';
+    if (scrollY) {
+      window.scrollTo(0, parseInt(scrollY || '0') * -1);
+    }
   }
 
   function rrLightboxClickOutside(e) {
-    if (e.target === document.getElementById('rr-lightbox')) rrLightboxClose();
+    var lb = document.getElementById('rr-lightbox');
+    var inner = lb.querySelector('.rr__lightbox-inner');
+    if (!inner.contains(e.target) || e.target === lb) rrLightboxClose();
   }
 
   document.addEventListener('keydown', function(e) {
