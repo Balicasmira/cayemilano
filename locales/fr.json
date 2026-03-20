@@ -447,7 +447,7 @@
       },
       "alternative_payment_method_banner": {
         "or": "🚚 Commande expédiée sous 24h",
-        "express_checkout": "🔒 Paiement sécurisé · SSL 256-bit · Données cryptées"
+        "express_checkout": "🔒 Paiement sécurisé · ↩️ Retours gratuits sous 30 jours"
       },
       "general": {
         "continue_to_review": "Finaliser ma commande"
