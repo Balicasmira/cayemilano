@@ -205,7 +205,7 @@
     position: fixed;
     inset: 0;
     background: rgba(0,0,0,0.92);
-    z-index: 2147483647; /* valeur max possible */
+    z-index: 2147483647;
     justify-content: center;
     align-items: center;
     padding: env(safe-area-inset-top, 12px) env(safe-area-inset-right, 12px) env(safe-area-inset-bottom, 12px) env(safe-area-inset-left, 12px);
@@ -213,7 +213,7 @@
     touch-action: none;
     -webkit-overflow-scrolling: none;
     isolation: isolate;
-    transform: translateZ(0); /* force nouveau stacking context GPU */
+    transform: translateZ(0);
     will-change: transform;
   }
 
@@ -295,47 +295,43 @@
 
     <div class="rr__summary">
       <div class="rr__rating-big">
-        <span class="rr__rating-number">4.7</span>
+        <span class="rr__rating-number">4.8</span>
         <span class="rr__stars-big">★★★★★</span>
-        <span class="rr__total">2 847 avis vérifiés</span>
+        <span class="rr__total">1 634 avis vérifiés</span>
       </div>
       <div class="rr__bars">
         <div class="rr__bar-row">
           <span class="rr__bar-label">5 ★</span>
-          <div class="rr__bar-track"><div class="rr__bar-fill" style="width:85%"></div></div>
-          <span class="rr__bar-count">2417</span>
+          <div class="rr__bar-track"><div class="rr__bar-fill" style="width:88%"></div></div>
+          <span class="rr__bar-count">1438</span>
         </div>
         <div class="rr__bar-row">
           <span class="rr__bar-label">4 ★</span>
-          <div class="rr__bar-track"><div class="rr__bar-fill" style="width:10%"></div></div>
-          <span class="rr__bar-count">285</span>
+          <div class="rr__bar-track"><div class="rr__bar-fill" style="width:8%"></div></div>
+          <span class="rr__bar-count">131</span>
         </div>
         <div class="rr__bar-row">
           <span class="rr__bar-label">3 ★</span>
-          <div class="rr__bar-track"><div class="rr__bar-fill" style="width:3%"></div></div>
-          <span class="rr__bar-count">85</span>
+          <div class="rr__bar-track"><div class="rr__bar-fill" style="width:2%"></div></div>
+          <span class="rr__bar-count">33</span>
         </div>
         <div class="rr__bar-row">
           <span class="rr__bar-label">2 ★</span>
           <div class="rr__bar-track"><div class="rr__bar-fill" style="width:1%"></div></div>
-          <span class="rr__bar-count">34</span>
+          <span class="rr__bar-count">19</span>
         </div>
         <div class="rr__bar-row">
           <span class="rr__bar-label">1 ★</span>
           <div class="rr__bar-track"><div class="rr__bar-fill" style="width:1%"></div></div>
-          <span class="rr__bar-count">26</span>
+          <span class="rr__bar-count">13</span>
         </div>
       </div>
     </div>
 
     <div class="rr__grid" id="rr-grid">
 
-      <!-- REVIEW 1 — Sophie — EAGER -->
+      <!-- REVIEW 1 — Sophie -->
       <div class="rr__card">
-        <img class="rr__photo" loading="eager" width="400" height="400"
-          onclick="rrLightboxOpen('https://m.media-amazon.com/images/I/81a6WB47fgL.jpg')"
-          src="https://m.media-amazon.com/images/I/81a6WB47fgL.jpg"
-          alt="Avis client Sophie M.">
         <div class="rr__body">
           <div class="rr__name-row">
             <span class="rr__name">Sophie M.</span>
@@ -343,18 +339,14 @@
           </div>
           <span class="rr__meta">Paris, France 🇫🇷</span>
           <span class="rr__stars">★★★★★</span>
-          <span class="rr__review-title">La veste en jean qu'il me fallait</span>
-          <p class="rr__text">Coupe oversize parfaite, le denim est épais et de qualité. Je la porte avec une robe, un jean slim, tout fonctionne. Les franges au bas ajoutent un côté bohème que j'adore. Je recommande sans hésiter.</p>
-          <span class="rr__date">1 Mars 2026</span>
+          <span class="rr__review-title">Les sandales les plus confortables que j'aie portées</span>
+          <p class="rr__text">Je les ai mises dès réception pour une journée entière en ville — aucune douleur, aucun frottement. La semelle amortit vraiment bien, on sent la différence. Le scratch se règle parfaitement sur mon pied large.</p>
+          <span class="rr__date">16 Avril 2026</span>
         </div>
       </div>
 
-      <!-- REVIEW 2 — Isabelle — EAGER -->
+      <!-- REVIEW 2 — Isabelle -->
       <div class="rr__card">
-        <img class="rr__photo" loading="eager" width="400" height="400"
-          onclick="rrLightboxOpen('https://m.media-amazon.com/images/I/71+Cy9y4ahL.jpg')"
-          src="https://m.media-amazon.com/images/I/71+Cy9y4ahL.jpg"
-          alt="Avis client Isabelle C.">
         <div class="rr__body">
           <div class="rr__name-row">
             <span class="rr__name">Isabelle C.</span>
@@ -362,13 +354,13 @@
           </div>
           <span class="rr__meta">Lyon, France 🇫🇷</span>
           <span class="rr__stars">★★★★★</span>
-          <span class="rr__review-title">Taille fidèle, coupe boyfriend au top</span>
-          <p class="rr__text">Je fais du 38, j'ai pris un S — tombé parfaitement oversize. Les boutons pression sont solides, les poches poitrine sont vraiment fonctionnelles. Un indispensable du dressing.</p>
-          <span class="rr__date">25 Fév 2026</span>
+          <span class="rr__review-title">Enfin des sandales qui ne blessent pas</span>
+          <p class="rr__text">J'avais abandonné les sandales à cause des ampoules. Celles-ci changent tout — la microfibre intérieure est douce, le bout ouvert libère les orteils. Je les porte tous les jours depuis une semaine.</p>
+          <span class="rr__date">14 Avril 2026</span>
         </div>
       </div>
 
-      <!-- REVIEW 3 — Marie-Laure — EAGER -->
+      <!-- REVIEW 3 — Marie-Laure -->
       <div class="rr__card">
         <div class="rr__body">
           <div class="rr__name-row">
@@ -378,12 +370,12 @@
           <span class="rr__meta">Bordeaux, France 🇫🇷</span>
           <span class="rr__stars">★★★★★</span>
           <span class="rr__review-title">Encore mieux qu'en photo</span>
-          <p class="rr__text">J'ai pris le coloris beige et il est magnifique en vrai. Le denim est lavé avec soin, la coupe est flatteuse. L'étiquette Levi's rouge sur la poche donne ce petit détail iconique. Reçu en 5 jours.</p>
-          <span class="rr__date">20 Fév 2026</span>
+          <p class="rr__text">La semelle en caoutchouc est vraiment souple, pas dure comme beaucoup d'autres. Le scratch tient toute la journée sans se décrocher. Légères, discrètes, élégantes — je les emmène en vacances sans hésiter.</p>
+          <span class="rr__date">12 Avril 2026</span>
         </div>
       </div>
 
-      <!-- REVIEW 4 — Valérie — LAZY -->
+      <!-- REVIEW 4 — Valérie -->
       <div class="rr__card">
         <div class="rr__body">
           <div class="rr__name-row">
@@ -392,18 +384,14 @@
           </div>
           <span class="rr__meta">Marseille, France 🇫🇷</span>
           <span class="rr__stars">★★★★★</span>
-          <span class="rr__review-title">Je la mets tous les week-ends</span>
-          <p class="rr__text">Stylée mais décontractée, elle habille n'importe quelle tenue. Je l'ai en bleu clair et je vais reprendre le noir. Le denim est épais et solide, pas qui se déforme au lavage.</p>
-          <span class="rr__date">18 Fév 2026</span>
+          <span class="rr__review-title">Je les mets avec tout</span>
+          <p class="rr__text">Avec une robe, un jean, un short — ça passe partout. Le coloris noir est très polyvalent. Elles sont légères comme une plume et la semelle amortit chaque pas. Je vais en prendre une deuxième paire.</p>
+          <span class="rr__date">11 Avril 2026</span>
         </div>
       </div>
 
-      <!-- REVIEW 5 — Céline — LAZY -->
+      <!-- REVIEW 5 — Céline -->
       <div class="rr__card">
-        <img class="rr__photo" loading="eager" width="400" height="400"
-          onclick="rrLightboxOpen('https://m.media-amazon.com/images/I/71aSZWngRLL.jpg')"
-          src="https://m.media-amazon.com/images/I/71aSZWngRLL.jpg"
-          alt="Avis client Céline F.">
         <div class="rr__body">
           <div class="rr__name-row">
             <span class="rr__name">Céline F.</span>
@@ -411,18 +399,14 @@
           </div>
           <span class="rr__meta">Nantes, France 🇫🇷</span>
           <span class="rr__stars">★★★★★</span>
-          <span class="rr__review-title">Offerte à ma sœur — elle est fan</span>
-          <p class="rr__text">Achetée en cadeau d'anniversaire. Ma sœur l'a enfilée direct à l'ouverture. Elle fait du 36, le S tombe super bien en oversize. Très beau cadeau pour le prix, emballage soigné.</p>
-          <span class="rr__date">14 Fév 2026</span>
+          <span class="rr__review-title">Offertes à ma mère — ravie</span>
+          <p class="rr__text">Ma mère a des problèmes de pieds depuis des années. Elle a enfilé les sandales dès l'ouverture du colis et m'a rappelée le soir pour me remercier. Le scratch réglable fait vraiment la différence pour elle.</p>
+          <span class="rr__date">9 Avril 2026</span>
         </div>
       </div>
 
-      <!-- REVIEW 6 — Nathalie — LAZY -->
+      <!-- REVIEW 6 — Nathalie -->
       <div class="rr__card">
-        <img class="rr__photo" loading="eager" width="400" height="400"
-          onclick="rrLightboxOpen('https://cdn.shopify.com/s/files/1/0924/9747/7960/files/asazasasa_processed.jpg?v=1773272810')"
-          src="https://cdn.shopify.com/s/files/1/0924/9747/7960/files/asazasasa_processed.jpg?v=1773272810"
-          alt="Avis client Nathalie R.">
         <div class="rr__body">
           <div class="rr__name-row">
             <span class="rr__name">Nathalie R.</span>
@@ -430,18 +414,14 @@
           </div>
           <span class="rr__meta">Toulouse, France 🇫🇷</span>
           <span class="rr__stars">★★★★★</span>
-          <span class="rr__review-title">Parfaite pour mi-saison au bureau</span>
-          <p class="rr__text">Je la porte par-dessus mes tenues de bureau au printemps et en automne. Élégante sans être habillée. Mes collègues me demandent toutes où je l'ai trouvée. Deuxième commande en cours pour le vert.</p>
-          <span class="rr__date">10 Fév 2026</span>
+          <span class="rr__review-title">Parfaites pour marcher toute la journée</span>
+          <p class="rr__text">Journée shopping de 6h en ville, aucune douleur, aucune rougeur. La semelle intérieure en microfibre absorbe tout. Mes amies m'ont demandé la marque. Je reviens commander le coloris beige.</p>
+          <span class="rr__date">7 Avril 2026</span>
         </div>
       </div>
 
-      <!-- REVIEW 7 — Aurélie — hidden + LAZY -->
+      <!-- REVIEW 7 — Aurélie — hidden -->
       <div class="rr__card rr__hidden">
-        <img class="rr__photo" loading="lazy" width="400" height="400"
-          onclick="rrLightboxOpen('https://m.media-amazon.com/images/I/71FGRhwWaNL.jpg')"
-          src="https://m.media-amazon.com/images/I/71FGRhwWaNL.jpg"
-          alt="Avis client Aurélie T.">
         <div class="rr__body">
           <div class="rr__name-row">
             <span class="rr__name">Aurélie T.</span>
@@ -449,13 +429,13 @@
           </div>
           <span class="rr__meta">Strasbourg, France 🇫🇷</span>
           <span class="rr__stars">★★★★★</span>
-          <span class="rr__review-title">Le XS parfait pour une silhouette fine</span>
-          <p class="rr__text">165cm/52kg, le XS est oversize comme voulu sans m'engloutir. Le denim est souple et agréable, pas raide du tout. Les franges effilées au bas sont superbes. Livraison ultra rapide.</p>
-          <span class="rr__date">6 Fév 2026</span>
+          <span class="rr__review-title">Taille fidèle, maintien parfait</span>
+          <p class="rr__text">J'ai pris ma pointure habituelle, le 38 — tombé nickel. Le scratch se règle en deux secondes et maintient bien sans serrer. Légères, le pied respire. Idéales pour l'été qui arrive.</p>
+          <span class="rr__date">6 Avril 2026</span>
         </div>
       </div>
 
-      <!-- REVIEW 8 — Laurence — hidden + LAZY -->
+      <!-- REVIEW 8 — Laurence — hidden -->
       <div class="rr__card rr__hidden">
         <div class="rr__body">
           <div class="rr__name-row">
@@ -464,13 +444,13 @@
           </div>
           <span class="rr__meta">Rennes, France 🇫🇷</span>
           <span class="rr__stars">★★★★☆</span>
-          <span class="rr__review-title">Très belle mais boutons pression un peu durs</span>
-          <p class="rr__text">La qualité générale est vraiment là — denim épais, belles surpiqûres, finitions Levi's soignées. Les boutons pression sont un peu rigides au début mais s'assouplissent avec le temps.</p>
-          <span class="rr__date">2 Fév 2026</span>
+          <span class="rr__review-title">Très confortables, scratch un peu visible</span>
+          <p class="rr__text">Le confort est vraiment là — semelle douce, légèreté agréable, aucune frottement. Le scratch est légèrement apparent sur le dessus mais on s'y habitue. Pour le prix, la qualité est largement au rendez-vous.</p>
+          <span class="rr__date">5 Avril 2026</span>
         </div>
       </div>
 
-      <!-- REVIEW 9 — Émilie — hidden + LAZY -->
+      <!-- REVIEW 9 — Émilie — hidden -->
       <div class="rr__card rr__hidden">
         <div class="rr__body">
           <div class="rr__name-row">
@@ -479,18 +459,14 @@
           </div>
           <span class="rr__meta">Nice, France 🇫🇷</span>
           <span class="rr__stars">★★★★★</span>
-          <span class="rr__review-title">Le coloris blanc est magnifique en vrai</span>
-          <p class="rr__text">Hésitais entre le blanc et le beige, j'ai choisi le blanc — excellente décision. Très polyvalent, je la porte avec tout. La coupe longue est parfaite, elle allonge vraiment la silhouette.</p>
-          <span class="rr__date">29 Jan 2026</span>
+          <span class="rr__review-title">La révélation de mon été</span>
+          <p class="rr__text">Hésitais avec une autre paire. J'ai choisi celles-ci pour la semelle confort — excellente décision. Elles vont avec toutes mes tenues d'été et je n'ai eu aucune ampoule en deux semaines de port intensif.</p>
+          <span class="rr__date">4 Avril 2026</span>
         </div>
       </div>
 
-      <!-- REVIEW 10 — Christine — hidden + LAZY -->
+      <!-- REVIEW 10 — Christine — hidden -->
       <div class="rr__card rr__hidden">
-        <img class="rr__photo" loading="lazy" width="400" height="400"
-          onclick="rrLightboxOpen('https://m.media-amazon.com/images/I/81+F9Nhh7KL.jpg')"
-          src="https://m.media-amazon.com/images/I/81+F9Nhh7KL.jpg"
-          alt="Avis client Christine L.">
         <div class="rr__body">
           <div class="rr__name-row">
             <span class="rr__name">Christine L.</span>
@@ -498,18 +474,14 @@
           </div>
           <span class="rr__meta">Lille, France 🇫🇷</span>
           <span class="rr__stars">★★★★★</span>
-          <span class="rr__review-title">Ma veste préférée depuis des semaines</span>
-          <p class="rr__text">J'en ai essayé des dizaines. Celle-ci a la bonne longueur, les bonnes surpiqûres iconiques Levi's, et les poches au bon endroit. Je l'ai commandée en deux coloris.</p>
-          <span class="rr__date">24 Jan 2026</span>
+          <span class="rr__review-title">Mes sandales préférées depuis des semaines</span>
+          <p class="rr__text">J'en ai essayé beaucoup. Celles-ci ont la bonne semelle, le bon maintien, et le bout ouvert qui libère les orteils. La semelle caoutchouc accroche bien même sur sol humide. Je les ai commandées en deux coloris.</p>
+          <span class="rr__date">3 Avril 2026</span>
         </div>
       </div>
 
       <!-- REVIEW 11 — Patricia — hidden -->
       <div class="rr__card rr__hidden">
-        <img class="rr__photo" loading="lazy" width="400" height="400"
-          onclick="rrLightboxOpen('https://m.media-amazon.com/images/I/61TqLaqtOML.jpg')"
-          src="https://m.media-amazon.com/images/I/61TqLaqtOML.jpg"
-          alt="Avis client Patricia V.">
         <div class="rr__body">
           <div class="rr__name-row">
             <span class="rr__name">Patricia V.</span>
@@ -517,13 +489,13 @@
           </div>
           <span class="rr__meta">Grenoble, France 🇫🇷</span>
           <span class="rr__stars">★★★★★</span>
-          <span class="rr__review-title">Le L disponible et coupe vraiment bien</span>
-          <p class="rr__text">Enfin une marque qui fait du L qui taille comme il faut. 168cm/72kg, la coupe est généreuse et flatteuse sans être informe. Les franges au bas sont un vrai plus esthétique.</p>
-          <span class="rr__date">20 Jan 2026</span>
+          <span class="rr__review-title">Pied large — enfin une sandale qui s'adapte</span>
+          <p class="rr__text">J'ai un pied large et les sandales standard me font toujours mal. Le scratch réglable de celles-ci change vraiment tout — je trouve mon ajustement exact. Légères, jolies et sans douleur. Enfin.</p>
+          <span class="rr__date">2 Avril 2026</span>
         </div>
       </div>
 
-      <!-- REVIEW 12 — Sandrine — hidden (no photo) -->
+      <!-- REVIEW 12 — Sandrine — hidden -->
       <div class="rr__card rr__hidden">
         <div class="rr__body">
           <div class="rr__name-row">
@@ -532,18 +504,14 @@
           </div>
           <span class="rr__meta">Montpellier, France 🇫🇷</span>
           <span class="rr__stars">★★★★★</span>
-          <span class="rr__review-title">Idéale pour les journées en ville</span>
-          <p class="rr__text">Je la porte en balade, au marché, partout. Elle fait décontractée mais soignée. Lavée en machine sans problème, le denim garde sa tenue, aucune déformation après plusieurs lavages.</p>
-          <span class="rr__date">15 Jan 2026</span>
+          <span class="rr__review-title">Idéales pour les journées en terrasse</span>
+          <p class="rr__text">Je les porte au marché, en balade, au café — partout. Légères et stables, la semelle caoutchouc ne glisse pas. Lavage à la main rapide et elles ressortent comme neuves. Un vrai coup de cœur.</p>
+          <span class="rr__date">1 Avril 2026</span>
         </div>
       </div>
 
-      <!-- REVIEW 13 — Anne-Sophie — hidden + LAZY -->
+      <!-- REVIEW 13 — Anne-Sophie — hidden -->
       <div class="rr__card rr__hidden">
-        <img class="rr__photo" loading="eager" width="400" height="400"
-          onclick="rrLightboxOpen('https://m.media-amazon.com/images/I/81S-wwQDqzL.jpg')"
-          src="https://m.media-amazon.com/images/I/81S-wwQDqzL.jpg"
-          alt="Avis client Nathalie R.">
         <div class="rr__body">
           <div class="rr__name-row">
             <span class="rr__name">Anne-Sophie N.</span>
@@ -552,17 +520,13 @@
           <span class="rr__meta">Dijon, France 🇫🇷</span>
           <span class="rr__stars">★★★★★</span>
           <span class="rr__review-title">Deuxième commande, toujours au top</span>
-          <p class="rr__text">J'avais commandé le bleu clair en novembre. Je reviens pour le vert kaki. Même qualité irréprochable, même coupe flatteuse. La veste Levi's trucker, c'est une valeur sûre.</p>
-          <span class="rr__date">12 Fév 2026</span>
+          <p class="rr__text">J'avais commandé le noir en mars. Je reviens pour le coloris camel. Même qualité, même confort irréprochable. La semelle intérieure microfibre reste douce même après plusieurs semaines d'utilisation.</p>
+          <span class="rr__date">30 Mars 2026</span>
         </div>
       </div>
 
-      <!-- REVIEW 14 — Élise — hidden + LAZY -->
+      <!-- REVIEW 14 — Élise — hidden -->
       <div class="rr__card rr__hidden">
-         <img class="rr__photo" loading="eager" width="400" height="400"
-          onclick="rrLightboxOpen('https://m.media-amazon.com/images/I/71iCUglCjwL.jpg')"
-          src="https://m.media-amazon.com/images/I/71iCUglCjwL.jpg"
-          alt="Avis client Nathalie R.">
         <div class="rr__body">
           <div class="rr__name-row">
             <span class="rr__name">Élise M.</span>
@@ -571,12 +535,12 @@
           <span class="rr__meta">Annecy, France 🇫🇷</span>
           <span class="rr__stars">★★★★★</span>
           <span class="rr__review-title">Rapport qualité-prix imbattable</span>
-          <p class="rr__text">Pour ce prix, je ne m'attendais pas à une telle qualité. Le denim est épais, les surpiqûres sont solides, les boutons pression bien fixés. Je vais en offrir une à ma mère pour son anniversaire.</p>
-          <span class="rr__date">8 Fév 2026</span>
+          <p class="rr__text">Pour ce prix, la qualité des matières surprend vraiment. La microfibre intérieure est douce, la semelle caoutchouc robuste. Aucun signe d'usure après deux semaines intensives. Je vais en offrir une paire à ma sœur.</p>
+          <span class="rr__date">8 Avril 2026</span>
         </div>
       </div>
 
-      <!-- REVIEW 15 — Delphine — hidden (no photo) -->
+      <!-- REVIEW 15 — Delphine — hidden -->
       <div class="rr__card rr__hidden">
         <div class="rr__body">
           <div class="rr__name-row">
@@ -585,13 +549,13 @@
           </div>
           <span class="rr__meta">Clermont-Ferrand, France 🇫🇷</span>
           <span class="rr__stars">★★★★☆</span>
-          <span class="rr__review-title">Très bien, légèrement plus longue qu'attendu</span>
-          <p class="rr__text">Je suis petite (160cm) et elle tombe un peu sous les hanches. Ça donne un effet chemise-veste que j'ai finalement adopté avec un legging. Le denim est vraiment souple et agréable.</p>
-          <span class="rr__date">3 Fév 2026</span>
+          <span class="rr__review-title">Très bien, légèrement plus larges qu'attendu</span>
+          <p class="rr__text">J'ai un pied fin, elles sont un tout petit peu larges mais le scratch rattrapait tout. Le confort est vraiment là — aucune douleur après une longue journée. Je recommande de prendre sa pointure exacte.</p>
+          <span class="rr__date">10 Avril 2026</span>
         </div>
       </div>
 
-      <!-- REVIEW 16 — Julie — hidden + LAZY -->
+      <!-- REVIEW 16 — Julie — hidden -->
       <div class="rr__card rr__hidden">
         <div class="rr__body">
           <div class="rr__name-row">
@@ -600,13 +564,13 @@
           </div>
           <span class="rr__meta">Rouen, France 🇫🇷</span>
           <span class="rr__stars">★★★★★</span>
-          <span class="rr__review-title">Stylée, pratique, poches fonctionnelles</span>
-          <p class="rr__text">Les poches poitrine et latérales sont vraiment bien conçues. Le denim souple ne rigidifie pas les mouvements. Un indispensable de ma garde-robe printemps-automne, je la porte depuis des semaines.</p>
-          <span class="rr__date">26 Jan 2026</span>
+          <span class="rr__review-title">Légères, jolies, pratiques</span>
+          <p class="rr__text">La semelle absorbe vraiment les chocs, c'est bluffant pour une sandale aussi légère. Le bout ouvert est parfait pour la chaleur. Je les emporte en voyage cet été, elles prennent très peu de place dans la valise.</p>
+          <span class="rr__date">13 Avril 2026</span>
         </div>
       </div>
 
-      <!-- REVIEW 17 — Camille — hidden (no photo) -->
+      <!-- REVIEW 17 — Camille — hidden -->
       <div class="rr__card rr__hidden">
         <div class="rr__body">
           <div class="rr__name-row">
@@ -615,13 +579,13 @@
           </div>
           <span class="rr__meta">Tours, France 🇫🇷</span>
           <span class="rr__stars">★★★★★</span>
-          <span class="rr__review-title">Commandée deux fois en deux mois</span>
-          <p class="rr__text">J'ai pris la première pour moi en bleu, la deuxième en noir pour ma fille. On l'adore toutes les deux. La coupe oversize est vraiment réussie, pas trop large, juste ce qu'il faut.</p>
-          <span class="rr__date">22 Jan 2026</span>
+          <span class="rr__review-title">Commandée deux fois en un mois</span>
+          <p class="rr__text">J'ai pris le noir pour moi, le beige pour ma fille. On les adore toutes les deux. Le scratch se règle en un geste, le maintien est parfait. Aucune ampoule, aucun inconfort. Vraiment bluffant.</p>
+          <span class="rr__date">15 Avril 2026</span>
         </div>
       </div>
 
-      <!-- REVIEW 18 — Virginie — hidden + LAZY -->
+      <!-- REVIEW 18 — Virginie — hidden -->
       <div class="rr__card rr__hidden">
         <div class="rr__body">
           <div class="rr__name-row">
@@ -631,10 +595,11 @@
           <span class="rr__meta">Metz, France 🇫🇷</span>
           <span class="rr__stars">★★★★★</span>
           <span class="rr__review-title">Un vrai coup de cœur</span>
-          <p class="rr__text">Je cherchais LA veste en jean depuis longtemps. Celle-ci coche toutes les cases : coupe oversize flatteuse, denim de qualité, franges effilées discrètes et l'étiquette Levi's iconique. Parfaite.</p>
-          <span class="rr__date">17 Jan 2026</span>
+          <p class="rr__text">Je cherchais LA sandale confort depuis longtemps. Celle-ci coche toutes les cases : légèreté, amorti, maintien par scratch, bout ouvert. Après une journée complète debout, mes pieds étaient encore frais. Parfaites.</p>
+          <span class="rr__date">3 Avril 2026</span>
         </div>
       </div>
+
     </div>
 
     <div class="rr__load-more">
@@ -642,11 +607,9 @@
     </div>
 
   </div>
-
-
 </section>
 
-<!-- LIGHTBOX — en dehors de la section pour éviter les conflits z-index Shopify -->
+<!-- LIGHTBOX -->
 <div class="rr__lightbox" id="rr-lightbox" onclick="rrLightboxClickOutside(event)">
   <button type="button" class="rr__lightbox-close" onclick="event.preventDefault(); event.stopPropagation(); rrLightboxClose();" aria-label="Fermer">✕</button>
   <div class="rr__lightbox-inner">
@@ -688,7 +651,6 @@
     img.src = '';
     img.src = src;
     lb.classList.add('rr--open');
-    // Sauvegarde la position de scroll avant de fixer le body
     document.body.style.top = '-' + window.scrollY + 'px';
     document.body.style.overflow = 'hidden';
     document.body.style.position = 'fixed';
