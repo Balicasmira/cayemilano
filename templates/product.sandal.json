@@ -1,0 +1,772 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "liquid_9tPDfi": {
+          "type": "liquid",
+          "settings": {
+            "liquid": "<style>\n  .kiel-stars-bar {\n    display: inline-flex;\n    align-items: center;\n    gap: 6px;\n    cursor: pointer;\n    text-decoration: none;\n  }\n\n  .kiel-stars-bar__stars {\n    display: flex;\n    align-items: center;\n    gap: 1px;\n  }\n\n  .kiel-stars-bar__stars svg {\n    display: block;\n  }\n\n  .kiel-stars-bar__label {\n    font-family: 'Jost', 'DM Sans', Arial, sans-serif;\n    font-size: 13px;\n    font-weight: 500;\n    color: green;\n    border-bottom: 1px solid #C4B49A;\n    padding-bottom: 1px;\n    transition: color 0.2s, border-color 0.2s;\n  }\n\n  .kiel-stars-bar:hover .kiel-stars-bar__label {\n    color: green;\n    border-color: green;\n  }\n</style>\n\n<div class=\"kiel-stars-bar\" onclick=\"kielScrollToReviews()\">\n\n  <div class=\"kiel-stars-bar__stars\">\n    <svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"green\"><path d=\"M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z\"/></svg>\n    <svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"green\"><path d=\"M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z\"/></svg>\n    <svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"green\"><path d=\"M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z\"/></svg>\n    <svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"green\"><path d=\"M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z\"/></svg>\n    <svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\">\n      <defs>\n        <linearGradient id=\"kiel-half-grad\">\n          <stop offset=\"50%\" stop-color=\"green\"/>\n          <stop offset=\"50%\" stop-color=\"grey\"/>\n        </linearGradient>\n      </defs>\n      <path d=\"M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z\" fill=\"url(#kiel-half-grad)\"/>\n    </svg>\n  </div>\n\n  <span class=\"kiel-stars-bar__label\">4,8/5 · Avis clients vérifiés</span>\n\n</div>\n\n<script>\n  function kielScrollToReviews() {\n    var kielTarget =\n      document.getElementById('rr-avis') ||\n      document.querySelector('[id*=\"reviews\"]') ||\n      document.querySelector('[id*=\"avis\"]') ||\n      document.querySelector('[id*=\"testimonials\"]');\n    if (kielTarget) {\n      kielTarget.scrollIntoView({ behavior: 'smooth', block: 'start' });\n    }\n  }\n</script>"
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {
+            "heading_tag": "h4"
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+            "show_taxes_notice": false
+          }
+        },
+        "liquid_HfVy8n": {
+          "type": "liquid",
+          "settings": {
+            "liquid": "<span class=\"stock-status\" style=\"font-size: 16px; margin-top: px;\">\n  <span class=\"outer-circle\">\n    <span class=\"inner-circle\"></span>\n  </span>\n  Presque épuisé !\n</span>\n\n<style>\n  .popular-badge {\n    display: inline-flex;\n    align-items: center;\n    gap: 10px;\n    background: #F3F3F3;\n    border-radius: 8px;\n    padding: 14px 18px;\n    margin: 12px 0;\n    width: fit-content;\n  }\n\n  .popular-badge__icon {\n    font-size: 18px;\n    flex-shrink: 0;\n    color: #1A1610;\n  }\n\n  .popular-badge__text {\n    font-size: 15px;\n    color: #1A1610;\n    font-family: inherit;\n    font-weight: 400;\n    letter-spacing: 0;\n    margin: 0;\n  }\n</style>\n<style>\n.popular-banner {\n  background-color: #e9e9e9;\n  padding: 20px 24px;\n  display: flex;\n  align-items: center;\n  gap: 14px;\n  font-family: Arial, sans-serif;\n  font-size: 22px;\n  color: #111;\n}\n\n.popular-banner svg {\n  width: 28px;\n  height: 28px;\n  stroke: black;\n}\n</style>\n\n<div class=\"popular-badge\">\n  <span class=\"popular-badge__icon\">🔥</span>\n\n  <p class=\"popular-badge__text\"><strong>C'est l'un de nos articles les plus populaires ce mois-ci.</b></strong>\n</div>"
+          }
+        },
+        "liquid_8fDnrH": {
+          "type": "liquid",
+          "name": "Custom Liquid - nos article",
+          "disabled": true,
+          "settings": {
+            "liquid": "<style>\n  .popular-badge {\n    display: inline-flex;\n    align-items: center;\n    gap: 10px;\n    background: #F3F3F3;\n    border-radius: 8px;\n    padding: 14px 18px;\n    margin: 12px 0;\n    width: fit-content;\n  }\n\n  .popular-badge__icon {\n    font-size: 18px;\n    flex-shrink: 0;\n    color: #1A1610;\n  }\n\n  .popular-badge__text {\n    font-size: 15px;\n    color: #1A1610;\n    font-family: inherit;\n    font-weight: 400;\n    letter-spacing: 0;\n    margin: 0;\n  }\n</style>\n<style>\n.popular-banner {\n  background-color: #e9e9e9;\n  padding: 20px 24px;\n  display: flex;\n  align-items: center;\n  gap: 14px;\n  font-family: Arial, sans-serif;\n  font-size: 22px;\n  color: #111;\n}\n\n.popular-banner svg {\n  width: 28px;\n  height: 28px;\n  stroke: black;\n}\n</style>\n\n<div class=\"popular-badge\">\n  <span class=\"popular-badge__icon\">🔥</span>\n\n  <p class=\"popular-badge__text\"><b>C'est l'un de nos articles les plus populaires ce mois-ci.</b></p>\n</div>"
+          }
+        },
+        "liquid_HdzimW": {
+          "type": "liquid",
+          "disabled": true,
+          "settings": {
+            "liquid": "<div style=\"border: 2px solid #ddd; border-radius: 10px; padding: 15px; max-width: 300px; background: #f4f7fa; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); font-family: Arial, sans-serif;\">\n    <div style=\"display: flex; align-items: center; margin-bottom: 10px;\">\n        <img src=\"https://static.vecteezy.com/system/resources/previews/011/629/361/non_2x/international-shipping-3d-rendering-illustration-png.png\" alt=\"Shipping Icon\" style=\"width: 20px; height: 20px; margin-right: 10px; filter: hue-rotate(45deg);\">\n        <p style=\"margin: 0; font-size: 14px; font-weight: bold; color: black;\"><u>Livraison gratuite via LaPoste</u></p>\n    </div>\n    <div style=\"display: flex; align-items: center; margin-bottom: 10px;\">\n        <img src=\"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREvcHN0Qq7AVQMbkxiq5tFtEGcWhQ8AACteg&s\" alt=\"Return Guarantee Icon\" style=\"width: 20px; height: 20px; margin-right: 10px; filter: hue-rotate(90deg);\">\n        <p style=\"margin: 0; font-size: 14px; font-weight: bold; color: black;\"><u>Garantie de retour sous 14j</u></p>\n    </div>\n    <div style=\"display: flex; align-items: center;\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0668/5356/8556/files/Flag_of_France.svg?v=1740577030\" alt=\"French Flag\" style=\"width: 20px; height: 15px; margin-right: 10px;\">\n        <p style=\"margin: 0; font-size: 14px; font-weight: bold; color: black;\"><u>Conception 100% française depuis 2009</u></p>\n    </div>\n</div>"
+          }
+        },
+        "liquid_aAiG8g": {
+          "type": "liquid",
+          "name": "Custom Liquid - 4 CVR",
+          "disabled": true,
+          "settings": {
+            "liquid": "<div style=\"display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px; padding: 20px; max-width: 400px;\">\n  <!-- Row 1: Money Back Guarantee and Easy Return -->\n  <div style=\"display: flex; align-items: center; font-family: Arial, sans-serif; background-color: #f4f4f4; padding: 10px 20px; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); width: 47%;\">\n    <img alt=\"Money Back Guarantee\" style=\"width: 35px; height: 35px; margin-right: 10px;\" src=\"https://static.vecteezy.com/system/resources/previews/011/629/361/non_2x/international-shipping-3d-rendering-illustration-png.png\">\n    <span style=\"font-size: 14px; font-weight: bold; color: #333;\">Livraison Gratuite</span>\n  </div>\n\n  <div style=\"display: flex; align-items: center; font-family: Arial, sans-serif; background-color: #f4f4f4; padding: 10px 20px; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); width: 45%;\">\n    <img alt=\"Easy Return\" style=\"width: 35px; height: 35px; margin-right: 10px;\" src=\"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREvcHN0Qq7AVQMbkxiq5tFtEGcWhQ8AACteg&amp;s\">\n    <span style=\"font-size: 14px; font-weight: bold; color: #333;\">Garantie de retour sous 30j</span>\n  </div>\n\n  <!-- Row 2: Secure Checkout and 1 Year Warranty -->\n  <div style=\"display: flex; align-items: center; font-family: Arial, sans-serif; background-color: #f4f4f4; padding: 10px 20px; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); width: 45%;\">\n    <img alt=\"Secure Checkout\" style=\"width: 35px; height: 35px; margin-right: 10px;\" src=\"https://cdn-icons-png.freepik.com/512/8946/8946418.png\">\n    <span style=\"font-size: 14px; font-weight: bold; color: #333;\">Paiement sécurisé via SSL</span>\n  </div>\n\n  <div style=\"display: flex; align-items: center; font-family: Arial, sans-serif; background-color: #f4f4f4; padding: 10px 20px; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); width: 45%;\">\n    <img alt=\"1 Year Warranty\" style=\"width: 50px; height: 35px; margin-right: 10px;\" src=\"https://cdn.shopify.com/s/files/1/0668/5356/8556/files/Flag_of_France.svg?v=1740577030\">\n    <span style=\"font-size: 14px; font-weight: bold; color: #333;\">Made IN France</span>\n  </div>\n</div>\n          </div>"
+          }
+        },
+        "liquid_CmRcXq": {
+          "type": "liquid",
+          "name": "Custom Liquid - code promo",
+          "disabled": true,
+          "settings": {
+            "liquid": "<div class=\"product-info__liquid\">\n            <style>\n.custom-shipping-container {\n  display: flex;\n  padding: 6px 16px;\n  justify-content: space-between;\n  align-items: center;\n  align-self: stretch;\n  background-color: #f6f6f6;\n  border-radius: 20px;\n}\n\n.custom-shipping-item {\n  display: flex;\n  align-items: center;\n  gap: 6px;\n}\n\n.text-block-shipping {\n  font-size: 12px;\n  color: #000;\n}\n\n.shipping-date {\n  font-weight: bold;\n}\n\n.free-shipping {\n  font-weight: bold;\n}\n\n.green-circle {\n  animation: fade 1s ease-in-out infinite;\n}\n\n@keyframes fade {\n  0%, 100% { opacity: 1; }\n  50% { opacity: 0.5; }\n}\n</style>\n\n<script>\ndocument.addEventListener(\"DOMContentLoaded\", function() {\n  var daysAfterToday = 1; // Set this to the number of days after today that the item will ship to the customer\n  var today = new Date();\n  var shipDate = new Date(today.setDate(today.getDate() + daysAfterToday));\n  var options = { weekday: 'short', month: 'long', day: 'numeric' };\n  var formattedDate = shipDate.toLocaleDateString('fr-FR', options);\n  document.getElementById('shipping-date').textContent = formattedDate;\n});\n</script>\n\n<div class=\"custom-shipping-container\">\n  <div class=\"custom-shipping-item\">\n    <svg class=\"green-circle\" xmlns=\"http://www.w3.org/2000/svg\" width=\"12\" height=\"13\" viewBox=\"0 0 12 13\" fill=\"none\">\n      <circle cx=\"6\" cy=\"6.5\" r=\"6\" fill=\"#FF0000\"></circle>\n    </svg>\n    <div class=\"text-block-shipping\">Profitez de 20 % de réduction avec le code <span class=\"free-shipping\">MARS20 </span></div>\n  </div>\n</div>\n          </div>"
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "hide_sold_out_variants": false,
+            "stack_blocks": true,
+            "selector_mode": "block",
+            "color_mode": "variant",
+            "size_chart_page": ""
+          }
+        },
+        "liquid_ecPzHe": {
+          "type": "liquid",
+          "settings": {
+            "liquid": "<!-- ══════════════════════════════════\n     SIZE GUIDE BUTTON + POPUP — Veste Femme Oversize\n══════════════════════════════════ -->\n\n<style>\n  .sg__btn {\n    display: inline-flex;\n    align-items: center;\n    gap: 6px;\n    font-size: 16px;\n    font-weight: 600;\n    color: green;\n    background: none;\n    border: none;\n    border-bottom: 1px solid #1A1A1A;\n    padding: 0 0 2px 0;\n    cursor: pointer;\n    font-family: inherit;\n    transition: opacity 0.2s;\n  }\n\n  .sg__btn:hover { opacity: 0.6; }\n\n  .sg__overlay {\n    display: none;\n    position: fixed;\n    inset: 0;\n    background: rgba(0,0,0,0.5);\n    z-index: 99998;\n    justify-content: center;\n    align-items: center;\n    padding: 20px;\n  }\n\n  .sg__overlay.sg--open { display: flex; }\n\n  .sg__modal {\n    background: #fff;\n    border-radius: 16px;\n    padding: 32px 28px 28px;\n    width: 100%;\n    max-width: 560px;\n    max-height: 90vh;\n    overflow-y: auto;\n    position: relative;\n    box-shadow: 0 20px 60px rgba(0,0,0,0.2);\n    animation: sgSlideIn 0.25s ease;\n  }\n\n  @keyframes sgSlideIn {\n    from { opacity: 0; transform: translateY(16px); }\n    to   { opacity: 1; transform: translateY(0); }\n  }\n\n  .sg__close {\n    position: absolute;\n    top: 16px;\n    right: 16px;\n    width: 32px;\n    height: 32px;\n    border-radius: 50%;\n    border: 1px solid #E8E8E8;\n    background: #F8F8F8;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    cursor: pointer;\n    font-size: 16px;\n    color: #666;\n    line-height: 1;\n    transition: background 0.2s;\n  }\n\n  .sg__close:hover { background: #EBEBEB; }\n\n  .sg__title {\n    font-size: 17px;\n    font-weight: 700;\n    color: #1A1A1A;\n    margin-bottom: 4px;\n    padding-right: 40px;\n  }\n\n  .sg__subtitle {\n    font-size: 12px;\n    color: #888;\n    margin-bottom: 8px;\n    display: block;\n  }\n\n  /* How to measure guide */\n  .sg__how {\n    display: flex;\n    gap: 10px;\n    flex-wrap: wrap;\n    margin-bottom: 18px;\n    padding: 12px;\n    background: #fafafa;\n    border-radius: 10px;\n    font-size: 12px;\n    color: #444;\n  }\n\n  .sg__how-item {\n    display: flex;\n    align-items: center;\n    gap: 5px;\n    flex: 1;\n    min-width: 120px;\n  }\n\n  .sg__how-icon {\n    font-size: 16px;\n    flex-shrink: 0;\n  }\n\n  /* Table */\n  .sg__table {\n    width: 100%;\n    border-collapse: collapse;\n    font-size: 13px;\n  }\n\n  .sg__table th {\n    background: #1E5A3C;\n    color: #fff;\n    padding: 10px 12px;\n    font-weight: 600;\n    text-align: center;\n    font-size: 12px;\n    letter-spacing: 0.3px;\n  }\n\n  .sg__table th:first-child { border-radius: 8px 0 0 0; }\n  .sg__table th:last-child  { border-radius: 0 8px 0 0; }\n\n  .sg__table td {\n    padding: 10px 12px;\n    text-align: center;\n    color: #1A1A1A;\n    border-bottom: 1px solid #F0F0F0;\n  }\n\n  .sg__table tr:nth-child(even) td { background: #F8F8F8; }\n  .sg__table tr:hover td { background: #F0F7F4; }\n\n  .sg__table td:first-child {\n    font-weight: 700;\n    color: #1E5A3C;\n  }\n\n  /* FR size column */\n  .sg__table td:nth-child(2) {\n    color: #888;\n    font-size: 12px;\n  }\n\n  /* Tip */\n  .sg__tip {\n    margin-top: 16px;\n    padding: 12px 14px;\n    background: #F0F7F4;\n    border-radius: 10px;\n    font-size: 12px;\n    color: #1E5A3C;\n    line-height: 1.5;\n  }\n\n  .sg__tip-oversize {\n    margin-top: 10px;\n    padding: 10px 14px;\n    background: #FFF8EC;\n    border-radius: 10px;\n    font-size: 12px;\n    color: #9A6200;\n    line-height: 1.5;\n  }\n\n  @media (max-width: 480px) {\n    .sg__modal { padding: 24px 16px 20px; }\n    .sg__table th, .sg__table td { padding: 8px 6px; font-size: 11px; }\n  }\n</style>\n\n<!-- BUTTON -->\n<button id=\"size\" class=\"sg__btn\" onclick=\"sgOpen()\">\n  <svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n    <path d=\"M21 10H3M16 2v8M8 2v8M3 6h18v14a2 2 0 01-2 2H5a2 2 0 01-2-2V6z\"/>\n  </svg>\n  Guide des tailles\n</button>\n\n<!-- POPUP OVERLAY -->\n<div class=\"sg__overlay\" id=\"sg-overlay\" onclick=\"sgClickOutside(event)\">\n  <div class=\"sg__modal\">\n\n    <button class=\"sg__close\" onclick=\"sgClose()\">✕</button>\n\n    <div class=\"sg__title\">📏 Guide des tailles — Femme</div>\n    <span class=\"sg__subtitle\">Veste chemise oversize · Mesures en centimètres (cm)</span>\n\n    <!-- How to measure -->\n    <div class=\"sg__how\">\n      <div class=\"sg__how-item\">\n        <span class=\"sg__how-icon\">👚</span>\n        <span><strong>Poitrine :</strong> tour complet sous les aisselles</span>\n      </div>\n      <div class=\"sg__how-item\">\n        <span class=\"sg__how-icon\">📐</span>\n        <span><strong>Épaule :</strong> d'une épaule à l'autre dans le dos</span>\n      </div>\n      <div class=\"sg__how-item\">\n        <span class=\"sg__how-icon\">📏</span>\n        <span><strong>Longueur :</strong> du col jusqu'au bas du vêtement</span>\n      </div>\n    </div>\n\n    <table class=\"sg__table\">\n      <thead>\n        <tr>\n          <th>Taille</th>\n          <th>FR</th>\n          <th>Poitrine</th>\n          <th>Épaule</th>\n          <th>Manche</th>\n          <th>Longueur</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <td>XS</td>\n          <td>34 – 36</td>\n          <td>82 – 86</td>\n          <td>37</td>\n          <td>58</td>\n          <td>62</td>\n        </tr>\n        <tr>\n          <td>S</td>\n          <td>38 – 40</td>\n          <td>86 – 90</td>\n          <td>38.5</td>\n          <td>59.5</td>\n          <td>64</td>\n        </tr>\n        <tr>\n          <td>M</td>\n          <td>40 – 42</td>\n          <td>90 – 94</td>\n          <td>40</td>\n          <td>61</td>\n          <td>66</td>\n        </tr>\n        <tr>\n          <td>L</td>\n          <td>42 – 44</td>\n          <td>94 – 98</td>\n          <td>41.5</td>\n          <td>62.5</td>\n          <td>68</td>\n        </tr>\n        <tr>\n          <td>XL</td>\n          <td>44 – 46</td>\n          <td>98 – 104</td>\n          <td>43</td>\n          <td>64</td>\n          <td>70</td>\n        </tr>\n        <tr>\n          <td>2XL</td>\n          <td>46 – 48</td>\n          <td>104 – 110</td>\n          <td>45</td>\n          <td>65.5</td>\n          <td>72</td>\n        </tr>\n      </tbody>\n    </table>\n\n    <div class=\"sg__tip\">\n      💡 <strong>Votre taille habituelle :</strong> La coupe est déjà oversize — prenez votre taille normale pour un effet volumineux tendance.\n    </div>\n    <div class=\"sg__tip-oversize\">\n      🔝 <strong>Envie d'un effet plus XXL ?</strong> Prenez une taille au-dessus pour un look streetwear plus affirmé.\n    </div>\n\n  </div>\n</div>\n\n<script>\n  function sgOpen() {\n    document.getElementById('sg-overlay').classList.add('sg--open');\n    document.body.style.overflow = 'hidden';\n  }\n\n  function sgClose() {\n    document.getElementById('sg-overlay').classList.remove('sg--open');\n    document.body.style.overflow = '';\n  }\n\n  function sgClickOutside(e) {\n    if (e.target === document.getElementById('sg-overlay')) sgClose();\n  }\n\n  document.addEventListener('keydown', function(e) {\n    if (e.key === 'Escape') sgClose();\n  });\n</script>"
+          }
+        },
+        "liquid_WkQwWm": {
+          "type": "liquid",
+          "name": "Custom Liquid - zalando ",
+          "disabled": true,
+          "settings": {
+            "liquid": "<div class=\"policy-line\">\n<div class=\"delivery-icon\">\n        <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#111\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n          <rect x=\"1\" y=\"3\" width=\"15\" height=\"13\"></rect>\n          <polygon points=\"16 8 20 8 23 11 23 16 16 16 16 8\"></polygon>\n          <circle cx=\"5.5\" cy=\"18.5\" r=\"2.5\"></circle>\n          <circle cx=\"18.5\" cy=\"18.5\" r=\"2.5\"></circle>\n        </svg>\n      </div>\n    <span class=\"policy-text\"><b>Livraison avec numéro de suivi - Gratuite</span>\n  </div>\n\n  <div class=\"policy-line\">\n    <span class=\"policy-icon\">↩</span>\n    <span class=\"policy-text\"><b>Retour gratuit sous 30 jours</span>\n  </div>\n</div>\n\n<style>\n.delivery-container {\n  width: 100%;\n  font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif;\n  margin-top: 16px;\n  box-sizing: border-box;\n}\n\n/* Style for Line 1 (Main Shipping Box) */\n.delivery-box {\n  width: 100%;\n  background: #f3f3f3;\n  border: 1px solid #dcdcdc;\n  padding: 20px 22px;\n  box-sizing: border-box;\n  border-bottom: none;\n  border-radius: 10px 10px 0 0; /* Optional: Rounded top corners */\n}\n\n.delivery-inner {\n  display: flex;\n  align-items: flex-start;\n  gap: 18px;\n}\n\n.delivery-icon svg {\n  width: 26px;\n  height: 26px;\n}\n\n.delivery-text {\n  flex: 1;\n}\n\n.delivery-top {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  font-size: 16px;\n  font-weight: normal; /* Updated to normal */\n  color: #000; /* Updated to solid black */\n}\n\n.delivery-bottom {\n  margin-top: 4px;\n  font-size: 15px;\n  color: #000; /* Updated to solid black */\n  font-weight: normal; /* Updated to normal */\n}\n\n/* Style for Lines 2 & 3 (Policies) */\n.policy-line {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n  background: #f3f3f3;\n  border: 1px solid #dcdcdc;\n  border-top: none;\n  padding: 15px 22px;\n  font-size: 15px;\n  color: #000; /* Updated to solid black */\n  font-weight: normal; /* Updated to normal */\n}\n\n/* Apply rounded corners to the bottom policy line */\n.policy-line:last-child {\n  border-radius: 0 0 10px 10px;\n}\n\n.policy-icon {\n  font-size: 18px;\n}\n\n/* Mobile Adjustments */\n@media (max-width: 768px) {\n  .delivery-box, .policy-line { padding: 16px; }\n  .delivery-icon svg { width: 22px; height: 22px; }\n  .delivery-top { font-size: 15px; }\n  .delivery-bottom { font-size: 14px; }\n  .policy-line { font-size: 14px; }\n}\n</style>"
+          }
+        },
+        "liquid_3aXQaL": {
+          "type": "liquid",
+          "name": "Custom Liquid - zalando ",
+          "settings": {
+            "liquid": "<!-- ══ DELIVERY INFO — Zalando Style ══ -->\n<style>\n  .zdlv {\n    font-family: 'Jost', 'DM Sans', Arial, sans-serif;\n    margin: 14px 0;\n border: 1px solid orange; /* light gray border */\n    border-radius: 8px;         /* optional: rounded corners */\n    padding: 2px;              /* optional: inner spacing */\n    background-color: #fff; \n  }\n\n  .zdlv__row {\n    display: flex;\n    align-items: flex-start;\n    gap: 12px;\n    padding: 10px 0;\n    border-bottom: 1px solid #F0EDE8;\n  }\n\n  .zdlv__row:last-child {\n    border-bottom: none;\n  }\n\n  .zdlv__icon {\n    color: #1A1610;\n    flex-shrink: 0;\n    margin-top: 2px;\n  }\n\n  .zdlv__icon svg {\n    width: 20px;\n    height: 20px;\n    display: block;\n  }\n\n  .zdlv__info {\n    flex: 1;\n  }\n\n  .zdlv__title {\n    font-size: 13px;\n    font-weight: 700;\n    color: #1A1610;\n    display: block;\n    margin-bottom: 2px;\n  }\n\n  .zdlv__meta {\n    display: flex;\n    align-items: center;\n    gap: 10px;\n  }\n\n  .zdlv__date {\n    font-size: 12.5px;\n    font-weight: 500;\n    color: #4B4540;\n  }\n\n  .zdlv__price {\n    font-size: 12.5px;\n    font-weight: 600;\n    color: #16A34A;\n  }\n</style>\n\n<div class=\"zdlv\">\n\n  <!-- Livraison -->\n  <div class=\"zdlv__row\">\n    <div class=\"zdlv__icon\">\n      <svg viewBox=\"0 0 24 24\" fill=\"currentColor\">\n        <path d=\"M2.231 8.25h2.282a.75.75 0 0 0 0-1.5H2.231a.75.75 0 0 0 0 1.5m2.266 3a.75.75 0 0 0 0-1.5H.753a.75.75 0 0 0 0 1.5zm.017 3.001a.75.75 0 0 0 0-1.5H2.21a.75.75 0 0 0 0 1.5z\"/>\n        <path d=\"m23.81 11.501-3.368-3.738a.75.75 0 0 0-.557-.248h-3.378V4.497a.75.75 0 0 0-.75-.75H3.711a.75.75 0 0 0 0 1.5l11.298-.004.003 10.513-4.953.004c-.519-.897-1.478-1.508-2.588-1.508s-2.07.61-2.588 1.508H3.712a.75.75 0 1 0 0 1.5h.76a2.999 2.999 0 0 0 5.998 0h5.276l.76.003a2.999 2.999 0 0 0 5.997 0h.749a.75.75 0 0 0 .75-.75v-4.51a.75.75 0 0 0-.193-.502m-16.338 7.25a1.5 1.5 0 1 1 0-2.999 1.5 1.5 0 0 1 0 2.999m12.032 0a1.5 1.5 0 1 1 0-2.999 1.5 1.5 0 0 1 0 2.999m2.998-2.988h-.408a2.99 2.99 0 0 0-2.59-1.511 2.99 2.99 0 0 0-2.59 1.511h-.402l-.003-6.748h3.042l2.95 3.278z\"/>\n      </svg>\n    </div>\n    <div class=\"zdlv__info\">\n      <span class=\"zdlv__title\">Livraison avec numéro de suivie</span>\n      <div class=\"zdlv__meta\">\n        <span class=\"zdlv__date\" id=\"zdlv-date\">5-7 jours ouvrables</span>\n        <span class=\"zdlv__price\">Gratuite</span>\n      </div> \n    </div>\n  </div>\n\n  <!-- Retour -->\n  <div class=\"zdlv__row\">\n    <div class=\"zdlv__icon\">\n      <svg viewBox=\"0 0 24 24\" fill=\"currentColor\">\n        <path d=\"M17.091 5.511A8.5 8.5 0 1 0 20.5 12.5h-1.502A7 7 0 1 1 16.03 6.56l-2.281 2.281A.75.75 0 0 0 14.28 10h5.97a.75.75 0 0 0 .75-.75V3.28a.75.75 0 0 0-1.28-.53z\"/>\n      </svg>\n    </div>\n    <div class=\"zdlv__info\">\n      <span class=\"zdlv__title\">Retour gratuit sous 30 jours</span>\n      <div class=\"zdlv__meta\">\n        <span class=\"zdlv__date\">Sans question posée</span>\n        <span class=\"zdlv__price\">Gratuit</span>\n      </div>\n    </div>\n  </div>\n\n</div>\n\n\n<!-- ════════════════════════════════════════ -->"
+          }
+        },
+        "liquid_HT7rAR": {
+          "type": "liquid",
+          "name": "Custom Liquid <br>",
+          "disabled": true,
+          "settings": {
+            "liquid": "<br>"
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_payment_button": true,
+            "show_gift_card_recipient": false,
+            "atc_button_background": "#1e5a3c",
+            "atc_button_text_color": "",
+            "payment_button_background": "",
+            "payment_button_text_color": ""
+          }
+        },
+        "liquid_UHtPCV": {
+          "type": "liquid",
+          "name": "Custom Liquid - shipping estiamtor",
+          "disabled": true,
+          "settings": {
+            "liquid": "<div class=\"product-infos__liquid\">\n  <style>\n    .product-infos__liquid {\n      text-align: center;\n    }\n    .kiel-ship-wrap {\n      display: inline-flex;\n      align-items: center;\n      gap: 8px;\n      padding: 6px 10px;\n      font-family: 'Jost', 'DM Sans', Arial, sans-serif;\n      background-color: #ffffff;\n      border-bottom: 1px solid #1A1610; /* <-- Underline added here */\n    }\n    .kiel-ship-icon {\n      color: #1A1610;\n      display: flex;\n      align-items: center;\n      flex-shrink: 0;\n    }\n    .kiel-ship-icon svg {\n      width: 20px;\n      height: 20px;\n    }\n    .kiel-ship-info {\n      display: inline-flex;\n      align-items: center;\n      gap: 6px;\n      font-size: 13px;\n      font-weight: 500;\n      color: #1A1610;\n    }\n    .kiel-ship-free {\n      font-weight: 700;\n      color: #16A34A;\n    }\n  </style>\n\n  <div class=\"kiel-ship-wrap\">\n    <div class=\"kiel-ship-icon\">\n      <svg viewBox=\"0 0 24 24\" fill=\"currentColor\">\n        <path d=\"M2.231 8.25h2.282a.75.75 0 0 0 0-1.5H2.231a.75.75 0 0 0 0 1.5m2.266 3a.75.75 0 0 0 0-1.5H.753a.75.75 0 0 0 0 1.5zm.017 3.001a.75.75 0 0 0 0-1.5H2.21a.75.75 0 0 0 0 1.5z\"></path>\n        <path d=\"m23.81 11.501-3.368-3.738a.75.75 0 0 0-.557-.248h-3.378V4.497a.75.75 0 0 0-.75-.75H3.711a.75.75 0 0 0 0 1.5l11.298-.004.003 10.513-4.953.004c-.519-.897-1.478-1.508-2.588-1.508s-2.07.61-2.588 1.508H3.712a.75.75 0 1 0 0 1.5h.76a2.999 2.999 0 0 0 5.998 0h5.276l.76.003a2.999 2.999 0 0 0 5.997 0h.749a.75.75 0 0 0 .75-.75v-4.51a.75.75 0 0 0-.193-.502\"></path>\n      </svg>\n    </div>\n\n    <div class=\"kiel-ship-info\">\n      <strong>Livraison:</strong>\n      <span id=\"kiel-ship-dates\">Sam 7 Mars – Mar 10 Mars</span>\n      <span class=\"kiel-ship-free\">Gratuite</span>\n    </div>\n  </div>\n\n  <script>\n    (function(){\n      var kielTZ = 'Europe/Paris';\n      var kielDays = ['Dim','Lun','Mar','Mer','Jeu','Ven','Sam'];\n      var kielMonths = ['Jan','Fév','Mars','Avr','Mai','Jun','Jul','Aoû','Sep','Oct','Nov','Déc'];\n\n      function kielNowParis(){\n        return new Date(new Date().toLocaleString('en-US', { timeZone: kielTZ }));\n      }\n\n      function kielAddBizDays(d, n){\n        var r = new Date(d), added = 0;\n        while(added < n){\n          r.setDate(r.getDate() + 1);\n          if(r.getDay() !== 0 && r.getDay() !== 5) added++;\n        }\n        return r;\n      }\n\n      function kielFmt(d){\n        return kielDays[d.getDay()] + ' ' + d.getDate() + ' ' + kielMonths[d.getMonth()];\n      }\n\n      var kielNow = kielNowParis();\n      var kielBase = new Date(kielNow);\n      kielBase.setDate(kielBase.getDate() + 1);\n\n      while(kielBase.getDay() === 0 || kielBase.getDay() === 5){\n        kielBase.setDate(kielBase.getDate() + 1);\n      }\n\n      document.getElementById('kiel-ship-dates').textContent =\n        kielFmt(kielAddBizDays(kielBase, 3)) + ' – ' + kielFmt(kielAddBizDays(kielBase, 5));\n    })();\n  </script>\n</div>"
+          }
+        },
+        "liquid_TxRYHW": {
+          "type": "liquid",
+          "name": "Custom Liquid - claude shipping",
+          "disabled": true,
+          "settings": {
+            "liquid": "<br>\n<style>\n  .dt__wrap,\n  .dt__wrap * {\n    box-sizing: border-box;\n    margin: 0;\n    padding: 0;\n  }\n\n  .dt__wrap {\n    width: 100%;\n    max-width: 420px;\n    padding: 20px 24px;\n    background: #fff;\n    border: 1px solid #EBEBEB;\n    border-radius: 14px;\n    box-shadow: 0 2px 12px rgba(0,0,0,0.06);\n  }\n\n  .dt__label {\n    font-size: 12px;\n    font-weight: 700;\n    letter-spacing: 1.5px;\n    text-transform: uppercase;\n    color: #1A1A1A;\n    margin-bottom: 18px;\n    display: block;\n    text-align: center;\n  }\n\n  .dt__track {\n    display: flex;\n    align-items: flex-start;\n    position: relative;\n  }\n\n  .dt__track::before {\n    content: '';\n    position: absolute;\n    top: 27px;\n    left: calc(16.66% + 4px);\n    right: calc(16.66% + 4px);\n    height: 1px;\n    background: #E8E8E8;\n    z-index: 0;\n  }\n\n  .dt__step {\n    flex: 1;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    gap: 9px;\n    position: relative;\n    z-index: 1;\n  }\n\n  .dt__icon-wrap {\n    width: 54px;\n    height: 54px;\n    border-radius: 50%;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    border: 1.5px solid #E0E0E0;\n    background: #fff;\n    box-shadow: 0 2px 6px rgba(0,0,0,0.05);\n    flex-shrink: 0;\n  }\n\n  .dt__icon-wrap svg {\n    width: 20px;\n    height: 20px;\n  }\n\n  /* Commande — grey */\n  .dt__step--grey .dt__icon-wrap {\n    border-color: #C8C8C8;\n    background: #F8F8F8;\n  }\n  .dt__step--grey .dt__step-label { color: #999; }\n\n  /* Expédié — orange */\n  .dt__step--orange .dt__icon-wrap {\n    border-color: #E8761A;\n    background: #FFF6EF;\n  }\n  .dt__step--orange .dt__step-label { color: #E8761A; }\n\n  /* Livraison — green */\n  .dt__step--green .dt__icon-wrap {\n    border-color: #1E5A3C;\n    background: #F0F7F4;\n  }\n  .dt__step--green .dt__step-label { color: #1E5A3C; }\n\n  .dt__info { text-align: center; }\n\n  .dt__step-label {\n    font-size: 10px;\n    font-weight: 700;\n    letter-spacing: 0.5px;\n    text-transform: uppercase;\n    display: block;\n    margin-bottom: 3px;\n  }\n\n  .dt__date {\n    font-size: 12px;\n    font-weight: 700;\n    color: #1A1A1A;\n    display: block;\n    line-height: 1.3;\n  }\n\n  .dt__subdate {\n    font-size: 11px;\n    color: #888;\n    display: block;\n    margin-top: 1px;\n  }\n\n  /* MOBILE */\n  @media (max-width: 420px) {\n    .dt__wrap { padding: 16px 14px; }\n    .dt__icon-wrap { width: 44px; height: 44px; }\n    .dt__icon-wrap svg { width: 17px; height: 17px; }\n    .dt__track::before { top: 21px; }\n    .dt__step-label { font-size: 9px; letter-spacing: 0; }\n    .dt__date { font-size: 11px; }\n    .dt__subdate { font-size: 10px; }\n    .dt__label { font-size: 11px; letter-spacing: 1px; }\n  }\n</style>\n\n<div class=\"dt__wrap\">\n  <span class=\"dt__label\">📦 Estimation de livraison ( 5-7 Jours)</span>\n  <div class=\"dt__track\">\n\n    <!-- STEP 1: Commande — grey -->\n    <div class=\"dt__step dt__step--grey\">\n      <div class=\"dt__icon-wrap\">\n        <svg viewBox=\"0 0 24 24\" fill=\"none\">\n          <path d=\"M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z\" stroke=\"#999\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>\n          <line x1=\"3\" y1=\"6\" x2=\"21\" y2=\"6\" stroke=\"#999\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n          <path d=\"M16 10a4 4 0 01-8 0\" stroke=\"#999\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>\n        </svg>\n      </div>\n      <div class=\"dt__info\">\n        <span class=\"dt__step-label\">Commande</span>\n        <span class=\"dt__date\" id=\"dt-order-date\">—</span>\n      </div>\n    </div>\n\n    <!-- STEP 2: Expédié — orange -->\n    <div class=\"dt__step dt__step--orange\">\n      <div class=\"dt__icon-wrap\">\n        <svg viewBox=\"0 0 24 24\" fill=\"none\">\n          <rect x=\"1\" y=\"3\" width=\"15\" height=\"13\" rx=\"1\" stroke=\"#E8761A\" stroke-width=\"1.5\"/>\n          <path d=\"M16 8h4l3 3v5h-7V8z\" stroke=\"#E8761A\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>\n          <circle cx=\"5.5\" cy=\"18.5\" r=\"2.5\" stroke=\"#E8761A\" stroke-width=\"1.5\"/>\n          <circle cx=\"18.5\" cy=\"18.5\" r=\"2.5\" stroke=\"#E8761A\" stroke-width=\"1.5\"/>\n        </svg>\n      </div>\n      <div class=\"dt__info\">\n        <span class=\"dt__step-label\">Expédié</span>\n        <span class=\"dt__date\" id=\"dt-ship-date\">—</span>\n      </div>\n    </div>\n\n    <!-- STEP 3: Livraison — green -->\n    <div class=\"dt__step dt__step--green\">\n      <div class=\"dt__icon-wrap\">\n        <svg viewBox=\"0 0 24 24\" fill=\"none\">\n          <path d=\"M22 11.08V12a10 10 0 11-5.93-9.14\" stroke=\"#1E5A3C\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>\n          <polyline points=\"22 4 12 14.01 9 11.01\" stroke=\"#1E5A3C\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>\n        </svg>\n      </div>\n      <div class=\"dt__info\">\n        <span class=\"dt__step-label\">Livraison</span>\n        <span class=\"dt__date\" id=\"dt-deliver-date\">—</span>\n        <span class=\"dt__subdate\" id=\"dt-deliver-date2\"></span>\n      </div>\n    </div>\n\n  </div>\n</div>\n<!-- ══════════════════════════════════ -->\n\n<script>\n  (function() {\n    const DAYS_FR   = ['Dim','Lun','Mar','Mer','Jeu','Ven','Sam'];\n    const MONTHS_FR = ['jan.','fév.','mars','avr.','mai','juin',\n                       'juil.','août','sep.','oct.','nov.','déc.'];\n\n    function isWeekend(d) { return d.getDay() === 0 || d.getDay() === 6; }\n\n    function addBusinessDays(date, n) {\n      let d = new Date(date), added = 0;\n      while (added < n) {\n        d.setDate(d.getDate() + 1);\n        if (!isWeekend(d)) added++;\n      }\n      return d;\n    }\n\n    function fmt(d) {\n      return DAYS_FR[d.getDay()] + ' ' + d.getDate() + ' ' + MONTHS_FR[d.getMonth()];\n    }\n\n    const today       = new Date();\n    const shipDate    = addBusinessDays(today, 1);\n    const deliverFrom = addBusinessDays(today, 5);\n    const deliverTo   = addBusinessDays(today, 6);\n\n    document.getElementById('dt-order-date').textContent    = fmt(today);\n    document.getElementById('dt-ship-date').textContent     = fmt(shipDate);\n    document.getElementById('dt-deliver-date').textContent  = fmt(deliverFrom);\n    document.getElementById('dt-deliver-date2').textContent = '— ' + fmt(deliverTo);\n  })();\n</script>"
+          }
+        },
+        "liquid_AQFQxJ": {
+          "type": "liquid",
+          "name": "Custom Liquid - chatgpt shipping",
+          "disabled": true,
+          "settings": {
+            "liquid": "<!-- ══ DELIVERY ESTIMATOR — Option B Pill ══ -->\n<style>\n  .dlv {\n    margin: 14px 0;\n    font-family: 'Jost', 'DM Sans', Arial, sans-serif;\n  }\n\n  .dlv__pill {\n    background: linear-gradient(135deg, #F0FDF4 0%, #FAFFF7 100%);\n    border: 1.5px solid #BBF7D0;\n    border-radius: 50px;\n    padding: 10px 18px;\n    display: inline-flex;\n    align-items: center;\n    gap: 8px;\n    width: 100%;\n    box-shadow: 0 1px 8px rgba(34,197,94,0.1);\n  }\n\n  .dlv__pulse {\n    position: relative;\n    width: 9px;\n    height: 9px;\n    flex-shrink: 0;\n  }\n  .dlv__pulse::before,\n  .dlv__pulse::after {\n    content: '';\n    position: absolute;\n    inset: 0;\n    border-radius: 50%;\n    background: #22C55E;\n  }\n  .dlv__pulse::after {\n    animation: dlvRipple 1.8s ease-out infinite;\n    background: transparent;\n    border: 2px solid #22C55E;\n  }\n  @keyframes dlvRipple {\n    0%   { transform: scale(1); opacity: 0.8; }\n    100% { transform: scale(2.6); opacity: 0; }\n  }\n\n  .dlv__body {\n    flex: 1;\n    display: flex;\n    align-items: center;\n    flex-wrap: wrap;\n    gap: 5px;\n    font-size: 12.5px;\n  }\n\n  .dlv__label {\n    color: #374151;\n    font-weight: 500;\n  }\n\n  .dlv__timer {\n    background: #FEF3C7;\n    color: #B45309;\n    font-weight: 700;\n    padding: 2px 8px;\n    border-radius: 5px;\n    font-size: 12.5px;\n    font-variant-numeric: tabular-nums;\n    letter-spacing: 0.3px;\n  }\n\n  .dlv__timer.dlv--urgent {\n    background: #FEE2E2;\n    color: #B91C1C;\n    animation: dlvBlink 0.9s ease-in-out infinite;\n  }\n\n  @keyframes dlvBlink {\n    0%, 100% { opacity: 1; }\n    50%       { opacity: 0.5; }\n  }\n\n  .dlv__sep {\n    color: #D1FAE5;\n    font-weight: 300;\n    font-size: 14px;\n  }\n\n  .dlv__arrow {\n    color: #6B7280;\n    font-size: 12px;\n    font-weight: 500;\n  }\n\n  .dlv__delivery-label {\n    color: #374151;\n    font-weight: 500;\n  }\n\n  .dlv__dates {\n    color: #15803D;\n    font-weight: 700;\n  }\n\n  .dlv__divider {\n    width: 1px;\n    height: 22px;\n    background: #BBF7D0;\n    flex-shrink: 0;\n  }\n\n  .dlv__free {\n    display: flex;\n    align-items: center;\n    gap: 4px;\n    font-size: 11px;\n    color: #15803D;\n    font-weight: 600;\n    white-space: nowrap;\n    flex-shrink: 0;\n  }\n\n  @media (max-width: 480px) {\n    .dlv__pill { padding: 9px 14px; }\n    .dlv__body { font-size: 11.5px; gap: 4px; }\n    .dlv__timer { font-size: 11.5px; }\n    .dlv__free { font-size: 10.5px; }\n  }\n</style>\n\n<div class=\"dlv\">\n  <div class=\"dlv__pill\">\n    <div class=\"dlv__pulse\"></div>\n    <div class=\"dlv__body\">\n      <span class=\"dlv__label\">Commandez dans</span>\n      <span class=\"dlv__timer\" id=\"dlv-timer\">--h --m</span>\n      <span class=\"dlv__sep\">|</span>\n      <span class=\"dlv__arrow\">→ Livraison prévue:</span>\n      <span class=\"dlv__dates\" id=\"dlv-dates\">...</span>\n    </div>\n    <div class=\"dlv__divider\"></div>\n    <div class=\"dlv__free\">📦 Gratuite & suivie</div>\n  </div>\n</div>\n\n<script>\n(function(){\n  var CUTOFF  = 17;\n  var TZ      = 'Europe/Paris';\n  var FR_DAYS   = ['Dim','Lun','Mar','Mer','Jeu','Ven','Sam'];\n  var FR_MONTHS = ['Jan','Fév','Mar','Avr','Mai','Jun','Jul','Aoû','Sep','Oct','Nov','Déc'];\n\n  function nowParis(){\n    return new Date(new Date().toLocaleString('en-US', { timeZone: TZ }));\n  }\n\n  function addBizDays(d, n){\n    var r = new Date(d), added = 0;\n    while(added < n){\n      r.setDate(r.getDate() + 1);\n      if(r.getDay() !== 0 && r.getDay() !== 6) added++;\n    }\n    return r;\n  }\n\n  function fmt(d){\n    return FR_DAYS[d.getDay()] + ' ' + d.getDate() + ' ' + FR_MONTHS[d.getMonth()];\n  }\n\n  function pad(n){ return n < 10 ? '0' + n : String(n); }\n\n  function update(){\n    var now   = nowParis();\n    var h     = now.getHours();\n    var isWE  = now.getDay() === 0 || now.getDay() === 6;\n    var timer = document.getElementById('dlv-timer');\n    var dates = document.getElementById('dlv-dates');\n    var label = document.querySelector('.dlv__label');\n\n    // ── Delivery dates: today+1 then +5 to +7 business days ──\n    var base = new Date(now);\n    base.setDate(base.getDate() + 1); // always start from tomorrow\n    // skip weekend for base\n    while(base.getDay() === 0 || base.getDay() === 6){\n      base.setDate(base.getDate() + 1);\n    }\n    dates.textContent = fmt(addBizDays(base, 5)) + ' – ' + fmt(addBizDays(base, 7));\n\n    // ── Countdown ──\n    if(isWE || h >= CUTOFF){\n      // Count to next business day 9h\n      var next = new Date(now);\n      next.setDate(next.getDate() + 1);\n      while(next.getDay() === 0 || next.getDay() === 6){\n        next.setDate(next.getDate() + 1);\n      }\n      next.setHours(9, 0, 0, 0);\n      var diff = Math.max(0, Math.floor((next - new Date()) / 1000));\n      var hh = Math.floor(diff / 3600);\n      var mm = Math.floor((diff % 3600) / 60);\n      timer.textContent = pad(hh) + 'h ' + pad(mm) + 'm';\n      timer.classList.remove('dlv--urgent');\n      label.textContent = 'Expédition dans ';\n    } else {\n      // Count to cutoff today\n      var cutoff = new Date(now);\n      cutoff.setHours(CUTOFF, 0, 0, 0);\n      var diff = Math.max(0, Math.floor((cutoff - new Date()) / 1000));\n      var hh = Math.floor(diff / 3600);\n      var mm = Math.floor((diff % 3600) / 60);\n      timer.textContent = pad(hh) + 'h ' + pad(mm) + 'm';\n      label.textContent = 'Commandez dans ';\n      if(diff < 3600) timer.classList.add('dlv--urgent');\n      else timer.classList.remove('dlv--urgent');\n    }\n  }\n\n  update();\n  setInterval(update, 30000);\n})();\n</script>\n<!-- ════════════════════════════════════════ -->"
+          }
+        },
+        "liquid_qt7TUf": {
+          "type": "liquid",
+          "name": "Custom Liquid - icon pauyment ",
+          "settings": {
+            "liquid": "<br><div style=\"display: flex; justify-content: center; align-items: center; gap: 5px;\">\n<div class=\"footer__payment-icons h-stack wrap gap-2\"><svg xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-labelledby=\"pi-american_express\" viewBox=\"0 0 38 24\" width=\"38\" height=\"24\"><title id=\"pi-american_express\">American Express</title><path fill=\"#000\" d=\"M35 0H3C1.3 0 0 1.3 0 3v18c0 1.7 1.4 3 3 3h32c1.7 0 3-1.3 3-3V3c0-1.7-1.4-3-3-3Z\" opacity=\".07\"></path><path fill=\"#006FCF\" d=\"M35 1c1.1 0 2 .9 2 2v18c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2V3c0-1.1.9-2 2-2h32Z\"></path><path fill=\"#FFF\" d=\"M22.012 19.936v-8.421L37 11.528v2.326l-1.732 1.852L37 17.573v2.375h-2.766l-1.47-1.622-1.46 1.628-9.292-.02Z\"></path><path fill=\"#006FCF\" d=\"M23.013 19.012v-6.57h5.572v1.513h-3.768v1.028h3.678v1.488h-3.678v1.01h3.768v1.531h-5.572Z\"></path><path fill=\"#006FCF\" d=\"m28.557 19.012 3.083-3.289-3.083-3.282h2.386l1.884 2.083 1.89-2.082H37v.051l-3.017 3.23L37 18.92v.093h-2.307l-1.917-2.103-1.898 2.104h-2.321Z\"></path><path fill=\"#FFF\" d=\"M22.71 4.04h3.614l1.269 2.881V4.04h4.46l.77 2.159.771-2.159H37v8.421H19l3.71-8.421Z\"></path><path fill=\"#006FCF\" d=\"m23.395 4.955-2.916 6.566h2l.55-1.315h2.98l.55 1.315h2.05l-2.904-6.566h-2.31Zm.25 3.777.875-2.09.873 2.09h-1.748Z\"></path><path fill=\"#006FCF\" d=\"M28.581 11.52V4.953l2.811.01L32.84 9l1.456-4.046H37v6.565l-1.74.016v-4.51l-1.644 4.494h-1.59L30.35 7.01v4.51h-1.768Z\"></path></svg>\n<svg version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" x=\"0\" y=\"0\" width=\"38\" height=\"24\" viewBox=\"0 0 165.521 105.965\" xml:space=\"preserve\" aria-labelledby=\"pi-apple_pay\"><title id=\"pi-apple_pay\">Apple Pay</title><path fill=\"#000\" d=\"M150.698 0H14.823c-.566 0-1.133 0-1.698.003-.477.004-.953.009-1.43.022-1.039.028-2.087.09-3.113.274a10.51 10.51 0 0 0-2.958.975 9.932 9.932 0 0 0-4.35 4.35 10.463 10.463 0 0 0-.975 2.96C.113 9.611.052 10.658.024 11.696a70.22 70.22 0 0 0-.022 1.43C0 13.69 0 14.256 0 14.823v76.318c0 .567 0 1.132.002 1.699.003.476.009.953.022 1.43.028 1.036.09 2.084.275 3.11a10.46 10.46 0 0 0 .974 2.96 9.897 9.897 0 0 0 1.83 2.52 9.874 9.874 0 0 0 2.52 1.83c.947.483 1.917.79 2.96.977 1.025.183 2.073.245 3.112.273.477.011.953.017 1.43.02.565.004 1.132.004 1.698.004h135.875c.565 0 1.132 0 1.697-.004.476-.002.952-.009 1.431-.02 1.037-.028 2.085-.09 3.113-.273a10.478 10.478 0 0 0 2.958-.977 9.955 9.955 0 0 0 4.35-4.35c.483-.947.789-1.917.974-2.96.186-1.026.246-2.074.274-3.11.013-.477.02-.954.022-1.43.004-.567.004-1.132.004-1.699V14.824c0-.567 0-1.133-.004-1.699a63.067 63.067 0 0 0-.022-1.429c-.028-1.038-.088-2.085-.274-3.112a10.4 10.4 0 0 0-.974-2.96 9.94 9.94 0 0 0-4.35-4.35A10.52 10.52 0 0 0 156.939.3c-1.028-.185-2.076-.246-3.113-.274a71.417 71.417 0 0 0-1.431-.022C151.83 0 151.263 0 150.698 0z\"></path><path fill=\"#FFF\" d=\"M150.698 3.532l1.672.003c.452.003.905.008 1.36.02.793.022 1.719.065 2.583.22.75.135 1.38.34 1.984.648a6.392 6.392 0 0 1 2.804 2.807c.306.6.51 1.226.645 1.983.154.854.197 1.783.218 2.58.013.45.019.9.02 1.36.005.557.005 1.113.005 1.671v76.318c0 .558 0 1.114-.004 1.682-.002.45-.008.9-.02 1.35-.022.796-.065 1.725-.221 2.589a6.855 6.855 0 0 1-.645 1.975 6.397 6.397 0 0 1-2.808 2.807c-.6.306-1.228.511-1.971.645-.881.157-1.847.2-2.574.22-.457.01-.912.017-1.379.019-.555.004-1.113.004-1.669.004H14.801c-.55 0-1.1 0-1.66-.004a74.993 74.993 0 0 1-1.35-.018c-.744-.02-1.71-.064-2.584-.22a6.938 6.938 0 0 1-1.986-.65 6.337 6.337 0 0 1-1.622-1.18 6.355 6.355 0 0 1-1.178-1.623 6.935 6.935 0 0 1-.646-1.985c-.156-.863-.2-1.788-.22-2.578a66.088 66.088 0 0 1-.02-1.355l-.003-1.327V14.474l.002-1.325a66.7 66.7 0 0 1 .02-1.357c.022-.792.065-1.717.222-2.587a6.924 6.924 0 0 1 .646-1.981c.304-.598.7-1.144 1.18-1.623a6.386 6.386 0 0 1 1.624-1.18 6.96 6.96 0 0 1 1.98-.646c.865-.155 1.792-.198 2.586-.22.452-.012.905-.017 1.354-.02l1.677-.003h135.875\"></path><g><g><path fill=\"#000\" d=\"M43.508 35.77c1.404-1.755 2.356-4.112 2.105-6.52-2.054.102-4.56 1.355-6.012 3.112-1.303 1.504-2.456 3.959-2.156 6.266 2.306.2 4.61-1.152 6.063-2.858\"></path><path fill=\"#000\" d=\"M45.587 39.079c-3.35-.2-6.196 1.9-7.795 1.9-1.6 0-4.049-1.8-6.698-1.751-3.447.05-6.645 2-8.395 5.1-3.598 6.2-.95 15.4 2.55 20.45 1.699 2.5 3.747 5.25 6.445 5.151 2.55-.1 3.549-1.65 6.647-1.65 3.097 0 3.997 1.65 6.696 1.6 2.798-.05 4.548-2.5 6.247-5 1.95-2.85 2.747-5.6 2.797-5.75-.05-.05-5.396-2.101-5.446-8.251-.05-5.15 4.198-7.6 4.398-7.751-2.399-3.548-6.147-3.948-7.447-4.048\"></path></g><g><path fill=\"#000\" d=\"M78.973 32.11c7.278 0 12.347 5.017 12.347 12.321 0 7.33-5.173 12.373-12.529 12.373h-8.058V69.62h-5.822V32.11h14.062zm-8.24 19.807h6.68c5.07 0 7.954-2.729 7.954-7.46 0-4.73-2.885-7.434-7.928-7.434h-6.706v14.894z\"></path><path fill=\"#000\" d=\"M92.764 61.847c0-4.809 3.665-7.564 10.423-7.98l7.252-.442v-2.08c0-3.04-2.001-4.704-5.562-4.704-2.938 0-5.07 1.507-5.51 3.82h-5.252c.157-4.86 4.731-8.395 10.918-8.395 6.654 0 10.995 3.483 10.995 8.89v18.663h-5.38v-4.497h-.13c-1.534 2.937-4.914 4.782-8.579 4.782-5.406 0-9.175-3.222-9.175-8.057zm17.675-2.417v-2.106l-6.472.416c-3.64.234-5.536 1.585-5.536 3.95 0 2.288 1.975 3.77 5.068 3.77 3.95 0 6.94-2.522 6.94-6.03z\"></path><path fill=\"#000\" d=\"M120.975 79.652v-4.496c.364.051 1.247.103 1.715.103 2.573 0 4.029-1.09 4.913-3.899l.52-1.663-9.852-27.293h6.082l6.863 22.146h.13l6.862-22.146h5.927l-10.216 28.67c-2.34 6.577-5.017 8.735-10.683 8.735-.442 0-1.872-.052-2.261-.157z\"></path></g></g></svg>\n<svg xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" viewBox=\"0 0 38 24\" width=\"38\" height=\"24\" aria-labelledby=\"pi-google_pay\"><title id=\"pi-google_pay\">Google Pay</title><path d=\"M35 0H3C1.3 0 0 1.3 0 3v18c0 1.7 1.4 3 3 3h32c1.7 0 3-1.3 3-3V3c0-1.7-1.4-3-3-3z\" fill=\"#000\" opacity=\".07\"></path><path d=\"M35 1c1.1 0 2 .9 2 2v18c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2V3c0-1.1.9-2 2-2h32\" fill=\"#FFF\"></path><path d=\"M18.093 11.976v3.2h-1.018v-7.9h2.691a2.447 2.447 0 0 1 1.747.692 2.28 2.28 0 0 1 .11 3.224l-.11.116c-.47.447-1.098.69-1.747.674l-1.673-.006zm0-3.732v2.788h1.698c.377.012.741-.135 1.005-.404a1.391 1.391 0 0 0-1.005-2.354l-1.698-.03zm6.484 1.348c.65-.03 1.286.188 1.778.613.445.43.682 1.03.65 1.649v3.334h-.969v-.766h-.049a1.93 1.93 0 0 1-1.673.931 2.17 2.17 0 0 1-1.496-.533 1.667 1.667 0 0 1-.613-1.324 1.606 1.606 0 0 1 .613-1.336 2.746 2.746 0 0 1 1.698-.515c.517-.02 1.03.093 1.49.331v-.208a1.134 1.134 0 0 0-.417-.901 1.416 1.416 0 0 0-.98-.368 1.545 1.545 0 0 0-1.319.717l-.895-.564a2.488 2.488 0 0 1 2.182-1.06zM23.29 13.52a.79.79 0 0 0 .337.662c.223.176.5.269.785.263.429-.001.84-.17 1.146-.472.305-.286.478-.685.478-1.103a2.047 2.047 0 0 0-1.324-.374 1.716 1.716 0 0 0-1.03.294.883.883 0 0 0-.392.73zm9.286-3.75l-3.39 7.79h-1.048l1.281-2.728-2.224-5.062h1.103l1.612 3.885 1.569-3.885h1.097z\" fill=\"#5F6368\"></path><path d=\"M13.986 11.284c0-.308-.024-.616-.073-.92h-4.29v1.747h2.451a2.096 2.096 0 0 1-.9 1.373v1.134h1.464a4.433 4.433 0 0 0 1.348-3.334z\" fill=\"#4285F4\"></path><path d=\"M9.629 15.721a4.352 4.352 0 0 0 3.01-1.097l-1.466-1.14a2.752 2.752 0 0 1-4.094-1.44H5.577v1.17a4.53 4.53 0 0 0 4.052 2.507z\" fill=\"#34A853\"></path><path d=\"M7.079 12.05a2.709 2.709 0 0 1 0-1.735v-1.17H5.577a4.505 4.505 0 0 0 0 4.075l1.502-1.17z\" fill=\"#FBBC04\"></path><path d=\"M9.629 8.44a2.452 2.452 0 0 1 1.74.68l1.3-1.293a4.37 4.37 0 0 0-3.065-1.183 4.53 4.53 0 0 0-4.027 2.5l1.502 1.171a2.715 2.715 0 0 1 2.55-1.875z\" fill=\"#EA4335\"></path></svg>\n<svg viewBox=\"0 0 38 24\" xmlns=\"http://www.w3.org/2000/svg\" width=\"38\" height=\"24\" role=\"img\" aria-labelledby=\"pi-maestro\"><title id=\"pi-maestro\">Maestro</title><path opacity=\".07\" d=\"M35 0H3C1.3 0 0 1.3 0 3v18c0 1.7 1.4 3 3 3h32c1.7 0 3-1.3 3-3V3c0-1.7-1.4-3-3-3z\"></path><path fill=\"#fff\" d=\"M35 1c1.1 0 2 .9 2 2v18c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2V3c0-1.1.9-2 2-2h32\"></path><circle fill=\"#EB001B\" cx=\"15\" cy=\"12\" r=\"7\"></circle><circle fill=\"#00A2E5\" cx=\"23\" cy=\"12\" r=\"7\"></circle><path fill=\"#7375CF\" d=\"M22 12c0-2.4-1.2-4.5-3-5.7-1.8 1.3-3 3.4-3 5.7s1.2 4.5 3 5.7c1.8-1.2 3-3.3 3-5.7z\"></path></svg><svg viewBox=\"0 0 38 24\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" width=\"38\" height=\"24\" aria-labelledby=\"pi-master\"><title id=\"pi-master\">Mastercard</title><path opacity=\".07\" d=\"M35 0H3C1.3 0 0 1.3 0 3v18c0 1.7 1.4 3 3 3h32c1.7 0 3-1.3 3-3V3c0-1.7-1.4-3-3-3z\"></path><path fill=\"#fff\" d=\"M35 1c1.1 0 2 .9 2 2v18c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2V3c0-1.1.9-2 2-2h32\"></path><circle fill=\"#EB001B\" cx=\"15\" cy=\"12\" r=\"7\"></circle><circle fill=\"#F79E1B\" cx=\"23\" cy=\"12\" r=\"7\"></circle><path fill=\"#FF5F00\" d=\"M22 12c0-2.4-1.2-4.5-3-5.7-1.8 1.3-3 3.4-3 5.7s1.2 4.5 3 5.7c1.8-1.2 3-3.3 3-5.7z\"></path></svg><svg viewBox=\"0 0 38 24\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" width=\"38\" height=\"24\" aria-labelledby=\"pi-visa\"><title id=\"pi-visa\">Visa</title><path opacity=\".07\" d=\"M35 0H3C1.3 0 0 1.3 0 3v18c0 1.7 1.4 3 3 3h32c1.7 0 3-1.3 3-3V3c0-1.7-1.4-3-3-3z\"></path><path fill=\"#fff\" d=\"M35 1c1.1 0 2 .9 2 2v18c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2V3c0-1.1.9-2 2-2h32\"></path><path d=\"M28.3 10.1H28c-.4 1-.7 1.5-1 3h1.9c-.3-1.5-.3-2.2-.6-3zm2.9 5.9h-1.7c-.1 0-.1 0-.2-.1l-.2-.9-.1-.2h-2.4c-.1 0-.2 0-.2.2l-.3.9c0 .1-.1.1-.1.1h-2.1l.2-.5L27 8.7c0-.5.3-.7.8-.7h1.5c.1 0 .2 0 .2.2l1.4 6.5c.1.4.2.7.2 1.1.1.1.1.1.1.2zm-13.4-.3l.4-1.8c.1 0 .2.1.2.1.7.3 1.4.5 2.1.4.2 0 .5-.1.7-.2.5-.2.5-.7.1-1.1-.2-.2-.5-.3-.8-.5-.4-.2-.8-.4-1.1-.7-1.2-1-.8-2.4-.1-3.1.6-.4.9-.8 1.7-.8 1.2 0 2.5 0 3.1.2h.1c-.1.6-.2 1.1-.4 1.7-.5-.2-1-.4-1.5-.4-.3 0-.6 0-.9.1-.2 0-.3.1-.4.2-.2.2-.2.5 0 .7l.5.4c.4.2.8.4 1.1.6.5.3 1 .8 1.1 1.4.2.9-.1 1.7-.9 2.3-.5.4-.7.6-1.4.6-1.4 0-2.5.1-3.4-.2-.1.2-.1.2-.2.1zm-3.5.3c.1-.7.1-.7.2-1 .5-2.2 1-4.5 1.4-6.7.1-.2.1-.3.3-.3H18c-.2 1.2-.4 2.1-.7 3.2-.3 1.5-.6 3-1 4.5 0 .2-.1.2-.3.2M5 8.2c0-.1.2-.2.3-.2h3.4c.5 0 .9.3 1 .8l.9 4.4c0 .1 0 .1.1.2 0-.1.1-.1.1-.1l2.1-5.1c-.1-.1 0-.2.1-.2h2.1c0 .1 0 .1-.1.2l-3.1 7.3c-.1.2-.1.3-.2.4-.1.1-.3 0-.5 0H9.7c-.1 0-.2 0-.2-.2L7.9 9.5c-.2-.2-.5-.5-.9-.6-.6-.3-1.7-.5-1.9-.5L5 8.2z\" fill=\"#142688\"></path></svg></div></div>\n</div>"
+          }
+        },
+        "liquid_fYbmhL": {
+          "type": "liquid",
+          "name": "Custom Liquid - icon payment",
+          "settings": {
+            "liquid": ""
+          }
+        },
+        "liquid_K6hmp3": {
+          "type": "liquid",
+          "settings": {
+            "liquid": ""
+          }
+        },
+        "liquid_LQxgYD": {
+          "type": "liquid",
+          "disabled": true,
+          "settings": {
+            "liquid": "<div class=\"product-info__liquid\">\n            <div class=\"product-info__liquid\">\n            <div class=\"product-block\">\n                      \n  <style>\n    @font-face {\n      font-family: 'Twentieth Century';\n      src: url('/path-to-your-font/twentieth-century.ttf') format('truetype');\n    }\n\n    .notification {\n      background-color: #ffecec;\n      border-left: 5px solid #ff6b6b;\n      padding: 10px 15px;\n      font-size: 15px;\n      font-family: 'Twentieth Century', sans-serif;\n      color: #333;\n      margin-top: 20px;\n      border-radius: 5px;\n    }\n\n    .notification b {\n      font-weight: bold;\n    }\n  </style>\n\n\n\n          </div>\n          </div>\n\n<hr style=\"border: none; border-top: 1px solid black; margin: 20px 0;\">"
+          }
+        },
+        "liquid_Qx4dN6": {
+          "type": "liquid",
+          "disabled": true,
+          "settings": {
+            "liquid": "<br>"
+          }
+        },
+        "badges": {
+          "type": "badges",
+          "disabled": true,
+          "settings": {}
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "disabled": true,
+          "settings": {}
+        },
+        "liquid_grAbkf": {
+          "type": "liquid",
+          "disabled": true,
+          "settings": {
+            "liquid": "<div class=\"product-info__liquid\">\n  <style>\n    .custom-shipping-container {\n      display: flex;\n      padding: 12px 16px; /* Increased padding for a taller container */\n      justify-content: space-between;\n      align-items: center;\n      align-self: stretch;\n      background-color: #f6f6f6;\n      border-radius: 10px;\n      height: 60px; /* Set fixed height for the container */\n    }\n\n    .custom-shipping-item {\n      display: flex;\n      align-items: center;\n      gap: 6px;\n    }\n\n    .text-block-shipping {\n      font-size: 10px;\n      color: #000;\n    }\n\n    .shipping-date {\n      font-weight: bold;\n    }\n\n    .free-shipping {\n      font-weight: bold;\n    }\n\n    .green-circle {\n      animation: fade 1s ease-in-out infinite;\n    }\n\n    @keyframes fade {\n      0%, 100% { opacity: 1; }\n      50% { opacity: 0.5; }\n    }\n  </style>\n\n  <script>\n    document.addEventListener(\"DOMContentLoaded\", function() {\n      var daysAfterToday = 0.5; // Set this to the number of days after today that the item will ship to the customer\n      var today = new Date();\n      var shipDate = new Date(today.setDate(today.getDate() + daysAfterToday));\n      var options = { weekday: 'short', month: 'long', day: 'numeric' };\n      var formattedDate = shipDate.toLocaleDateString('fr-FR', options);\n      document.getElementById('shipping-date').textContent = formattedDate;\n    });\n  </script>\n\n  <div class=\"custom-shipping-container\">\n    <div class=\"custom-shipping-item\">\n      <svg class=\"green-circle\" xmlns=\"http://www.w3.org/2000/svg\" width=\"12\" height=\"13\" viewBox=\"0 0 12 13\" fill=\"none\">\n        <circle cx=\"6\" cy=\"6.5\" r=\"6\" fill=\"#137333\"></circle>\n      </svg>\n      <div class=\"text-block-shipping\">Expédié le <span id=\"shipping-date\" class=\"shipping-date\">mer. 26 février</span></div>\n    </div>\n    <div class=\"custom-shipping-item\">\n      <!-- Franse vlag afbeelding -->\n      <img src=\"https://upload.wikimedia.org/wikipedia/commons/c/c3/Flag_of_France.svg\" loading=\"lazy\" alt=\"French flag\" class=\"custom-icon\" width=\"20\" height=\"15\">\n      <div class=\"text-block-shipping\"><span class=\"free-shipping\">Livraison GRATUITE</span> via LaPoste</div>\n    </div>\n  </div>\n</div>"
+          }
+        },
+        "rating": {
+          "type": "rating",
+          "disabled": true,
+          "settings": {
+            "show_empty": false
+          }
+        },
+        "separator": {
+          "type": "separator",
+          "disabled": true,
+          "settings": {}
+        },
+        "separator_NyY8hA": {
+          "type": "separator",
+          "disabled": true,
+          "settings": {}
+        },
+        "liquid_69gTBj": {
+          "type": "liquid",
+          "settings": {
+            "liquid": "<hr style=\"border: none; border-top: 1px solid black; margin: 20px 0;\">"
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {
+            "collapse_content": false
+          }
+        },
+        "liquid_WNUeX4": {
+          "type": "liquid",
+          "settings": {
+            "liquid": "<hr style=\"border: none; border-top: 1px solid black; margin: 20px 0;\">"
+          }
+        }
+      },
+      "block_order": [
+        "liquid_9tPDfi",
+        "title",
+        "price",
+        "liquid_HfVy8n",
+        "liquid_8fDnrH",
+        "liquid_HdzimW",
+        "liquid_aAiG8g",
+        "liquid_CmRcXq",
+        "variant_picker",
+        "liquid_ecPzHe",
+        "liquid_WkQwWm",
+        "liquid_3aXQaL",
+        "liquid_HT7rAR",
+        "buy_buttons",
+        "liquid_UHtPCV",
+        "liquid_TxRYHW",
+        "liquid_AQFQxJ",
+        "liquid_qt7TUf",
+        "liquid_fYbmhL",
+        "liquid_K6hmp3",
+        "liquid_LQxgYD",
+        "liquid_Qx4dN6",
+        "badges",
+        "quantity_selector",
+        "liquid_grAbkf",
+        "rating",
+        "separator",
+        "separator_NyY8hA",
+        "liquid_69gTBj",
+        "description",
+        "liquid_WNUeX4"
+      ],
+      "custom_css": [
+        ".div {margin-bottom: 0; padding-bottom: 0;}"
+      ],
+      "settings": {
+        "full_width": false,
+        "show_fixed_add_to_cart": true,
+        "desktop_media_width": 55,
+        "desktop_media_layout": "carousel_thumbnails_left",
+        "mobile_media_size": "expanded",
+        "mobile_carousel_control": "free_scroll",
+        "enable_video_autoplay": false,
+        "enable_video_looping": true,
+        "enable_image_zoom": true,
+        "max_image_zoom_level": 3,
+        "background": "",
+        "background_gradient": "",
+        "text_color": "",
+        "input_background": "rgba(0,0,0,0)",
+        "input_text_color": ""
+      }
+    },
+    "1742408186b99a7f2d": {
+      "type": "apps",
+      "settings": {
+        "full_width": true,
+        "remove_vertical_spacing": true,
+        "remove_horizontal_spacing": true,
+        "background": "",
+        "background_gradient": "",
+        "text_color": "",
+        "enable_review_integration": true,
+        "review_header_gradient": "linear-gradient(135deg, rgba(255, 194, 102, 1), rgba(255, 163, 26, 1) 100%)",
+        "review_header_text_color": "#000000",
+        "review_button_background": "#000000",
+        "review_button_text_color": "#ffffff"
+      }
+    },
+    "text_with_icons_DTpD4Y": {
+      "type": "text-with-icons",
+      "blocks": {
+        "item_Gk4c7H": {
+          "type": "item",
+          "settings": {
+            "icon": "picto-box",
+            "mobile_icon_width": 24,
+            "icon_width": 32,
+            "icon_background_type": "circle",
+            "icon_background": "",
+            "icon_color": "",
+            "title": "Livraison gratuite",
+            "content": "<p>Toujours livraison gratuite avec La Poste (suivi et traçabilité comprise) / <strong>6-7 jrs</strong></p>"
+          }
+        },
+        "item_LabVeL": {
+          "type": "item",
+          "settings": {
+            "icon": "picto-customer-support",
+            "mobile_icon_width": 24,
+            "icon_width": 32,
+            "icon_background_type": "circle",
+            "icon_background": "",
+            "icon_color": "",
+            "title": "Service client",
+            "content": "<p>Toujours disponible avec une réponse sous 24 heures. 7J/7</p>"
+          }
+        },
+        "item_rK4bqM": {
+          "type": "item",
+          "settings": {
+            "icon": "picto-return",
+            "mobile_icon_width": 24,
+            "icon_width": 32,
+            "icon_background_type": "circle",
+            "icon_background": "",
+            "icon_color": "",
+            "title": "Garantie de retour à 100%",
+            "content": "<p>Retour facile sous 30jours</p>"
+          }
+        },
+        "item_PM6jDt": {
+          "type": "item",
+          "settings": {
+            "icon": "picto-credit-card",
+            "mobile_icon_width": 24,
+            "icon_width": 32,
+            "icon_background_type": "circle",
+            "icon_background": "",
+            "icon_color": "",
+            "title": "Paiement sécurisé",
+            "content": "<p>Paiement rapide et sécurisé par carte de crédit.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "item_Gk4c7H",
+        "item_LabVeL",
+        "item_rK4bqM",
+        "item_PM6jDt"
+      ],
+      "disabled": true,
+      "settings": {
+        "full_width": false,
+        "stack_on_mobile": true,
+        "title": "Ce qui nous distingue ✨",
+        "heading_tag": "h5",
+        "text_alignment": "center",
+        "icon_spacing": "small",
+        "background": "#f7eaea",
+        "background_gradient": "",
+        "text_color": ""
+      }
+    },
+    "multiple_images_with_text_ar7x4R": {
+      "type": "multiple-images-with-text",
+      "blocks": {
+        "item_XXfDHP": {
+          "type": "item",
+          "settings": {
+            "image_rotation_degrees": -2,
+            "subheading": "",
+            "title": "Heading 1",
+            "content": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
+            "button_url": "",
+            "button_text": ""
+          }
+        },
+        "item_k6DH6X": {
+          "type": "item",
+          "settings": {
+            "image_rotation_degrees": 1.5,
+            "subheading": "",
+            "title": "Heading 2",
+            "content": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
+            "button_url": "",
+            "button_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "item_XXfDHP",
+        "item_k6DH6X"
+      ],
+      "disabled": true,
+      "name": "Multiple images with text",
+      "settings": {
+        "full_width": true,
+        "images_layout": "stacked",
+        "collage_images_alignment": "middle",
+        "background": "",
+        "background_gradient": "",
+        "text_color": "",
+        "button_background": "",
+        "button_text_color": ""
+      }
+    },
+    "testimonials_UJCkNj": {
+      "type": "testimonials",
+      "blocks": {
+        "testimonial_D3b9Un": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Victoria S.",
+            "title": "Qualité supérieure !",
+            "content": "<p>\"Parfaitement adapté et il a l'air génial. Entièrement satisfait.\"</p>"
+          }
+        },
+        "testimonial_FchGbx": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Mary U.",
+            "title": "Très satisfait !",
+            "content": "<p>\"Les vêtements sont solides et dégagent de la classe. Exactement ce que je cherchais.\"</p>"
+          }
+        },
+        "testimonial_nByit4": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 4,
+            "author": "Mila R.",
+            "title": "Très bien !",
+            "content": "<p>\"Très content de l'achat. Style intemporel et bonne qualité.\"</p>"
+          }
+        },
+        "testimonial_PjKnpt": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Loane D.",
+            "title": "\"Coupe parfaite !\"",
+            "content": "<p>\"L'article est exactement comme promis et le tissu est incroyablement confortable.\"</p>"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_D3b9Un",
+        "testimonial_FchGbx",
+        "testimonial_nByit4",
+        "testimonial_PjKnpt"
+      ],
+      "disabled": true,
+      "settings": {
+        "full_width": true,
+        "stack_testimonials": false,
+        "subheading": "",
+        "title": "* Avis de nos clients sur KielAmsterdam  *",
+        "content": "",
+        "link_url": "",
+        "link_text": "",
+        "background": "#fff5f5",
+        "background_gradient": "",
+        "text_color": "#000000",
+        "heading_color": "#000000",
+        "heading_gradient": "",
+        "testimonial_card_background": "#472525",
+        "testimonial_card_text_color": "#ffffff"
+      }
+    },
+    "image_with_text_overlay_MeEWqc": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "subheading_JFd87N": {
+          "type": "subheading",
+          "disabled": true,
+          "settings": {
+            "text": "Kiel Amsterdam"
+          }
+        },
+        "heading_ttQA6P": {
+          "type": "heading",
+          "settings": {
+            "text": "Retrouvez notre boutique À:",
+            "heading_tag": "h4"
+          }
+        },
+        "heading_x8tPyW": {
+          "type": "heading",
+          "settings": {
+            "text": "102 rue de vaudiguard 75006 PARIS",
+            "heading_tag": "h5"
+          }
+        },
+        "richtext_9gLCCR": {
+          "type": "richtext",
+          "disabled": true,
+          "settings": {
+            "content": "<p>Kiel Amsterdam est la destination des femmes à la recherche de mode raffinée et intemporelle. Depuis 2007, notre boutique à Paris est le cœur de l'élégance et du style. Nous proposons des vêtements et accessoires exclusifs qui reflètent le flair parisien. Notre collection est soigneusement sélectionnée pour accueillir les femmes de tous âges avec des créations à la fois modernes et de haute qualité. Ce n'est pas seulement de la mode, c'est un art de vivre. De notre boutique emblématique à nos clientes du monde entier, Dupont Mode Paris reste un symbole de luxe et de classe.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_JFd87N",
+        "heading_ttQA6P",
+        "heading_x8tPyW",
+        "richtext_9gLCCR"
+      ],
+      "disabled": true,
+      "settings": {
+        "full_width": true,
+        "allow_transparent_header": false,
+        "enable_parallax": false,
+        "image_size": "md",
+        "mobile_text_position": "place-self-center text-center",
+        "desktop_text_position": "sm:place-self-center sm:text-center",
+        "text_color": "#ffffff",
+        "overlay_color": "#000000",
+        "overlay_opacity": 30
+      }
+    },
+    "faq_FKfNe8": {
+      "type": "faq",
+      "blocks": {
+        "item_gp3RVU": {
+          "type": "item",
+          "settings": {
+            "title": "Expédition",
+            "content": "<p>Nous expédions toutes nos commandes en France avec La Poste. Vous commandez avant 23h ? Votre colis sera expédié gratuitement le jour suivant. Ainsi, vous recevrez votre commande rapidement et sans frais supplémentaires !</p>"
+          }
+        },
+        "item_TYVjxa": {
+          "type": "item",
+          "settings": {
+            "title": "Retours",
+            "content": "<p>Vous n'êtes pas entièrement satisfait ? Pas de panique ! Vous pouvez retourner votre commande facilement et rapidement dans les 30 jours suivant la réception. Nous veillons à ce que le processus se déroule sans accroc, pour que vous n'ayez rien à craindre.</p>"
+          }
+        },
+        "item_bnQnfE": {
+          "type": "item",
+          "settings": {
+            "title": "Taille",
+            "content": "<p>Nos vêtements taillent exactement comme indiqué dans le guide des tailles. Pour chaque produit, vous trouverez le guide des tailles, afin de toujours choisir la bonne taille et d'être sûr que cela vous ira parfaitement.</p>"
+          }
+        },
+        "item_9My4gD": {
+          "type": "item",
+          "settings": {
+            "title": "Vous avez d'autres questions ?",
+            "content": "<p>Vous avez une question ou besoin de conseils ? N'hésitez pas à nous contacter. Nous sommes ici pour vous aider et vous conseiller.</p><p><strong>Email : bonjour@kielamsterdam.com</strong></p><p>LUN / VEN 9h00 - 21h00<br/>SAM / DIM 10h00 - 23h00</p>"
+          }
+        }
+      },
+      "block_order": [
+        "item_gp3RVU",
+        "item_TYVjxa",
+        "item_bnQnfE",
+        "item_9My4gD"
+      ],
+      "disabled": true,
+      "settings": {
+        "full_width": true,
+        "subheading": "",
+        "title": "Questions fréquentes",
+        "content": "<p>Réponses à toutes vos questions !<br/></p>",
+        "team_avatar_width": 160,
+        "support_hours": "Notre magasin est ouvert du lun / ven de 09h00 à 17h00 et du sam / dim de 10h00 à 17h00",
+        "answer_time": "Réponse sous 24 heures",
+        "button_text": "",
+        "button_url": "",
+        "text_position": "center",
+        "background": "#ffffff",
+        "background_gradient": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_gradient": "",
+        "button_background": "",
+        "button_text_color": "",
+        "accordion_background": "",
+        "accordion_text_color": ""
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "disabled": true,
+      "settings": {
+        "recommendations_count": 5,
+        "products": [
+          "lacoste-pull-zip-nouvelle-collection-promo-solde-le-heritage",
+          "pull-adidas-grid-solde-nouvelle-collection-homme",
+          "lacoste-pull-a-col-montant-style-et-confort",
+          "pull-a-demi-zip-en-laine-dagneau-ultra-fine",
+          "adiflex-ensemble-adidas-survetement"
+        ],
+        "full_width": true,
+        "stack_products": false,
+        "show_progress_bar": true,
+        "products_per_row_mobile": "1",
+        "products_per_row_desktop": 4,
+        "subheading": "",
+        "title": "Complétez votre look:",
+        "content": "",
+        "background": "#ffffff",
+        "background_gradient": "",
+        "text_color": "",
+        "heading_color": "#101010",
+        "heading_gradient": "",
+        "product_card_background": "#f6d9d9",
+        "product_card_text_color": "#380e0e"
+      }
+    },
+    "image_with_text_overlay_mWgwx8": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "subheading_heXYiH": {
+          "type": "subheading",
+          "disabled": true,
+          "settings": {
+            "text": ""
+          }
+        },
+        "heading_qAT8AH": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "text": "Image with text overlay",
+            "heading_tag": "h1"
+          }
+        },
+        "richtext_xCKDBY": {
+          "type": "richtext",
+          "disabled": true,
+          "settings": {
+            "content": "<p></p><p></p><p><strong>Notre boutique: 102 Rue de Provence, 75009 Paris, France</strong></p>"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_heXYiH",
+        "heading_qAT8AH",
+        "richtext_xCKDBY"
+      ],
+      "name": "Image with text overlay",
+      "settings": {
+        "full_width": true,
+        "allow_transparent_header": false,
+        "enable_parallax": false,
+        "image_size": "auto",
+        "image": "shopify://shop_images/8214a165-83f6-4c58-bcd7-c4a298423c9f.png",
+        "mobile_text_position": "place-self-center text-center",
+        "desktop_text_position": "sm:place-self-center sm:text-center",
+        "text_color": "#ffffff",
+        "overlay_color": "#000000",
+        "overlay_opacity": 0
+      }
+    },
+    "slideshow_X9APHH": {
+      "type": "slideshow",
+      "blocks": {
+        "image_e9FCVE": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/bleue.jpg",
+            "content_max_width": 780,
+            "mobile_text_position": "place-self-center text-center",
+            "desktop_text_position": "sm:place-self-center sm:text-center",
+            "subheading": "Tell your story",
+            "title": "Slide 1",
+            "heading_tag": "h0",
+            "button_text": "",
+            "button_link": "",
+            "text_color": "#ffffff",
+            "button_background": "#ffffff",
+            "button_text_color": "#000000",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30,
+            "background": "",
+            "background_gradient": ""
+          }
+        },
+        "image_FPhCBq": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/gris1_c7a8916c-dc5b-4744-a326-845f16c4ee14.jpg",
+            "content_max_width": 780,
+            "mobile_text_position": "place-self-center text-center",
+            "desktop_text_position": "sm:place-self-center sm:text-center",
+            "subheading": "Tell your story",
+            "title": "Slide 2",
+            "heading_tag": "h0",
+            "button_text": "",
+            "button_link": "",
+            "text_color": "#ffffff",
+            "button_background": "#ffffff",
+            "button_text_color": "#000000",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30,
+            "background": "",
+            "background_gradient": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_e9FCVE",
+        "image_FPhCBq"
+      ],
+      "disabled": true,
+      "name": "Slideshow",
+      "settings": {
+        "full_width": true,
+        "allow_transparent_header": true,
+        "image_size": "auto",
+        "controls_type": "dots",
+        "transition_type": "fade_with_text",
+        "autoplay": true,
+        "cycle_speed": 5,
+        "background": "#f2f2f2",
+        "background_gradient": ""
+      }
+    },
+    "newsletter_YwmJfG": {
+      "type": "newsletter",
+      "name": "Newsletter",
+      "settings": {
+        "full_width": true,
+        "show_icon": false,
+        "title": "Tentez votre chance de gagner un crédit shopping de 49 € !",
+        "content": "<p>Chaque mois, nous offrons 49 € à l'un de nos fidèles abonnés Kiel Amsterdam !</p>",
+        "button_text": "Abonnez-vous",
+        "subtext": "",
+        "background": "#faefed",
+        "background_gradient": "",
+        "text_color": "",
+        "button_background": "",
+        "button_text_color": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "1742408186b99a7f2d",
+    "text_with_icons_DTpD4Y",
+    "multiple_images_with_text_ar7x4R",
+    "testimonials_UJCkNj",
+    "image_with_text_overlay_MeEWqc",
+    "faq_FKfNe8",
+    "related-products",
+    "image_with_text_overlay_mWgwx8",
+    "slideshow_X9APHH",
+    "newsletter_YwmJfG"
+  ]
+}
