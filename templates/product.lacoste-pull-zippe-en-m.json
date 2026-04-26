@@ -106,6 +106,10 @@
             "liquid": "<br>"
           }
         },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
@@ -180,10 +184,6 @@
           "disabled": true,
           "settings": {}
         },
-        "quantity_selector": {
-          "type": "quantity_selector",
-          "settings": {}
-        },
         "liquid_grAbkf": {
           "type": "liquid",
           "disabled": true,
@@ -241,6 +241,7 @@
         "liquid_WkQwWm",
         "liquid_3aXQaL",
         "liquid_HT7rAR",
+        "quantity_selector",
         "buy_buttons",
         "liquid_UHtPCV",
         "liquid_TxRYHW",
@@ -251,7 +252,6 @@
         "liquid_LQxgYD",
         "liquid_Qx4dN6",
         "badges",
-        "quantity_selector",
         "liquid_grAbkf",
         "rating",
         "separator",
