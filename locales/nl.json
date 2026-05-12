@@ -804,8 +804,174 @@
           "heading": {
             "cannot_be_picked_up": {
               "many": "% {count} artikelen kunnen niet worden opgehaald"
+            },
+            "cannot_be_shipped": {
+              "many": "%{count} artikelen kunnen niet worden verzonden"
+            }
+          },
+          "remove_item": {
+            "many": "artikelen verwijderen"
+          },
+          "ship_separately": {
+            "many": "Apart verzenden"
+          },
+          "pick_them_up_in_store": {
+            "many": "Ophalen in de winkel"
+          },
+          "remove_item_only": {
+            "many": "Artikelen verwijderen"
+          }
+        },
+        "pickup_items_count": {
+          "many": "Verwijder %{count} items"
+        },
+        "ship_items_count": {
+          "many": "Verzend %{count} artikelen"
+        }
+      },
+      "merchandise_unavailable_in_buyer_location": {
+        "remove_items_action": {
+          "many": "verwijder niet-beschikbare artikelen"
+        }
+      },
+      "review_address_modal": {
+        "subtitle": {
+          "many": "Deze bestelling wordt verzonden naar een adres dat door {{merchant}} is opgegeven. Selecteer een verzendadres."
+        }
+      },
+      "remote_merchandise_only": {
+        "detail_item_label": {
+          "many": "{{count}} artikelen"
+        }
+      }
+    },
+    "notices": {
+      "order": {
+        "cancel_reason": {
+          "many": "Overige"
+        }
+      }
+    },
+    "page_titles": {
+      "search_results": {
+        "many": "Zoeken: %{count} resultaten gevonden voor '%{terms}'"
+      }
+    }
+  },
+  "customer_accounts": {
+    "orders": {
+      "order_list": {
+        "items": {
+          "many": "{{count}} artikelen"
+        }
+      },
+      "order_status": {
+        "delivered_description_gift_card": {
+          "many": "De cadeaubonnen zijn via e-mail verzonden."
+        },
+        "gift_card_label": {
+          "many": "Cadeaubonnen"
+        },
+        "confirmed_gift_card_additional_description": {
+          "many": "Elke cadeaubon wordt in een afzonderlijke e-mail verstuurd."
+        },
+        "delivered_description_gift_card_text": {
+          "many": "De cadeaubonnen zijn per sms verstuurd."
+        },
+        "confirmed_gift_card_additional_description_text": {
+          "many": "Elke cadeaukaart wordt in een afzonderlijke sms verzonden."
+        },
+        "gift_resend_success": {
+          "many": "Geretourneerde cadeaubonnen"
+        },
+        "gift_resend_failure": {
+          "many": "Er is een probleem opgetreden bij het opnieuw verzenden van uw cadeaubonnen. Probeer het opnieuw of neem contact met ons op."
+        },
+        "tracking_number": {
+          "many": "Track-nummers"
+        },
+        "gift_card_resend_button": {
+          "many": "Cadeaubonnen opnieuw verzenden"
+        }
+      }
+    },
+    "order_details": {
+      "image_gallery": {
+        "load_more_items": {
+          "many": "Laad nog {{count}} artikelen in"
+        }
+      },
+      "subtotal_label_with_quantity": {
+        "many": "Subtotaal · {{count}} artikelen"
+      },
+      "discount_order_stacking": {
+        "many": "Kortingen op bestellingen"
+      }
+    },
+    "B2B": {
+      "orders": {
+        "draft_order_list": {
+          "pending_tab_accessibility_label": {
+            "pending_orders": {
+              "many": "U hebt {{count}} openstaande bestellingen"
             }
           }
+        }
+      },
+      "draft_order_details": {
+        "payment_status": {
+          "pending": {
+            "banner_overdue": {
+              "many": "U heeft een betalingsachterstand van {{count}} dagen"
+            },
+            "banner_due": {
+              "many": "Uw betaling is binnen {{count}} dagen verschuldigd"
+            },
+            "banner_overdue_for_single_fulfillment": {
+              "many": "De betaling van {{amount}} is {{count}} dagen te laat. {{link}}"
+            }
+          }
+        }
+      }
+    },
+    "errors": {
+      "banner_title": {
+        "many": "Er zijn {{count}} fouten"
+      }
+    },
+    "payment_methods": {
+      "add_payment_method": {
+        "subscription_contracts": {
+          "more_items": {
+            "many": "Nog {{count}} extra producten"
+          },
+          "product_count": {
+            "many": "{{count}} producten"
+          }
+        },
+        "updating_contracts": {
+          "many": "Abonnementen bijwerken ({{count}} contracten)..."
+        },
+        "contracts_updated": {
+          "many": "{{count}} abonnementsovereenkomsten zijn succesvol bijgewerkt"
+        }
+      }
+    },
+    "ui_components": {
+      "autocompleteOptionsAvailable": {
+        "many": "{{count}} beschikbare artikelen"
+      },
+      "month": {
+        "many": "maand"
+      },
+      "mapClusterTitle": {
+        "many": "Cluster van {{number}} markeringen"
+      }
+    },
+    "date": {
+      "humanize": {
+        "lessThanOneHourAgo": {
+          "many": "Er zijn {{count}} minuten"
         }
       }
     }
