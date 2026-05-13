@@ -1,0 +1,277 @@
+{% comment %}
+  ============================================================
+  SNIPPET: faq-section-nl.liquid
+  Location: snippets/faq-section-nl.liquid
+  Usage: {% render 'faq-section-nl' %}
+  OPTIMIZED: contain layout, script deferred, no render-blocking resources
+  ============================================================
+{% endcomment %}
+
+<style>
+  .faq__section {
+    padding: 70px 60px;
+    background: #1A1610;
+    font-family: 'Jost', 'DM Sans', Arial, sans-serif;
+    contain: layout style;
+  }
+
+  .faq__inner {
+    max-width: 820px;
+    margin: 0 auto;
+  }
+
+  .faq__header {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+
+  .faq__label {
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #C9A96E;
+    margin-bottom: 12px;
+    display: block;
+  }
+
+  .faq__title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(24px, 3vw, 36px);
+    font-weight: 400;
+    color: #F5F0E8;
+    line-height: 1.2;
+  }
+
+  .faq__title em {
+    font-style: italic;
+    color: #C9A96E;
+  }
+
+  .faq__subtitle {
+    margin-top: 12px;
+    font-size: 14px;
+    color: rgba(245,240,232,0.45);
+    font-weight: 300;
+  }
+
+  .faq__list {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .faq__item {
+    border-radius: 4px;
+    overflow: hidden;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.07);
+    transition: background 0.3s;
+  }
+
+  .faq__item.open {
+    background: rgba(201,169,110,0.07);
+    border-color: rgba(201,169,110,0.2);
+  }
+
+  .faq__question {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 22px 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    text-align: left;
+    gap: 20px;
+  }
+
+  .faq__question-text {
+    font-size: 15px;
+    font-weight: 500;
+    color: #F5F0E8;
+    line-height: 1.4;
+    font-family: 'Jost', 'DM Sans', Arial, sans-serif;
+  }
+
+  .faq__item.open .faq__question-text { color: #C9A96E; }
+
+  .faq__icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: all 0.3s;
+    color: rgba(245,240,232,0.5);
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1;
+  }
+
+  .faq__item.open .faq__icon {
+    transform: rotate(45deg);
+    border-color: rgba(201,169,110,0.4);
+    color: #C9A96E;
+  }
+
+  .faq__answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.3s ease;
+  }
+
+  .faq__item.open .faq__answer { max-height: 300px; }
+
+  .faq__answer-inner {
+    padding: 16px 28px 22px;
+    font-size: 14px;
+    line-height: 1.75;
+    color: rgba(245,240,232,0.6);
+    font-weight: 300;
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .faq__answer-inner strong {
+    color: #F5F0E8;
+    font-weight: 500;
+  }
+
+  @media (max-width: 768px) {
+    .faq__section { padding: 50px 20px; }
+    .faq__question { padding: 18px 20px; }
+    .faq__answer-inner { padding: 14px 20px 18px; }
+    .faq__question-text { font-size: 14px; }
+  }
+</style>
+
+<section class="faq__section" id="faq">
+  <div class="faq__inner">
+
+    <div class="faq__header">
+      <span class="faq__label">Heeft u vragen?</span>
+      <h2 class="faq__title">Veelgestelde <em>Vragen</em></h2>
+      <p class="faq__subtitle">Alles wat u moet weten voordat u bestelt.</p>
+    </div>
+
+    <div class="faq__list">
+
+      <div class="faq__item" id="faq-1">
+        <button class="faq__question" onclick="faqToggle('faq-1')" aria-expanded="false">
+          <span class="faq__question-text">Is dit een authentiek product?</span>
+          <span class="faq__icon">+</span>
+        </button>
+        <div class="faq__answer">
+          <div class="faq__answer-inner">
+            <strong>Absoluut, 100%</strong>. Wij betrekken onze producten <strong>rechtstreeks van het merk</strong>, zonder tussenpersoon. Wat u ontvangt is precies wat u in een officiële winkel zou vinden.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq__item" id="faq-2">
+        <button class="faq__question" onclick="faqToggle('faq-2')" aria-expanded="false">
+          <span class="faq__question-text">Waarom zijn uw prijzen lager dan in winkels?</span>
+          <span class="faq__icon">+</span>
+        </button>
+        <div class="faq__answer">
+          <div class="faq__answer-inner">
+            Wij verkopen <strong>rechtstreeks</strong>, zonder tussenpersoon of fysieke winkel. Daardoor kunnen wij u premiumkwaliteit aanbieden tegen een eerlijke prijs.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq__item" id="faq-3">
+        <button class="faq__question" onclick="faqToggle('faq-3')" aria-expanded="false">
+          <span class="faq__question-text">Hoe kies ik mijn maat?</span>
+          <span class="faq__icon">+</span>
+        </button>
+        <div class="faq__answer">
+          <div class="faq__answer-inner">
+            Onze kleding valt <strong>normaal</strong>. Neem uw gebruikelijke maat. Twijfelt u tussen twee maten, kies dan de grotere maat. Raadpleeg de maattabel die beschikbaar is op elke productpagina.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq__item" id="faq-4">
+        <button class="faq__question" onclick="faqToggle('faq-4')" aria-expanded="false">
+          <span class="faq__question-text">Krimpt de stof bij het wassen?</span>
+          <span class="faq__icon">+</span>
+        </button>
+        <div class="faq__answer">
+          <div class="faq__answer-inner">
+            Nee, mits u de verzorgingsinstructies op het label opvolgt. Wij adviseren te wassen op <strong>maximaal 30°C</strong> en liggend te drogen om de vorm en kleur te behouden.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq__item" id="faq-5">
+        <button class="faq__question" onclick="faqToggle('faq-5')" aria-expanded="false">
+          <span class="faq__question-text">Wat zijn de levertijden?</span>
+          <span class="faq__icon">+</span>
+        </button>
+        <div class="faq__answer">
+          <div class="faq__answer-inner">
+            Uw bestelling wordt de <strong>volgende werkdag</strong> verstuurd vanuit ons magazijn. De levering vindt plaats binnen <strong>5 tot 7 werkdagen</strong>. U ontvangt een trackingnummer per e-mail zodra uw pakket is verzonden.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq__item" id="faq-6">
+        <button class="faq__question" onclick="faqToggle('faq-6')" aria-expanded="false">
+          <span class="faq__question-text">Hoe kan ik mijn bestelling volgen?</span>
+          <span class="faq__icon">+</span>
+        </button>
+        <div class="faq__answer">
+          <div class="faq__answer-inner">
+            Zodra uw bestelling is verzonden, ontvangt u een e-mail met uw <strong>trackingnummer</strong>. U kunt uw pakket in realtime volgen via de link in uw bevestigingsmail.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq__item" id="faq-7">
+        <button class="faq__question" onclick="faqToggle('faq-7')" aria-expanded="false">
+          <span class="faq__question-text">Kan ik mijn artikel retourneren of ruilen?</span>
+          <span class="faq__icon">+</span>
+        </button>
+        <div class="faq__answer">
+          <div class="faq__answer-inner">
+            Ja. U heeft <strong>30 dagen</strong> vanaf de ontvangst om uw artikel te retourneren of te ruilen. Neem contact met ons op via <strong>bonjour@kielamsterdam.com</strong> en wij regelen alles voor u.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq__item" id="faq-8">
+        <button class="faq__question" onclick="faqToggle('faq-8')" aria-expanded="false">
+          <span class="faq__question-text">Leveren jullie ook in België en Duitsland?</span>
+          <span class="faq__icon">+</span>
+        </button>
+        <div class="faq__answer">
+          <div class="faq__answer-inner">
+            Ja, wij leveren door heel Europa. Verzending is <strong>altijd gratis</strong>, ongeacht uw land of het bedrag van uw bestelling. De levertijd is <strong>5 tot 7 werkdagen</strong> voor België en Duitsland.
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- OPTIMIZED: script deferred to avoid render blocking -->
+<script defer>
+  function faqToggle(id) {
+    const item = document.getElementById(id);
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq__item').forEach(el => {
+      el.classList.remove('open');
+      el.querySelector('.faq__question').setAttribute('aria-expanded', 'false');
+    });
+    if (!isOpen) {
+      item.classList.add('open');
+      item.querySelector('.faq__question').setAttribute('aria-expanded', 'true');
+    }
+  }
+</script>

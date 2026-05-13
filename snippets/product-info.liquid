@@ -127,7 +127,14 @@
 {% else %}
   {% render 'trust-stripo' %}
 {% endif %}
-             {% render 'faq-section' %}
+-
+
+{% if request.locale.iso_code == 'nl' %}
+  {% render 'faq-section-nl' %}
+{% else %}
+  {% render 'faq-section' %}
+{% endif %}
+
 
           {%- endif -%}
         {%- endif -%}
