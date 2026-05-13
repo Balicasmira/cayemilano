@@ -122,7 +122,11 @@
 {% if product.tags contains 'review-chemiso' %}
   {% render 'review-chemiso' %}
 {% endif %}
-             {% render 'trust-stripo' %}
+{% if request.locale.iso_code == 'nl' %}
+  {% render 'trust-stripo-nl' %}
+{% else %}
+  {% render 'trust-stripo' %}
+{% endif %}
              {% render 'faq-section' %}
 
           {%- endif -%}

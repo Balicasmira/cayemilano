@@ -1,0 +1,252 @@
+{% comment %}
+  ============================================================
+  SNIPPET: trust-strip-nl.liquid
+  Location: snippets/trust-strip-nl.liquid
+  Usage: {% render 'trust-strip-nl' %}
+  OPTIMIZED: SVG payment icons deferred, font-display swap, contain layout
+  ============================================================
+{% endcomment %}
+
+<style>
+  .ts__section {
+    padding: 50px 60px;
+    background: #FDFAF5;
+    border-top: 1px solid #EDE7D9;
+    border-bottom: 1px solid #EDE7D9;
+    font-family: 'Jost', 'DM Sans', Arial, sans-serif;
+    contain: layout style;
+  }
+
+  .ts__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .ts__header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .ts__label {
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #000;
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  .ts__title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(22px, 2.5vw, 32px);
+    font-weight: 400;
+    color: #1A1610;
+  }
+
+  .ts__title em {
+    font-style: italic;
+    color: #8B7355;
+  }
+
+  .ts__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2px;
+  }
+
+  .ts__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 36px 28px;
+    background: #F5F0E8;
+    border: 1px solid #EDE7D9;
+    transition: background 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ts__card::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%) scaleX(0);
+    width: 40px;
+    height: 2px;
+    background: #8B7355;
+    transition: transform 0.3s ease;
+  }
+
+  .ts__card:hover { background: #EDE7D9; }
+  .ts__card:hover::before { transform: translateX(-50%) scaleX(1); }
+
+  .ts__icon-wrap {
+    width: 62px;
+    height: 62px;
+    border-radius: 50%;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 18px;
+    font-size: 26px;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+  }
+
+  .ts__card:hover .ts__icon-wrap { transform: scale(1.08); }
+
+  .ts__card-title {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: #1A1610;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+  }
+
+  .ts__card-desc {
+    font-size: 13px;
+    line-height: 1.65;
+    color: #6B5E48;
+    font-weight: 300;
+  }
+
+  .ts__card-desc strong {
+    color: #1A1610;
+    font-weight: 600;
+  }
+
+  .ts__stars {
+    color: #E8A24A;
+    font-size: 12px;
+    letter-spacing: 2px;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .ts__payment {
+    margin-top: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    padding-top: 28px;
+    border-top: 1px solid #EDE7D9;
+  }
+
+  .ts__payment-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #B8A882;
+  }
+
+  .ts__payment-icons {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .ts__pay-badge {
+    background: white;
+    border: 1px solid #EDE7D9;
+    border-radius: 6px;
+    padding: 5px 10px;
+    font-size: 11px;
+    font-weight: 700;
+    color: #1A1610;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+  }
+
+  @media (max-width: 900px) {
+    .ts__section { padding: 30px 12px; }
+    .ts__grid { grid-template-columns: repeat(2, 1fr); gap: 2px; }
+    .ts__card { padding: 22px 14px; }
+    .ts__icon-wrap { width: 48px; height: 48px; font-size: 20px; margin-bottom: 12px; }
+    .ts__card-title { font-size: 11px; letter-spacing: 1px; }
+    .ts__card-desc { font-size: 12px; line-height: 1.55; }
+  }
+</style>
+
+<section class="ts__section">
+  <div class="ts__inner">
+
+    <div class="ts__header">
+      <span class="ts__label">Waarom voor ons kiezen</span>
+      <h2 class="ts__title">Wat ons <em>onderscheidt 🌟</em></h2>
+    </div>
+
+    <div class="ts__grid">
+
+      <div class="ts__card">
+        <div class="ts__icon-wrap">🚚</div>
+        <div class="ts__card-title">Gratis & Gevolgde Levering</div>
+        <p class="ts__card-desc">
+          Verzonden via <strong>onze bezorgpartners in Nederland</strong>.<br>
+          Realtime tracking inbegrepen.<br>
+          Geleverd binnen <strong>5–7 werkdagen</strong>.
+        </p>
+      </div>
+
+      <div class="ts__card">
+        <div class="ts__icon-wrap">↩️</div>
+        <div class="ts__card-title">30 Dagen Bedenktijd</div>
+        <p class="ts__card-desc">
+          Gratis retour of ruiling.<br>
+          Zonder vragen te stellen.<br>
+          <strong>Terugbetaling binnen 5 dagen</strong>.
+        </p>
+      </div>
+
+      <div class="ts__card">
+        <div class="ts__icon-wrap">🔒</div>
+        <div class="ts__card-title">100% Veilig Betalen</div>
+        <p class="ts__card-desc">
+          Visa, Mastercard, Apple Pay,<br>
+          Google Pay — versleuteld via <strong>SSL</strong>.<br>
+          <strong>Uw gegevens zijn beschermd.</strong>
+        </p>
+      </div>
+
+      <div class="ts__card">
+        <div class="ts__icon-wrap">⭐</div>
+        <div class="ts__card-title">+1000 Tevreden Klanten</div>
+        <p class="ts__card-desc">
+          <span class="ts__stars">★★★★★</span>
+          Beoordeeld met <strong>4,7/5</strong> door onze kopers.<br>
+          Geverifieerde en authentieke recensies.
+        </p>
+      </div>
+
+      <div class="ts__card">
+        <div class="ts__icon-wrap">💬</div>
+        <div class="ts__card-title">Reactie Binnen 2 Uur</div>
+        <p class="ts__card-desc">
+          Ons team reageert <strong>7 dagen per week</strong><br>
+          van 9u tot 21u.<br>
+          Via <strong>e-mail</strong> of via <strong>WhatsApp</strong>.
+        </p>
+      </div>
+
+      <div class="ts__card">
+        <div class="ts__icon-wrap">🇳🇱</div>
+        <div class="ts__card-title">Verzonden Vanuit Nederland</div>
+        <p class="ts__card-desc">
+          Uw bestelling vertrekt vanuit ons<br>
+          <strong>Nederlands magazijn</strong> de dag<br>
+          na uw aankoop.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
