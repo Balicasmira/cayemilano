@@ -616,7 +616,8 @@
         },
         "shipping_method_not_available_updated": {
           "many": "Het is niet mogelijk om ten minste één van de artikelen die u heeft toegevoegd naar uw locatie te verzenden. Gelieve dit/deze te verwijderen om te kunnen afrekenen, of neem contact op met de winkel."
-        }
+        },
+        "empty_state": "GRATIS PRIORITEITSLEVERING"
       },
       "processing": {
         "wait": {
