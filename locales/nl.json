@@ -844,6 +844,10 @@
         "detail_item_label": {
           "many": "{{count}} artikelen"
         }
+      },
+      "alternative_payment_method_banner": {
+        "express_checkout": "📦 Gratis Verzending · ↩️ Gratis retour binnen 30 dagen ✅",
+        "or": "🚚 Bestelling wordt binnen 24 uur verzonden"
       }
     },
     "notices": {
