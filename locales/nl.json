@@ -798,6 +798,9 @@
         },
         "pickup_unavailable_banner_title_with_country": {
           "many": "Geen locaties in %{country} met uw artikelen gevonden"
+        },
+        "location_far_away_one_item": {
+          "many": "%{count} locaties met uw object"
         }
       },
       "split_delivery": {
