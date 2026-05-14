@@ -801,6 +801,27 @@
         },
         "location_far_away_one_item": {
           "many": "%{count} locaties met uw object"
+        },
+        "location_information_far_away_one_item": {
+          "many": "Er zijn %{count} locaties met uw artikel"
+        },
+        "location_information_far_away_other_items": {
+          "many": "Er zijn %{count} locaties met uw artikelen"
+        },
+        "location_nearby_one_item": {
+          "many": "Er zijn %{count} locaties in de buurt met uw artikel"
+        },
+        "location_nearby_other_items": {
+          "many": "Er zijn %{count} locaties in de buurt met uw artikelen"
+        },
+        "location_nearby_short_one_item": {
+          "many": "%{count} locaties in de buurt met uw artikel"
+        },
+        "location_nearby_short_other_items": {
+          "many": "%{count} locaties in de buurt met uw artikelen"
+        },
+        "location_far_away_other_items": {
+          "many": "%{count} locaties met uw artikelen"
         }
       },
       "split_delivery": {
